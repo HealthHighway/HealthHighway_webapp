@@ -1,0 +1,632 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*landing animation css */
+.animation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100vw;
+  padding: 0 40px;
+}
+.animation_right {
+  position: relative;
+}
+.animation_left,
+.animation_right {
+  height: 280px;
+}
+#client,
+#instructor {
+  height: 90%;
+  width: auto;
+  margin-top: 30px;
+  overflow: visible;
+}
+#dev {
+  width: auto;
+  height: 100%;
+  margin-right: 48px;
+}
+#client {
+  position: absolute;
+}
+.animation_middle {
+  margin-top: 10px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transform: translateX(-50px);
+  width: calc(100% + 100px);
+}
+
+
+.middle-line {
+  height: 4px;
+  border-radius: 4px 200% 200% 4px;
+  background: linear-gradient(90deg, #4ca9ee, #29e7cd);
+  animation: middle-line 5s 2s forwards ease-in-out;
+}
+@keyframes middle-line {
+  0% {
+    margin: 0;
+    width: 0;
+  }
+  45% {
+    margin: 0 100% 0 0;
+    width: calc(100% - 40px);
+    border-radius: 4px;
+  }
+  100% {
+    border-radius: 200% 4px 4px 200%;
+    background: linear-gradient(90deg, #29e7cd, #4ca9ee);
+    width: 0;
+  }
+}
+
+/* dev animation starts here */
+:root {
+  --dev-delay-grp1: 1.25s;
+  --dev-delay-grp2: 1.5s;
+  --dev-delay-grp3: 1.75s;
+  --dev-delay-grp4: 2s;
+  --dev-opacity-delay: 4s;
+}
+#dev {
+  animation: dev 1s var(--dev-opacity-delay) forwards ease-in-out;
+}
+@keyframes dev {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.rect-1 {
+  opacity: 0;
+  transform-origin: center;
+  transform-box: fill-box;
+  transform: rotateZ(2deg);
+  animation: rect-animation 0.4s var(--dev-delay-grp1) forwards ease-in-out;
+}
+.rect-2 {
+  opacity: 0;
+  animation: rect-animation 0.4s var(--dev-delay-grp3) forwards ease-in-out;
+}
+@keyframes rect-animation {
+  from {
+    opacity: 1;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 40;
+  }
+}
+.line {
+  stroke-dashoffset: 100%;
+  stroke-dasharray: 100%;
+}
+.line-1,
+.line-2,
+.line-3 {
+  animation: line-grp 1s var(--dev-delay-grp1) forwards ease-in-out;
+}
+.line-4,
+.line-5 {
+  animation: line-grp 1s var(--dev-delay-grp2) forwards ease-in-out;
+}
+.line-6,
+.line-7,
+.line-8 {
+  animation: line-grp 1s var(--dev-delay-grp3) forwards ease-in-out;
+}
+.line-9,
+.line-10 {
+  animation: line-grp 1s var(--dev-delay-grp4) forwards ease-in-out;
+}
+@keyframes line-grp {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* instructor animation starts here */
+:root {
+  --instructor-opacity-delay: 3s;
+  --instructor-delay: 4s;
+}
+#instructor {
+  opacity: 0;
+  animation: instructor 1.5s var(--instructor-opacity-delay) forwards
+    ease-in-out;
+}
+@keyframes instructor {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#thigh_right {
+  animation: thigh 1s var(--instructor-delay) forwards ease-in-out;
+  transform-origin: top right;
+  transform-box: fill-box;
+}
+@keyframes thigh {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(-2.5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+#calve_right {
+  animation: calve 1s var(--instructor-delay) forwards ease-in-out;
+  transform-origin: bottom right;
+  transform-box: fill-box;
+}
+
+@keyframes calve {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(90deg) translate(-10px, 45px);
+  }
+}
+#right_hand {
+  transform-origin: top right;
+  transform-box: fill-box;
+  animation: right_hand 1s var(--instructor-delay) forwards ease-in-out;
+}
+
+@keyframes right_hand {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  33.3% {
+    transform: rotateZ(40deg) translate(10px, -10px);
+  }
+  100% {
+    transform: rotateZ(75deg) translate(50px, 30px);
+  }
+}
+#arm_right {
+  transform-origin: bottom right;
+  transform-box: fill-box;
+  animation: arm_right 1s var(--instructor-delay) forwards ease-in-out;
+}
+@keyframes arm_right {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  33.3% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(-10deg);
+  }
+}
+#palm_right {
+  transform-origin: bottom right;
+  transform-box: fill-box;
+  animation: palm_right 1s var(--instructor-delay) ease-in-out forwards;
+}
+@keyframes palm_right {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-20deg) translate(25px, 0px);
+  }
+}
+#left_hand {
+  transform-origin: bottom left;
+  transform-box: fill-box;
+  animation: left_hand 1s var(--instructor-delay) ease-in-out forwards;
+}
+@keyframes left_hand {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-70deg) translate(10px, 23px);
+  }
+}
+#palm_left {
+  transform-origin: bottom left;
+  transform-box: fill-box;
+  animation: palm_left 1s var(--instructor-delay) ease-in-out forwards;
+}
+@keyframes palm_left {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(76deg) translate(-25px, -11px);
+  }
+}
+/* client animation starts here */
+:root {
+  --client-delay: 7.5s;
+  --client-opacity-delay: 6.5s;
+}
+
+#client {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  animation: client 1s var(--client-opacity-delay) forwards ease-in-out;
+}
+@keyframes client {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#client_arm_right {
+  transform-box: fill-box;
+  transform-origin: bottom right;
+  animation: client_arm_right 1s var(--client-delay) forwards ease-in-out;
+}
+@keyframes client_arm_right {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotateZ(1deg);
+  }
+}
+#client_hand_right {
+  transform-box: fill-box;
+  transform-origin: bottom right;
+  animation: client_hand_right 1s var(--client-delay) forwards ease-in-out;
+}
+@keyframes client_hand_right {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(71deg) translate(-32px, 41px);
+  }
+}
+#client_hand_left {
+  transform-box: fill-box;
+  transform-origin: bottom left;
+  animation: client_hand_left 1s var(--client-delay) forwards ease-in-out;
+}
+@keyframes client_hand_left {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-66deg) translate(84px, 71px);
+  }
+}
+#client_arm_left {
+  transform-box: fill-box;
+  transform-origin: bottom left;
+  animation: client_arm_left 1s var(--client-delay) forwards ease-in-out;
+}
+@keyframes client_arm_left {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+#client_calve_left {
+  transform-box: fill-box;
+  transform-origin: bottom left;
+  animation: client_calve_left 1.5s var(--client-delay) forwards ease-in-out;
+}
+@keyframes client_calve_left {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-72deg) translate(28px, 9px);
+  }
+}
+/* mini instructor animation starts here */
+#mini_thigh_right {
+  animation: mini_thigh 1s var(--client-delay) forwards ease-in-out;
+  transform-origin: top right;
+  transform-box: fill-box;
+}
+@keyframes mini_thigh {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(-2.5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+#mini_calve_right {
+  animation: mini_calve 1s var(--client-delay) forwards ease-in-out;
+  transform-origin: bottom right;
+  transform-box: fill-box;
+}
+
+@keyframes mini_calve {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(90deg) translate(-1px, 6px);
+  }
+}
+#mini_right_hand {
+  transform-origin: top right;
+  transform-box: fill-box;
+  animation: mini_right_hand 1s var(--client-delay) forwards ease-in-out;
+}
+
+@keyframes mini_right_hand {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  33.3% {
+    transform: rotateZ(40deg) translate(2px, -2px);
+  }
+  100% {
+    transform: rotateZ(75deg) translate(7px, 4px);
+  }
+}
+#mini_arm_right {
+  transform-origin: bottom right;
+  transform-box: fill-box;
+  animation: mini_arm_right 1s var(--client-delay) forwards ease-in-out;
+}
+@keyframes mini_arm_right {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  33.3% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(-10deg);
+  }
+}
+#mini_palm_right {
+  transform-origin: bottom right;
+  transform-box: fill-box;
+  animation: mini_palm_right 1s var(--client-delay) ease-in-out forwards;
+}
+@keyframes mini_palm_right {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-20deg) translate(3px, 0px);
+  }
+}
+#mini_left_hand {
+  transform-origin: bottom left;
+  transform-box: fill-box;
+  animation: mini_left_hand 1s var(--client-delay) ease-in-out forwards;
+}
+@keyframes mini_left_hand {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-70deg) translate(2px, 4px);
+  }
+}
+#mini_palm_left {
+  transform-origin: bottom left;
+  transform-box: fill-box;
+  animation: mini_palm_left 1s var(--client-delay) ease-in-out forwards;
+}
+@keyframes mini_palm_left {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(76deg) translate(-3px, 0px);
+  }
+}
+@media (max-width: 1310px) {
+  .animation_left,
+  .animation_right {
+    height: 232px;
+  }
+}
+@media (max-width: 1200px) {
+  .animation-container {
+    padding: 0 20px;
+  }
+  .animation_left,
+  .animation_right {
+    height: 200px;
+  }
+  .animation_middle {
+    transform: translateX(-25px);
+    width: calc(100% + 50px);
+  }
+}
+@media (max-width: 1000px) {
+  .animation_left,
+  .animation_right {
+    height: 200px;
+  }
+  #client,
+  #instructor {
+    margin-top: 20px;
+  }
+  .animation-container {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 962px) {
+  .animation_left,
+  .animation_right {
+    height: 174px;
+  }
+}
+@media (max-width: 900px) {
+  .animation_left,
+  .animation_right {
+    height: 171px;
+  }
+}
+@media (max-width: 800px) {
+  .animation_left,
+  .animation_right {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 250px;
+  }
+  .animation-container {
+    margin-top: 50px;
+  }
+  #dev {
+    animation: dev 1s 2.5s forwards ease-in-out;
+  }
+  #instructor {
+    opacity: 0;
+    animation: instructor 4s 4s forwards ease-in-out;
+  }
+  @keyframes instructor {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  #client {
+    animation: client 1s 7.5s forwards ease-in-out;
+    margin-left: 20px;
+    transform: translateX(30px);
+  }
+}
+@media (max-width: 700px) {
+  .animation_left,
+  .animation_right {
+    height: 200px;
+  }
+  #client,
+  #instructor {
+    margin-top: 15px;
+  }
+  .animation_middle {
+    width: calc(100vw - 391px);
+    padding: 0 15px 25px;
+  }
+}
+@media (max-width: 500px) {
+  .animation-container {
+    justify-content: space-between;
+    width: 100vw;
+    position: relative;
+  }
+  #dev {
+    margin-right: 20px;
+  }
+
+  .animation_middle {
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 70vw;
+    padding: 0 5px;
+  }
+  .animation_left,
+  .animation_right {
+    height: 180px;
+  }
+}
+@media (max-width: 520px) and (min-height: 700px) {
+  #landing-main-div {
+    padding-top: 150px;
+  }
+  .animation_left,
+  .animation_right {
+    height: 220px;
+  }
+  .animation-container {
+    margin-top: 40px;
+  }
+  .landing-main-center {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 420px) and (min-height: 700px) {
+  #landing-main-div {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 400px) {
+  .animation-container {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 370px) {
+  #client,
+  #instructor {
+    margin-top: 5px;
+  }
+  #dev {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 340px) and (min-height: 540px) {
+  .animation_left,
+  .animation_right {
+    height: 140px;
+  }
+  .animation-container {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 300px) {
+  .animation-container {
+    justify-content: space-between;
+    width: 100vw;
+    position: relative;
+  }
+  #client,
+  #instructor {
+    margin-top: 10px;
+  }
+  #dev {
+    margin-right: 20px;
+  }
+}

@@ -1,0 +1,136 @@
+/* Testiomonials CSS (END) */
+
+.call-back {
+    padding: 1em 5%;
+    background-color: #4ca9ee;
+    color: white;
+}
+
+.call-back-head {
+    font-family: "Open Sans";
+    text-align: center;
+}
+
+.call-back-text {
+    font-family: "Open Sans";
+    text-align: center;
+    font-size: 0.85rem;
+    padding-top: 0.2em;
+}
+
+#phone-num {
+    display: block;
+    padding: 0.8em 1em;
+    border: none;
+    outline: none;
+    font-family: "Montserrat";
+    font-size: 1rem;
+    margin: 1em auto;
+    border-radius: 0.2em;
+}
+
+.call-back-btn {
+    display: block;
+    margin: 1em auto;
+    padding: 0.6em 1.4em;
+    font-family: "Montserrat";
+    background-color: transparent;
+    border: 0.15em solid white;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 0.5em;
+}
+
+@media (min-width: 768px) {
+    .call-back {
+        padding: 2em 10%;
+        display: -ms-grid;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .call-back-head {
+        text-align: left;
+        font-size: 2rem;
+    }
+    .call-back-btn {
+        margin: 1em auto;
+    }
+    .call-back-text {
+        text-align: left;
+        font-size: 0.9rem;
+    }
+    .call-back-btn {
+        -webkit-transition: 0.2s ease-in;
+        transition: 0.2s ease-in;
+        margin: 1em 0;
+        margin-left: 1.5em;
+    }
+    .call-back-btn:hover {
+        background-color: white;
+        color: #4ca9ee;
+    }
+    .cb-form {
+        display: flex;
+        justify-content: flex-start;
+    }
+    #phone-num {
+        margin: 1em 0;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .call-back {
+        padding: 2em 8%;
+        display: grid;
+        -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+    }
+    .cb-text {
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    }
+    .cb-form {
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    }
+    .call-back-head {
+        font-size: 2.2rem;
+    }
+    .cb-form {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .call-back-btn {
+        margin: 1em 0;
+        margin-left: 1.5em;
+    }
+}
+
+@media (min-width: 1440px) {
+    .call-back {
+        -ms-grid-columns: 30% 70%;
+        grid-template-columns: 30% 70%;
+    }
+    .call-back-btn {
+        justify-self: flex-end;
+    }
+    .cb-form {
+        justify-content: flex-end;
+    }
+    #phone-num {
+        width: 50%;
+        margin-right: 0;
+    }
+}
+
+
+/* CAll back CSS (END) */

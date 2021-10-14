@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.personal-session-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  margin: 20px 0px;
+}
+.book-session-title {
+  color: #4ca9ee;
+  margin: 1rem 0rem;
+}
+.personal-session-card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 8px 20px;
+}
+.personal-cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.personal-card-title {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.personal-card-title h1 {
+  color: #4ca9ee;
+  font-size: 1.5rem;
+}
+.personal-card-title img {
+  width: 125px;
+}
+.personal-session-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.personal-session-text ul {
+  width: 100%;
+}
+.personal-session-text li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+}
+.personal-session-text li img {
+  width: 28px;
+  margin: 0px 10px;
+}
+.personal-session-text li p {
+  font-size: 16px;
+}
+.personal-session-text li h2 {
+  font-size: 36px;
+  color: #4ca9ee;
+  margin: 0px 10px;
+  width: 28px;
+  text-align: center;
+  line-height: 28px;
+}
+.personal-session-text button {
+  background: #4ca9ee;
+  padding: 8px 48px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0.8rem 0rem;
+  cursor: pointer;
+}
+@media (max-width: 450px) {
+  .personal-session-card {
+    width: 290px;
+    margin: 8px 0px;
+  }
+  .book-session-title h1 {
+    font-size: 1.3rem;
+  }
+  .personal-card-title h1 {
+    font-size: 1.2rem;
+  }
+  .personal-card-title img {
+    width: 100px;
+  }
+  .personal-session-text li img {
+    width: 24px;
+  }
+  .personal-session-text li h2 {
+    width: 24px;
+    font-size: 33px;
+  }
+  .personal-session-text li p {
+    font-size: 14.5px;
+  }
+  .personal-session-text li {
+    padding: 8px 0px;
+  }
+}
+@media (max-width: 300px) {
+  .personal-session-card {
+    width: 90vw;
+  }
+}

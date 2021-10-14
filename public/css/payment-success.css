@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 2em 5%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#success {
+    font-family: 'Open Sans';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
+
+.get-started-btn {
+    background-color: #4ca9ee;
+    ;
+    padding: .5em 2em;
+    border-radius: .2em;
+    margin: 1em 0;
+    margin-top: 2em;
+    color: white;
+    font-weight: 600;
+}
+
+.link {
+    color: #4ca9ee;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.success-img {
+    width: 100px;
+    margin: 1em 0;
+}
+
+.success-img img {
+    width: 100%;
+}
+
+
+/* Payment Card */
+
+.payment-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.payment-card {
+    width: 390px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.payment-card>img {
+    width: 100%;
+}
+
+.pay-text-area {
+    padding: 14px;
+}
+
+.pay-title-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-btn-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pay-title h3 {
+    padding-bottom: 5px;
+    max-width: 250px;
+}
+
+.pay-title p {
+    padding-bottom: 15px;
+    color: #666565;
+    font-size: 18px;
+}
+
+.trusted-container h3 {
+    color: #666565;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.payment-btn-time button {
+    padding: 10px 20px;
+    color: white;
+    background: #4ca9ee;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.payment-btn-time p {
+    padding: 9px 5px;
+    font-size: 16px;
+    color: #fff;
+    background: #3a3939;
+    width: 5rem;
+    text-align: center;
+    border-radius: 8px;
+    text-align: center;
+}
+
+@media (max-width: 425px) {
+    .payment-card {
+        width: 270px;
+    }
+    .pay-title h3 {
+        font-size: 16px;
+        max-width: 150px;
+    }
+    .pay-title p {
+        font-size: 15px;
+    }
+    .trusted-container h3 {
+        font-size: 16px;
+    }
+    .payment-btn-time button {
+        padding: 8px;
+        font-size: 1rem;
+    }
+    .payment-btn-time p {
+        width: 4rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 330px) {
+    .payment-card-container {
+        padding: 0px;
+    }
+    .payment-card {
+        margin: 20px 0px;
+    }
+}
+
+
+/* Payment Card (end) */

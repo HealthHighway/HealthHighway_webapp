@@ -1,0 +1,595 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600;700&family=Work+Sans:wght@500;600&display=swap");
+
+.title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+}
+.sub-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+#detailed-landing-main-div {
+  width: 100vw;
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 120px 6vw 0 6vw;
+  justify-content: space-evenly;
+}
+
+.points-text span {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.slides img {
+  width: 602px;
+  height: 332px;
+}
+
+.detailed-landing-main-right {
+  margin-top: 50px;
+}
+
+.detailed-landing-main-left {
+  width: 40vw;
+  margin-right: 4vw;
+}
+
+.dot-container {
+  text-align: center;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 25px 2px;
+  background-color: #e7e3e3;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #4ca9ee;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.rupees {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+  color: #4ca9ee;
+}
+
+.points-text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #5a6885;
+}
+
+.points {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 24px;
+  width: 50%;
+}
+
+.points-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 24px;
+  width: auto;
+  font-size: 18px;
+}
+
+.points-div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.points-common,
+.points-recommended,
+.points-not-recommended {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.points div {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.points div:nth-child(1) {
+  margin-right: 20px;
+}
+
+#book-now {
+  border-color: #4ca9ee;
+  color: #fff !important;
+  padding: 8px 35px !important;
+  border-radius: 20px !important;
+  transition: 0.3s ease;
+  background-color: #4ca9ee;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.enroll-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.personalisation-text {
+  color: #4ca9ee;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.enroll-btn {
+  background: #4ca9ee;
+  display: block;
+  -webkit-box-shadow: 0px 2px 10px rgba(76, 169, 238, 0.3);
+  box-shadow: 0px 2px 10px rgba(76, 169, 238, 0.3);
+  border-radius: 8px;
+  width: 214px;
+  height: 60px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19.4px;
+  line-height: 24px;
+  color: #ffffff;
+  border-color: #4ca9ee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.page-navbar {
+  display: none;
+}
+
+.navbar-option {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #716e6e;
+}
+
+.active-option {
+  color: #4ca9ee;
+}
+
+.active-option::after {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4ca9ee;
+  display: inline-block;
+  margin: 0 0 0 10px;
+}
+
+.page-navbar {
+  display: flex;
+  margin-top: 32px;
+  justify-content: space-between;
+  width: 90vw;
+  padding: 0 5vw;
+}
+
+.page-navbar,
+.instructor-div {
+  display: none;
+}
+
+#overview-div {
+  margin-top: 60px;
+  display: none;
+}
+
+#about-mobile-div,
+#benefits-mobile-div {
+  display: none;
+}
+
+@media only screen and (max-width: 1582px) {
+  .slides img {
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .points {
+    margin-top: 15px;
+  }
+  .points-div {
+    margin-top: 25px;
+  }
+  .personalisation-text {
+    width: 200px;
+    text-align: center;
+  }
+  .points-not-recommended,
+  .points-recommended {
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 1370px) {
+  .slides img {
+    width: 460px;
+  }
+}
+
+@media only screen and (max-width: 1330px) {
+  .slides img {
+    width: 420px;
+    height: 280px;
+  }
+}
+
+@media only screen and (max-width: 1270px) {
+  .slides img {
+    width: 432px;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  #detailed-landing-main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 0 0 0;
+  }
+  .detailed-landing-main-left {
+    width: 88vw;
+    padding: 0 6vw;
+    margin-right: 0;
+  }
+  .title-para {
+    width: 76vw;
+  }
+  .detailed-landing-main-right {
+    padding: 40px 10vw 0 10vw;
+  }
+  .slides img {
+    width: 602px;
+    height: 332px;
+  }
+  .points {
+    width: 200px;
+    margin: 0 20px 5px 20px;
+    text-align: start;
+  }
+  .points-common,
+  .points-recommended,
+  .points-not-recommended {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 947px) {
+  .points {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 895px) {
+  .points {
+    width: 240px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .detailed-landing-main-right {
+    padding: 40px 15vw 0 15vw;
+  }
+  .detailed-landing-main-left {
+    margin-right: 0;
+  }
+  .slides img {
+    width: 70vw;
+    height: 332px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .points-common .points .points-text {
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .detailed-landing-main-right {
+    padding: 40px 15vw 0 15vw;
+  }
+  .detailed-landing-main-left {
+    margin-right: 0;
+  }
+  .slides img {
+    width: 70vw;
+    height: 332px;
+  }
+  .points {
+    width: 48%;
+    margin: 0 1%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .points-recommended .points-text,
+  .points-not-recommended .points-text {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .slides img {
+    width: 359px;
+    height: 231px;
+  }
+  .detailed-landing-main-left {
+    width: 84vw;
+    margin: 0;
+    padding: 0;
+  }
+  .detailed-landing-main-right {
+    width: 84vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+  .points-recommended .points-text,
+  .points-not-recommended .points-text {
+    width: 140px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .title {
+    font-size: 36px;
+  }
+  .sub-title {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .enroll-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .personalisation-text {
+    margin-top: 14px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .title-para {
+    width: 72vw;
+  }
+  .detailed-landing-main-right,
+  .detailed-landing-main-left {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .detailed-landing-main-left {
+    display: none;
+  }
+  .page-navbar,
+  .instructor-div {
+    display: block;
+  }
+  .page-navbar {
+    display: flex;
+  }
+  .instructor-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(178, 222, 255, 0.31);
+    border-radius: 15px;
+    padding: 15px 30px;
+    margin: 32px 10vw 0 10vw;
+  }
+  .trainer {
+    display: flex;
+    align-items: center;
+  }
+  .points-common {
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .points {
+    width: 40vw;
+    padding: 0 5vw;
+    margin: 0;
+    font-size: 12px;
+  }
+  .points div {
+    width: 40px;
+    display: flex;
+    justify-content: end;
+  }
+  .points-text span {
+    font-size: 12px !important;
+    line-height: 12px;
+    font-weight: lighter;
+  }
+  .points-title {
+    padding: 0 10vw;
+    font-size: 14px;
+  }
+  .points-recommended,
+  .points-not-recommended {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 10vw;
+    margin-top: 10px;
+  }
+  .points-text {
+    font-size: 12px;
+  }
+  #overview-div {
+    display: block;
+  }
+  #about-div {
+    display: none !important;
+  }
+  .personalisation-text {
+    width: auto;
+  }
+  .slides img {
+    width: 75vw;
+    height: 49vw;
+  }
+  .points-recommended .points-text,
+  .points-not-recommended .points-text {
+    width: auto;
+    margin-right: 15px;
+  }
+  .points div img, .points-title img{
+    width: 18px;
+    height: 18px;
+  }
+
+  .points div:nth-child(1) {
+    margin-right: 14px;
+}
+
+  .points div p{
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .points-common {
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .points-recommended,
+  .points-not-recommended {
+    flex-direction: column;
+    align-items: start;
+  }
+  .points-text {
+    width: 80vw;
+  }
+  .points {
+    width: 90vw;
+    margin-bottom: 5px;
+  }
+  .points-title {
+    width: 90vw;
+    margin-top: 25px;
+    padding-right: 0;
+  }
+  .points div {
+    width: 32px;
+  }
+  .rupees {
+    line-height: 0;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .page-navbar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar-option {
+    margin-bottom: 10px;
+  }
+  .instructor-div {
+    padding: 15px 20px;
+  }
+  .enroll-btn {
+    width: 174px;
+    height: 45px;
+    font-size: 16px;
+    line-height: 15px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .instructor-div {
+    padding: 15px 5px;
+  }
+}

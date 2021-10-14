@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navbar_vidhu.css">
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/grpssn.css" />
+    <link rel="icon" href="/images/hh-favicon.png">
+    <title>Health Highway | Search for Group Sessions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+    
+    <script >
+      function putNodesIntoDOM (data){
+        let today = new Date();
+        let ongoingDiv = document.getElementById('ongoing');
+        let upcomingDiv = document.getElementById('upcoming');
+        ongoingDiv.innerHTML = '';
+        upcomingDiv.innerHTML = '';
+        data.forEach(s => {
+            let start_date = new Date(s.STARTING_DATE)
+            if(start_date-today <= 0){
+                if(s.PARTICIPANTS >= s.LIMIT){
+                  const divMain = document.createElement('div');
+                  divMain.onclick = function(){ window.location.href = `/Group-Yoga-Classes/${s._id}`}
+                  divMain.style.cursor = 'pointer';
+                  divMain.classList.add("new-ssn-card", "overbooked");
+                  const childPart = `<img src=${s.IMG} alt="ssn-img" />
+                            <div class="ssn-card-txt">
+                                <div class="ssn-title">
+                                    <h3>${s.SESSION_NAME}</h3>
+                                    <p>by ${s.TNAME}</p>
+                                </div>
+                                <div class="ssn-time">
+                                    <p>${s.TIME.substring(0, 5) + s.TIME.substring(9)}</p>
+                                </div>
+                            </div>`
+                  divMain.innerHTML = childPart;
+                  ongoingDiv.appendChild(divMain);
+                }
+                else{
+                  const divMain = document.createElement('div');
+                  divMain.onclick = function(){ window.location.href = `/Group-Yoga-Classes/${s._id}`}
+                  divMain.style.cursor = 'pointer';
+                  divMain.classList.add("new-ssn-card");
+                  const childPart = `<img src=${s.IMG} alt="ssn-img" />
+                            <div class="ssn-card-txt">
+                                <div class="ssn-title">
+                                    <h3>${s.SESSION_NAME}</h3>
+                                    <p>by ${s.TNAME}</p>
+                                </div>
+                                <div class="ssn-time">
+                                    <p>${s.TIME.substring(0, 5) + s.TIME.substring(9)}</p>
+                                </div>
+                            </div>`
+                  divMain.innerHTML = childPart;
+                  ongoingDiv.appendChild(divMain);
+                }
+            }else{
+              if(s.PARTICIPANTS >= s.LIMIT){
+                  const divMain = document.createElement('div');
+                  divMain.onclick = function(){ window.location.href = `/Group-Yoga-Classes/${s._id}`}
+                  divMain.style.cursor = 'pointer';
+                  divMain.classList.add("new-ssn-card", "overbooked");
+                  const childPart = `<img src=${s.IMG} alt="ssn-img" />
+                            <div class="ssn-card-txt">
+                                <div class="ssn-title">
+                                    <h3>${s.SESSION_NAME}</h3>
+                                    <p>by ${s.TNAME}</p>
+                                </div>
+                                <div class="ssn-time">
+                                    <p>${s.TIME.substring(0, 5) + s.TIME.substring(9)}</p>
+                                </div>
+                            </div>`
+                  divMain.innerHTML = childPart;
+                  upcomingDiv.appendChild(divMain);
+                }
+                else{
+                  const divMain = document.createElement('div');
+                  divMain.onclick = function(){ window.location.href = `/Group-Yoga-Classes/${s._id}`}
+                  divMain.style.cursor = 'pointer';
+                  divMain.classList.add("new-ssn-card", "starting-soon");
+                  const childPart = `<img src=${s.IMG} alt="ssn-img" />
+                            <div class="ssn-card-txt">
+                                <div class="ssn-title">
+                                    <h3>${s.SESSION_NAME}</h3>
+                                    <p>by ${s.TNAME}</p>
+                                </div>
+                                <div class="ssn-time">
+                                    <p>${s.TIME.substring(0, 5) + s.TIME.substring(9)}</p>
+                                </div>
+                            </div>`
+                  divMain.innerHTML = childPart;
+                  upcomingDiv.appendChild(divMain);
+                }
+            }
+            
+          })
+      }
+
+      function findSearchResults(q){
+        const client = algoliasearch('PF77W5ATP0', '7cf45f6f20bc5ed3cace55bcb04ab8fa');
+        const index = client.initIndex('healthhighway');
+        index
+          .search(q)
+          .then(({ hits }) => {
+              console.log(hits);
+              putNodesIntoDOM(hits)
+          })
+          .catch(err => {
+              console.log(err);
+          });
+      }
+
+      function throttle(){
+         if(this.search_timeout){
+            clearTimeout(this.search_timeout);
+         }
+         this.search_timeout = setTimeout(async function(){
+              console.log("called : ", document.getElementById('search-bar').value);
+              findSearchResults(document.getElementById('search-bar').value);
+          }, 500)
+      }
+
+      (function loadInitialData(){
+        fetch("https://api.healthhighway.co.in/admin/get-all-group-sessions", {
+            method : "GET"
+        }).then(async (response) => {
+            console.log(response.status)
+            const data = await response.json();
+            console.log(data);
+            putNodesIntoDOM(data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+      })()
+  </script>
+</head>
+
+<body>
+    <%- include("partials/navbar") %>
+    <main>
+        
+        <section class="search-section">
+            <input id="search-bar" type="search" placeholder="Search for a session" onkeydown="throttle()"  >
+        </section>
+        <script>
+           document.getElementById('search-bar').addEventListener("search", function(event){
+              throttle();
+           })
+        </script>
+          
+        <section class="sessions-section">
+          <div class="headingandnavigation">
+              <div class="img-heading">
+                  <img src="https://ik.imagekit.io/healthhighway2020/yoga_mxwGruxrx.svg?updatedAt=1631714378168" alt="ssn-logo" />
+                  <h2 class="sessions-heading">
+                      Ongoing Sessions
+                  </h2>
+              </div>
+          </div>
+          <!-- <script>
+            let initialValue = window.location.search.length > 3?window.location.search.substring(3):"";
+            initialValue = initialValue.replaceAll("%20", " ");
+            console.log(initialValue)
+            document.getElementById('search-bar').value = initialValue;
+          </script> -->
+
+          <div class="ssn-card-container" id="ongoing" >
+
+          </div>
+
+      </section>
+
+      <section class="sessions-section">
+        <div class="headingandnavigation">
+            <div class="img-heading">
+                <img src="https://ik.imagekit.io/healthhighway2020/yoga_mxwGruxrx.svg?updatedAt=1631714378168" alt="ssn-logo" />
+                <h2 class="sessions-heading">
+                    Upcoming Sessions
+                </h2>
+            </div>
+        </div>
+
+        <div class="ssn-card-container" id="upcoming" >
+
+        </div>
+
+    </section>
+
+        <!-- USP Section (START) -->
+        <section id="usp" class="usp-section">
+          <div class="usp-one">
+              <!-- <img src="images/dgsUsp1.svg" alt="yoga for everyone" /> -->
+              <div class="usp-one-svg"></div>
+              <div class="left-item">
+                  <h3 class="usp-heading"><span>Enjoy various group activites</span></h3>
+                  <p class="usp-content">
+                      Make your Yoga journey more pleasant with group activities and challenges every session.
+                  </p>
+              </div>
+          </div>
+          <div class="usp-two">
+              <!-- <img src="images/dgsUsp2.svg" alt="yoga for everything" /> -->
+              <div class="usp-two-svg"></div>
+              <div class="right-item">
+                  <h3 class="usp-heading"><span>Enhance your fitness circles</span></h3>
+                  <p class="usp-content">
+                      Practice Yoga in a group of like-minded people who share your fitness concerns.
+                  </p>
+              </div>
+          </div>
+          <div class="usp-three">
+              <!-- <img src="images/dgsUsp3.svg" alt="yoga for everytime" /> -->
+              <div class="usp-three-svg"></div>
+              <div class="left-item">
+                  <h3 class="usp-heading"><span>Choice of Groups</span></h3>
+                  <p class="usp-content">
+                      Availability of male, female and mixed groups so you can practice Yoga in a comfortable environment.
+                  </p>
+              </div>
+          </div>
+        </section>
+        <script src="/js/usp-animation3.js" ></script>
+        <!-- USP Section (END) -->
+
+        <%- include('partials/video') %>
+        <!-- Testimonials -->
+        <%- include('partials/testimonials') %>
+        <!-- Testimonials(end) -->
+
+        <!-- Call-Us Section  -->
+        <%- include('partials/callback') %>
+        <!-- Call-Us Section (END) -->
+
+        </div>
+
+        <!-- login div -->
+        <%- include('partials/login-form') %>
+        <!-- login div (END) -->
+
+    </main>
+
+    
+    <script src="/js/video-component.js"></script>
+    <script src="/js/landing.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
+</body>
+
+</html>

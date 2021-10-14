@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/navbar_vidhu.css">
+    <link rel="stylesheet" href="/css/freeYoga/landingDiv.css">
+    <link rel="stylesheet" href="/css/freeYoga/details.css">
+    <link rel="stylesheet" href="/css/freeYoga/call.css">
+    <link rel="stylesheet" href="/css/login.css" />      
+    <link rel="stylesheet" href="/css/main.css" />      
+    <title>Health Highway | Your Yoga Buddy</title>
+    <link rel="icon" href="/images/hh-favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
+</head>
+
+<body>
+    <%- include("partials/navbar") %>
+    
+    <main>
+        <!-- landing -->
+        <div id="detailed-landing-main-div">
+            <div class="detailed-landing-main-left">
+                <p class="title-para"><span class="title"><%= session.SESSION_NAME %> </span><span class="sub-title"></span>by <%= session.TNAME %></span></p>
+                <div class="points-div">
+                    <div class="points-top">
+                        <div class="points-common">
+                            <div class="points">
+                                <div>
+                                    <p class="rupees">₹</p>
+                                </div>
+                                <p class="points-text"><%= session.PRICE %> INR <span>Per Month</span></p>
+                            </div>
+                            <div class="points">
+                                <div><img src='/images/calendar.png'></div>
+                                <p class="points-text">Every <%= session.DAYS.toString() %></p>
+                            </div>
+                            <div class="points">
+                                <div><img src='/images/Clock.png'></div>
+                                <p class="points-text"><%= session.TIME %></p>
+                            </div>
+                            <div class="points">
+                                <div><img src='/images/Duration.png'></div>
+                                <p class="points-text">45 Minutes</p>
+                            </div>
+                            <div class="points">
+                                <div><img src='/images/Graph.png'></div>
+                                <p class="points-text"><%= session.LEVEL %> Level</p>
+                            </div>
+                            <div class="points">
+                                <div><img src='/images/people.png'></div>
+                                <p class="points-text">Trusted by <%= session.PARTICIPANTS==1?session.PARTICIPANTS+" Person":session.PARTICIPANTS+" People" %> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="points-bottom">
+                        <p class="points-title"><img style="margin-right: 20px;" src='/images/right.png'>Suitable/ Beneficial for these people</p>  
+                        <div class="points-recommended">
+                            <% session.FP.forEach(fp => { %>
+                                <p class="points-text points"><%= fp %></p>
+                            <% }) %> 
+                        </div>
+                        <p class="points-title"><img style="margin-right: 20px;" src='/images/wrong.png'>Not advisable for these People</p> 
+                        <div class="points-not-recommended">
+                            <% session.NFP.forEach(nfp => { %>
+                                <p class="points-text points"><%= nfp %></p>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detailed-landing-main-right">
+                <div class="slides fade" style="overflow: hidden;border-radius: 10px;">
+                    <img src=<%= session.IMG %> style="object-fit : cover" >
+                </div><br><br>
+                <div class="enroll-div">
+                    <% if(session.PARTICIPANTS >= session.LIMIT){ %>
+                        <a style="cursor: pointer;" class="enroll-btn" >Overbooked</a>
+                    <% }else { if(session.FREEFOR > 0 && FSA < FSTA){ %>
+                            <a style="cursor: pointer;" class="enroll-btn" onclick="bookGroupSession()" >Enroll For Free</a>
+                        <% }else{ %>
+                            <a style="cursor: pointer;" class="enroll-btn" onclick="bookGroupSession()" >Pay <%= session.PRICE %></a>
+                        <% } %>
+                    <% } %>
+                    <a href="/1-on-1-Pricing-Plan" class="personalisation-text">Want Personalisation ?</a>
+                </div>
+            </div>
+        </div>
+        <!-- landing (END)-->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>  
+        <script>
+            isActive = () => {
+                let startDate = new Date('<%-session.STARTING_DATE %>');
+                let currDate = new Date();
+                return startDate-currDate>0?false:true;
+            }
+            saveGrp = async (USERID, GRPID, GROUP) => {
+                let present=false;
+                GROUP.forEach(group => {
+                    if(group.GRPID === GRPID){
+                        present=true;
+                        return;
+                    }
+                })
+                console.log(present);
+                if(present)
+                {
+                    infoModalOpenFunction("/images/alreadyBookedInfo.svg", "Relax! Your Session is Booked Already");
+                    return;
+                }
+                
+                // console.log("This is the starting date");
+                // console.log(this.props.STARTING_DATE)
+                let STARTING_DATE_FOR_USER = '<%-session.STARTING_DATE %>';
+                if(isActive()){
+                    STARTING_DATE_FOR_USER = new Date();
+                    STARTING_DATE_FOR_USER = STARTING_DATE_FOR_USER.toGMTString();
+                }
+                console.log("this is final starting date")
+                console.log(STARTING_DATE_FOR_USER);
+                let END_DATE_FOR_USER = new Date(STARTING_DATE_FOR_USER);
+                // console.log(END_DATE_FOR_USER);
+                if( '<%-FSTA %>' > '<%- FSA %>' && '<%- session.FREEFOR %>' > 0){
+                    //save without pay
+                    END_DATE_FOR_USER = new Date( END_DATE_FOR_USER.setDate(END_DATE_FOR_USER.getDate() + Number('<%- session.FREEFOR %>')) )
+                    END_DATE_FOR_USER=END_DATE_FOR_USER.toGMTString();
+                    console.log("final end-date without payment");
+                    console.log(END_DATE_FOR_USER)
+                    const response = await fetch("/create-group", {
+                        method  :"POST",
+                        mode : "same-origin",
+                        headers : {
+                        'Content-type' : 'application/json'
+                        },
+                        body : JSON.stringify({
+                            USERID : '<%- _id %>',
+                            GRPID : '<%- session._id %>',
+                            STARTING_DATE_FOR_USER, END_DATE_FOR_USER
+                        })
+                    });
+
+                    const decode = await response.json();
+                    console.log(decode);
+                    infoModalOpenFunction("/images/sessionBooked.svg", "Hurray! Session Booked");
+                    setTimeout(() => {
+                        window.location.replace("/");
+                    }, 2000)
+                    // this.saveSessionOnBackEnd(USERID, GRPID, STARTING_DATE_FOR_USER, END_DATE_FOR_USER);
+                }
+                else
+                {
+                    //save after payment
+                    END_DATE_FOR_USER = new Date( END_DATE_FOR_USER.setDate(END_DATE_FOR_USER.getDate() + 30) )
+                    END_DATE_FOR_USER=END_DATE_FOR_USER.toGMTString();
+                    console.log("Final date for user before payment")
+                    console.log(END_DATE_FOR_USER);
+                    let socket = io();
+                    const _id = '<%- _id %>';
+                    socket.emit('givedata', {private_session : {PRICE : '<%- session.PRICE %>'}, _id});
+                    socket.on('welcome', async (msg) => {
+                        console.log(msg);
+                        var options = {
+                            "key" : "rzp_test_0Yx7yX4fQ8wjrf",
+                            "amount" : msg.paymentData.amount,
+                            "currency" : msg.paymentData.currency,
+                            "name": "Health Highway",
+                            "description" : "Test Transaction",
+                            "order_id" : msg.paymentData.id,
+                            "handler" : async (res) => {
+                                console.log("payment done successfully");
+                                const response = await fetch("/create-group", {
+                                    method  :"POST",
+                                    mode : "same-origin",
+                                    headers : {
+                                    'Content-type' : 'application/json'
+                                    },
+                                    body : JSON.stringify({
+                                        USERID : '<%- _id %>',
+                                        GRPID : '<%- session._id %>',
+                                        STARTING_DATE_FOR_USER, END_DATE_FOR_USER
+                                    })
+                                });
+
+                                const decode = await response.json();
+                                console.log(decode);
+                                infoModalOpenFunction("/images/sessionBooked.svg", "Hurray! Session Booked");
+                                setTimeout(() => {
+                                    window.location.replace("/");
+                                }, 2000)
+                            },
+                            "prefill" : {
+                            }
+                        }
+                        console.log(options);
+                        var rzp1 = new Razorpay(options);
+                        rzp1.open();
+                        rzp1.on('payment.failed', function (response){
+                            infoModalOpenFunction("/images/notLoggedInfo.svg", "Oops! Some Network issue, please try later");
+                            setTimeout(() => {
+                                window.location.replace("/");
+                            }, 2000);
+                        })
+                    })
+                }
+            }
+        </script>
+
+        <script>
+            const bookGroupSession = async () => {
+                const _id = '<%- _id %>';
+                const FSA = '<%- FSA %>';
+                console.log(_id, FSA);
+                if(_id.length == 0)
+                {
+                    infoModalOpenFunction("/images/notLoggedInfo.svg", "Please login before booking Session");
+                }
+                else
+                {
+                    var old_group = <%- JSON.stringify(GROUP) %>;
+                    console.log(old_group);
+                    saveGrp('<%- _id %>', '<%- session._id %>', old_group);
+                }
+            }
+        </script>
+        
+
+        <div class="instructor-div">
+            <div class="trainer">
+                <img src="/images/yogaInstructor.png" alt="trainer" style="margin-right: 20px;"/>
+                <div class="trainer-details">
+                    <p style="text-align: start;font-family: Montserrat; font-style: normal; font-weight: normal; font-size: 14px; line-height: 22px; color: #716E6E;">Trainer</p>
+                    <p style="text-align: start;font-family: Montserrat; font-style: normal; font-weight: normal; font-size: 16px; line-height: 22px; color: #4CA9EE;"><%= session.TNAME %></p>
+                </div>
+            </div>
+            <img src="/images/like.png" alt="like" style="width: 28px; height: 25px"/>
+        </div>
+
+        <div class="page-navbar">
+            <p class="navbar-option active-option" id="overview">Overview</p>
+            <p class="navbar-option" id="about">About</p>
+            <p class="navbar-option" id="benefits">Benefits</p>
+        </div>
+
+        <div id="overview-div">
+            <div class="points-top">
+                <div class="points-common">
+                    <div class="points">
+                        <div>
+                            <p class="rupees">₹</p>
+                        </div>
+                        <p class="points-text"><%= session.PRICE %> INR <span>Per Month</span></p>
+                    </div>
+                    <div class="points">
+                        <div><img src='/images/calendar.png'></div>
+                        <p class="points-text">Every <%= session.DAYS.toString() %></p>
+                    </div>
+                    <div class="points">
+                        <div><img src='/images/Clock.png'></div>
+                        <p class="points-text"><%= session.TIME %></p>
+                    </div>
+                    <div class="points">
+                        <div><img src='/images/Duration.png'></div>
+                        <p class="points-text">45 Minutes</p>
+                    </div>
+                    <div class="points">
+                        <div><img src='/images/Graph.png'></div>
+                        <p class="points-text"><%= session.LEVEL %> Level</p>
+                    </div>
+                    <div class="points">
+                        <div><img src='/images/people.png'></div>
+                        <p class="points-text"><%= session.PARTICIPANTS %> People </p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="points-bottom">
+                <p class="points-title"><img style="margin-right: 20px;" src='/images/right.png'>Suitable/ Beneficial for these people</p>  
+                <div class="points-recommended">
+                    <% session.FP.forEach(fp => { %>
+                        <p class="points-text points"><%= fp %></p>
+                    <% }) %> 
+                </div>
+                <p class="points-title"><img style="margin-right: 20px;" src='/images/wrong.png'>Not advisable for these People</p> 
+                <div class="points-not-recommended">
+                    <% session.NFP.forEach(nfp => { %>
+                        <p class="points-text points"><%= nfp %></p>
+                    <% }) %>
+                </div>
+            </div>
+            <div style="margin: 32px 8vw 0 8vw;">
+                <p class="about-title">Overview</p>
+                <p class="about-content"><%= session.ABOUT %></p>
+            </div>
+        </div>
+
+        <div class="details-div">
+        <!-- about -->
+        <div id="about-div">
+                <p class="about-title">About the Session </p>
+                <p class="about-content"><%= session.ABOUT %></p>
+                <div class="about-sub-div">
+                    <p class="about-sub-title">Main Practices</p>
+                    <ol type="1">
+                        <li>Malasana Lateral Stretch + Twist</li>
+                        <li>Sivananda Surya Namaskar x 3 Rounds</li>
+                        <li>Uttana Pristhasana + Twist</li>
+                        <li>Prasarita Padottanasana C</li>
+                        <li>Ardha Shalabhasana</li>
+                        <li>Supta Virasana</li>
+                        <li>Gomukasana Fold Forward + Twist</li>
+                        <li>Kandharasana</li>
+                        <li>Nadi Shodhan Pranayama</li>
+                        <li>AUM Chanting</li>
+                    </ol>
+                    <p class="about-sub-title">Benefits</p>
+                    
+                    <ol type="1">
+                        <% session.BENEFITS.forEach(bf => { %>
+                            <li><%= bf %></li>
+                        <% }) %> 
+                    </ol>
+                </div>
+        </div>
+        
+        <div id="about-mobile-div">
+            <p class="about-title">About the Session </p>
+            <p class="about-content"><%= session.ABOUT %></p>
+            <div class="about-sub-div">
+                <p class="about-sub-title">Main Practices</p>
+                <ol type="1">
+                    <li>Malasana Lateral Stretch + Twist</li>
+                    <li>Sivananda Surya Namaskar x 3 Rounds</li>
+                    <li>Uttana Pristhasana + Twist</li>
+                    <li>Prasarita Padottanasana C</li>
+                    <li>Ardha Shalabhasana</li>
+                    <li>Supta Virasana</li>
+                    <li>Gomukasana Fold Forward + Twist</li>
+                    <li>Kandharasana</li>
+                    <li>Nadi Shodhan Pranayama</li>
+                    <li>AUM Chanting</li>
+                </ol>
+            </div>
+        </div>
+        <div id="benefits-mobile-div">
+            <p class="about-sub-title">Benefits</p>
+                    <ol type="1">
+                        <li>Malasana Lateral Stretch + Twist</li>
+                        <li>Sivananda Surya Namaskar x 3 Rounds</li>
+                        <li>AUM Chanting</li>
+                        <li>Supta Virasana</li>
+                        <li>Gomukasana Fold Forward + Twist</li>
+                        <li>Kandharasana</li>
+                        <li>Nadi Shodhan Pranayama</li>
+                        <li>AUM Chanting</li>
+                    </ol>
+        </div>
+        <img src="/images/detailImg.svg" />
+        <!-- about (END) -->
+        </div>
+
+               <!-- Call-Us Section  -->
+               <%- include('partials/callback') %>
+            <!-- Call-Us Section (END) -->
+
+                  <!-- login div -->
+                  <%- include('partials/login-form') %>
+                <!-- login div (END) -->
+
+                
+            
+    </main>
+    <script type="text/javascript" src="/js/landing.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
+    <script type="text/javascript" src="/js/detailed-page-navbar.js"></script>
+</body>
+
+</html>

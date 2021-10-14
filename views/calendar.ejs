@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Check out</title>
+    <meta name="theme-color" content="#7952b3">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" /> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-basic.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-glass.css" /> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/color-calendar/dist/bundle.min.js"></script> -->
+    <!-- With locals-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" ></script>
+    <link rel="stylesheet" href="/css/tavo-calendar.css" />
+    <script src="/js/tavo-calendar.js"></script>
+
+  <body class="bg-light">
+
+    <div id="my-calendar"></div>
+
+    <button onclick="getDateDummy()" >next</button>
+
+    <script>
+
+      const myCalendar = new TavoCalendar('#my-calendar', {
+           range_select: false,            
+           format: "MM-DD-YYYY",
+           multi_select: false,
+           past_select: false,
+           date_start : new Date(Date.now() + 24*3600*1000)
+      })
+
+      const getDateDummy = () => {
+         var a = myCalendar.getSelected();
+         a = new Date(a);
+         console.log(a)
+      }
+    </script>
+    <!-- <div>
+        <div id="color-calendar"></div>
+    </div> -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script>
+        new Calendar({
+            id: '#color-calendar',
+            dateChanged: (currentDate, DateEvents) => {
+            //  alert(currentDate);
+            },
+            calendarSize: 'large',
+            primaryColor: '#4ca9ee',
+            headerColor: '#4ca9ee',
+        })
+    </script> -->
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script>     -->
+    
+  </body>
+</html>

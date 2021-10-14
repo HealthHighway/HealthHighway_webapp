@@ -1,0 +1,24 @@
+<header class="header-for-navbar">
+  <div class="navbar-top">
+      <div class="brandwrap-top">
+          <a href="/"><img src="https://ik.imagekit.io/healthhighway2020/Group_1YBxSKuiyUd.svg?updatedAt=1633715883579" alt="logo"></a>
+      </div>
+      <nav>
+          <ul class="nav-links-top">
+              <li class="desk-link-nav"><a href="https://blogs.healthhighway.co.in/" >Blogs</a></li>
+              <li class="desk-link-nav"><a style="cursor: pointer;" onclick="scrollEase(1000, 'callback-section-id')" >Support</a></li>
+              <% if(_id.length == 0){ %>
+                 <li class="desk-link-nav"><a  style="cursor: pointer;" onclick="modalOpenFunction()" id="loginbtn">Login</a></li>
+               <% }  %>
+               <% if(_id.length == 0){ %>
+                  <li><a onclick="modalOpenFunction();"  style="cursor: pointer;" class="joinbtn" id="landing-joinus">JoinUs</a></li>
+               <% }else{ %>
+                <li> <button onclick="location.href='/my-profile'"  style="cursor: pointer;" class="loginIcon">
+                  <img src="/images/user.png" alt="user"/>
+              </button> </li>
+               <% } %>
+             
+          </ul>
+      </nav>
+  </div>
+</header>

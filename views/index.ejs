@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/new_navbar.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Health Highway | Your Yoga Buddy</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <%- include("partials/navbar") %>
+    </header>
+    <main>
+        <!-- landing -->
+        <div id="landing-main-div">
+            <img src="images/pattern.png" class="pattern" />
+            <div class="landing-main-left">
+                <img src="images/Instructor.png" class="instructor" />
+            </div>
+            <div class="landing-main-center">
+                <p class="landing-main-text1">Live Yoga Classes</p>
+                <p class="landing-main-text2">From world yoga capital to your home</p>
+                <a class="landing-main-button" href="#get-started-section">Get Started</a>
+            </div>
+            <div class="landing-main-right">
+                <img src="images/Student.png" class="student" />
+            </div>
+            <div class="landing-container"></div>
+        </div>
+        <!-- landing (END)-->
+
+        <!-- know more div (START) --> 
+        <p style="text-align: center"><a href="#usp" class="know-more">Know More</a></p>
+        <p style="text-align: center"><a href="#usp" class="know-more"><i class="fa fa-arrow-down"></i></a></p>
+        <!-- know more div (END) -->
+
+        <!-- About-Us Section (START) -->
+        <section id="about-us" class="about-us-section">
+            <h2 class="about-us-heading">
+                <span>“</span>It’s not just Health Highway , it’s Health The Highway
+                <span>”</span>
+            </h2>
+            <div class="border"></div>
+            <p class="about-us-content">
+                <span>HealthyLifestyle</span> is what Health Highway believes in! We aim to provide you holistic wellness through yoga therapy for health issues or otherwise what fits YOU, YOUR time and YOUR lifestyle!
+            </p>
+        </section>
+        <!-- About-Us Section (END) -->
+
+        <!-- USP Section (START) -->
+        <section id="usp" class="usp-section">
+            <div class="usp-one">
+                <img src="images/usp-one.png" alt="yoga for everyone" />
+                <div class="left-item">
+                    <h3 class="usp-heading">Yoga for <span>Everyone</span></h3>
+                    <p class="usp-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor rutrum, efficitur neque sit amet, pretium erat. Nullam et elit sit amet sapien faucibus mollis eu et diam.
+                    </p>
+                </div>
+            </div>
+            <div class="usp-two">
+                <img src="images/usp-two.png" alt="yoga for everything" />
+                <div class="right-item">
+                    <h3 class="usp-heading">Yoga for <span>Everything</span></h3>
+                    <p class="usp-content">
+                        From obesity to increasing stamina we provide yoga for everything be it anything. Something along this line should be our explanation
+                    </p>
+                </div>
+            </div>
+            <div class="usp-three">
+                <img src="images/usp-three.png" alt="yoga for everytime" />
+                <div class="left-item">
+                    <h3 class="usp-heading">Yoga for <span>Everytime</span></h3>
+                    <p class="usp-content">
+                        No matter you are a early bird or night owl we are always there for you. We have personalized curated sessions based on your needs and your timeing with 1v1 interaction
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- USP Section (END) -->
+
+        <!-- VIdeo Section -->
+        <section id="video-component">
+            <h2 id="video-title">
+                <span>“</span>We just don't say , we <span>deliver</span> it<span>”</span
+          >
+        </h2>
+        <div class="border"></div>
+
+        <div id="video-container">
+          <video id="yogaVideo" src="video/Untitled.mp4" loop></video>
+          <div id="video-controls">
+            <button id="video-play">
+              <img src="images/play_circle.svg" alt="" />
+            </button>
+            <button id="video-pause" class="video-display">
+              <!-- <button id="video-pause" class="video-display video-button-visible"> -->
+              <img src="images/pause_circle.svg" alt="" />
+            </button>
+            <button id="video-mute">
+              <img src="images/speaker-on.svg" alt="" />
+            </button>
+            <button id="video-unmute" class="video-display">
+              <!-- <button id="video-unmute" class="video-display video-button-visible"> -->
+              <img src="images/speaker-off.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIdeo Section (END) -->
+
+      <!-- Get Started -->
+      <section class="get-started" id="get-started-section">
+        <h2 class="get-started-heading">Take your <span>First Step</span></h2>
+            <div class="get-started-grid">
+                <div class="private-sessions">
+                    <h4 class="gs-item">Private Sessions</h4>
+                    <div class="item-border"></div>
+                    <img src="images/private sessions.png" alt="pvt session" />
+                    <div class="perks">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  id="tick"
+                  d="M10.9999 21.1996L6.7999 16.9996L5.3999 18.3996L10.9999 23.9996L22.9999 11.9996L21.5999 10.5996L10.9999 21.1996Z"
+                  fill="#ffffff"
+                />
+              </svg>
+                        <p class="perqs">Maximum Interaction</p>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  id="tick"
+                  d="M10.9999 21.1996L6.7999 16.9996L5.3999 18.3996L10.9999 23.9996L22.9999 11.9996L21.5999 10.5996L10.9999 21.1996Z"
+                  fill="#ffffff"
+                />
+              </svg>
+                        <p class="perqs">Choice of Instructor (Male/Female)</p>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  id="tick"
+                  d="M10.9999 21.1996L6.7999 16.9996L5.3999 18.3996L10.9999 23.9996L22.9999 11.9996L21.5999 10.5996L10.9999 21.1996Z"
+                  fill="#ffffff"
+                />
+              </svg>
+                        <p class="perqs">Focused according to your Schedule</p>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  id="tick"
+                  d="M10.9999 21.1996L6.7999 16.9996L5.3999 18.3996L10.9999 23.9996L22.9999 11.9996L21.5999 10.5996L10.9999 21.1996Z"
+                  fill="#ffffff"
+                />
+              </svg>
+                        <p class="perqs">Best Results</p>
+                    </div>
+                    <a href="pricing.html" class="get-started-btn">Get Started</a>
+                </div>
+                <div class="group-sessions">
+                    <h4 class="gs-item">Group Sessions</h4>
+                    <div class="item-border"></div>
+                    <img src="images/group sessions.png" alt="grp session" />
+                    <div class="perks">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  id="tick"
+                  d="M10.9999 21.1996L6.7999 16.9996L5.3999 18.3996L10.9999 23.9996L22.9999 11.9996L21.5999 10.5996L10.9999 21.1996Z"
+                  fill="#ffffff"
+                />
+              </svg>
+                        <p class="perqs">Maximum Interaction</p>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  id="tick"
+                  d="M10.9999 21.1996L6.7999 16.9996L5.3999 18.3996L10.9999 23.9996L22.9999 11.9996L21.5999 10.5996L10.9999 21.1996Z"
+                  fill="#ffffff"
+                />
+              </svg>
+                        <p class="perqs">Choice of Instructor (Male/Female)</p>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  id="tick"
+                  d="M10.9999 21.1996L6.7999 16.9996L5.3999 18.3996L10.9999 23.9996L22.9999 11.9996L21.5999 10.5996L10.9999 21.1996Z"
+                  fill="#ffffff"
+                />
+              </svg>
+                        <p class="perqs">Focused according to your Schedule</p>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  id="tick"
+                  d="M10.9999 21.1996L6.7999 16.9996L5.3999 18.3996L10.9999 23.9996L22.9999 11.9996L21.5999 10.5996L10.9999 21.1996Z"
+                  fill="#ffffff"
+                />
+              </svg>
+                        <p class="perqs">Best Results</p>
+                    </div>
+                    <a href="/Group-Yoga-Classes" class="get-started-btn">Get Started</a>
+                </div>
+            </div>
+        </section>
+        <!-- Get Started (END) -->
+
+        <!-- Events -->
+        <div class="event-container">
+            <div class="event-text">
+                <div class="event-heading">
+                    <h1>
+                        Bringing the <span>power</span> of <span>yoga</span> near you.
+                    </h1>
+                </div>
+                <div class="event-elements">
+                    <div class="event-item">
+                        <img src="images/Icon User.png" alt="" />
+                        <p>
+                            xx users mentored (kind of like these many people have attended the sessions)
+                        </p>
+                    </div>
+                    <div class="event-item">
+                        <img src="images/Icon events.png" alt="" />
+                        <p>Succesful events conducted in a lot of places like ryan</p>
+                    </div>
+                    <div class="event-item">
+                        <img src="images/Update.png" alt="" />
+                        <p>Upcoming events (probably)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-container mySwiper event-slider">
+                <div class="swiper-wrapper event-slider-container">
+                    <div class="swiper-slide event-slider-card">
+                        <div class="event-img">
+                            <img src="images/workshop-pic.png" alt="" />
+                        </div>
+                        <h3 class="event-name">Yoga workshop</h3>
+                        <div class="event-location">
+                            <img src="images/location.svg" alt="" />
+                            <p>Ryan school</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide event-slider-card">
+                        <div class="event-img">
+                            <img src="images/workshop-pic.png" alt="" />
+                        </div>
+                        <h3 class="event-name">POGO workshop</h3>
+                        <div class="event-location">
+                            <img src="images/location.svg" alt="" />
+                            <p>Ryan school</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide event-slider-card">
+                        <div class="event-img">
+                            <img src="images/workshop-pic.png" alt="" />
+                        </div>
+                        <h3 class="event-name">CARTOOn workshop</h3>
+                        <div class="event-location">
+                            <img src="images/location.svg" alt="" />
+                            <p>Ryan school</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide event-slider-card">
+                        <div class="event-img">
+                            <img src="images/workshop-pic.png" alt="" />
+                        </div>
+                        <h3 class="event-name">CARTOOn workshop</h3>
+                        <div class="event-location">
+                            <img src="images/location.svg" alt="" />
+                            <p>Ryan school</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button id="prev">
+              <img src="images/circle_chevron_left.svg" alt="" />
+            </button>
+                    <button id="next">
+              <img src="images/circle_chevron_right.svg" alt="" />
+            </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: "auto",
+                spaceBetween: 40,
+                navigation: {
+                    nextEl: "#next",
+                    prevEl: "#prev",
+                },
+            });
+        </script>
+        <!-- Events (END) -->
+
+
+        <!-- Testimonials -->
+
+        <section id="testimonials">
+            <div id="testimonial-main">
+                <h2 id="testimonials-heading">Our Customers <span>Love Us !</span></h2>
+
+                <div class="testimonial-container">
+                    <div class="swiper-container myTestimonialSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide testimonial">
+                                <div class="testimonial-ratings">
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_half.svg" alt="" />
+                                </div>
+                                <p>
+                                    Excellent teachers with knowledge in a wide variety of Asanas and techniques. I am highly motivated by and inspired by the quality of teaching despite the online medium.
+                                </p>
+                                <div class="testimonial-user-profile">
+                                    <h4>Anamika|</h4>
+                                    <p>Rishikesh</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide testimonial">
+                                <div class="testimonial-ratings">
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_half.svg" alt="" />
+                                </div>
+                                <p>
+                                    Excellent teachers with knowledge in a wide variety of Asanas and techniques. I am highly motivated by and inspired by the quality of teaching despite the online medium.
+                                </p>
+                                <div class="testimonial-user-profile">
+                                    <h4>Anamika|</h4>
+                                    <p>Rishikesh</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide testimonial">
+                                <div class="testimonial-ratings">
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_full.svg" alt="" />
+                                    <img src="./images/testimonial-star_half.svg" alt="" />
+                                </div>
+                                <p>
+                                    Excellent teachers with knowledge in a wide variety of Asanas and techniques. I am highly motivated by and inspired by the quality of teaching despite the online medium.
+                                </p>
+                                <div class="testimonial-user-profile">
+                                    <h4>Anamika|</h4>
+                                    <p>Rishikesh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-controls">
+                        <img src="./images/testimonial-arrow.svg" class="swiper-button-prev" alt="" />
+                        <img src="./images/testimonial-arrow.svg" class="swiper-button-next" alt="" />
+                    </div>
+                </div>
+            </div>
+            <img src="./images/testimonials-images.png" alt="" />
+        </section>
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".myTestimonialSwiper", {
+                spaceBetween: 20,
+                // loop:true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
+
+        <!-- Testimonials(end) -->
+
+        <!-- Call-Us Section  -->
+        <section class="call-back">
+            <div class="cb-text">
+                <h2 class="call-back-head">Still Confused?</h2>
+                <p class="call-back-text">
+                    Let us find the best yoga solution for you
+                </p>
+            </div>
+            <div class="cb-form">
+                <input id="phone-num" type="text" placeholder="+91  Phone number" />
+                <button class="call-back-btn" type="submit">Schedule Callback</button>
+            </div>
+        </section>
+        <!-- Call-Us Section (END) -->
+
+        <!-- login div -->
+        <div class="login-modal-bg">
+            <div class="login-modal">
+                <div class="loginBody" id="phoneDiv">
+                    <img src="images/logo.svg" class="loginLogo">
+                    <div class="loginLogoText">
+                        <span style="color: #4ca9ee" class="logo-span">Health</span>
+                        <span style="color: #29e7cd" class="logo-span"> Highway</span>
+                    </div>
+                    <p class="loginInput">+91 <i class="fa fa-caret-down"></i> <input class="loginInputBar" placeholder="Please Enter Your Phone Number" type="text" id="inputPhoneNo"></p><br>
+                    <div class="mt-3" id="recaptcha-verifier" ></div>
+                    <button type="button" class="btn btn-light loginButton" id="loginContinue" style="pointer-events:none">
+                      Continue
+                    </button>
+                    <p class="loginCondition"><span style="margin-right: 5px;"><i class="fas fa-star-of-life"></i></span>By Continuing you agree to the <a style="color:#29E7CD;text-decoration: underline">Terms of Services</a> and <a style="color:#29E7CD; text-decoration: underline">Privacy policy</a>.</p>
+                    <button type="button" class="btn loginContinueButton" id="customBtn" style="display: flex; align-content: flex-start;">
+                        <img src="images/google.png" class="google" >Login Using Gmail</span>
+                    </button>
+                </div>
+                <div id="OTP">
+                    <p class="OTPTitle"><i class="fas fa-angle-left fa-2x" id="modalBack"></i><span class="OTPText" style="color: #4ca9ee">BACK</span></p>
+                    <div class="loginBody">
+                        <p class="enterText">Please enter the code we just sent to <span id="phoneNumber"></span> proceed</p>
+                        <form class="otp" name="one-time-code" id="otp-div">
+                            <fieldset>
+                                <div>
+                                    <input type="number" pattern="[0-9]*"  value="" inputtype="numeric" autocomplete="one-time-code" id="otp-1" required>
+                                    <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otp-2" required>
+                                    <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otp-3" required>
+                                    <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otp-4" required>
+                                    <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otp-5" required>
+                                    <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otp-6" required>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <button type="button" class="btn btn-light loginButton" id="confirmLogin">
+                            Confirm
+                        </button>
+                    </div>
+                </div>
+                <span> <i class="fa fa-times fa-1x close"></i></span>
+            </div>
+        </div>
+            <!-- login div (END) -->
+
+    </main>
+    <footer></footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var firebaseConfig = {
+        apiKey: "AIzaSyCj_0en8nIIHQXE_5aa-pwjnEgIJ3McA9w",
+        authDomain: "healthhighway-45963.firebaseapp.com",
+        databaseURL: "https://healthhighway-45963.firebaseio.com",
+        projectId: "healthhighway-45963",
+        storageBucket: "healthhighway-45963.appspot.com",
+        messagingSenderId: "716392922291",
+        appId: "1:716392922291:web:ef7708be5a170c42a544c6",
+        measurementId: "G-B3ZVBEZ2H2"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+        window.onload = function(){
+            render();
+        }
+
+        async function render() {
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-verifier');
+            recaptchaVerifier.render();
+            recaptchaVerifier.verify().then(token => {
+              console.log(token);
+              document.getElementById("loginContinue").style.pointerEvents="auto";
+            })
+        }
+    </script>
+    <script>
+        var googleUser = {};
+        var startApp = function() {
+          gapi.load('auth2', function(){
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+              client_id: '403433220043-cbmjvt9e7fkeglihn61obq1pruickdlh.apps.googleusercontent.com',
+              cookiepolicy: 'single_host_origin',
+              prompt : 'consent'
+              // Request scopes in addition to 'profile' and 'email'
+              //scope: 'additional_scope'
+            });
+            attachSignin(document.getElementById('customBtn'));
+          });
+        };
+  
+        function attachSignin(element) {
+          console.log(element.id);
+          auth2.attachClickHandler(element, {},
+              async function(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                console.log(profile.getEmail());
+                const response = await fetch("/oauth", {
+                        method  :"POST",
+                        mode : "same-origin",
+                        headers : {
+                        'Content-type' : 'application/json'
+                        },
+                        body : JSON.stringify({email : profile.getEmail(), name: profile.getName()})
+                });
+                const decode = await response.json();
+                console.log(decode);
+                window.location.replace("/");
+
+              }, function(error) {
+                alert(JSON.stringify(error, undefined, 2));
+              });
+        }
+    </script>
+    <script>startApp();</script>
+    <script type="text/javascript" src="js/event.js"></script>
+    <script type="text/javascript" src="js/landing.js"></script>
+    <script src="js/video-component.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+
+</html>

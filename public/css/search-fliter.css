@@ -1,0 +1,741 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: black;
+}
+
+.blank-con {
+  height: 15rem;
+}
+
+.tags-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 3em 20%;
+  width: max-content;
+}
+
+.tag {
+  font-family: "Open Sans", sans-serif;
+  background-color: #4ca9ee;
+  color: white;
+  border: none;
+  border-radius: 0.2em;
+  padding: 0.6em 2em;
+  cursor: pointer;
+  margin: 0 0.3em;
+}
+
+.grp-session-container {
+  position: relative;
+  padding-top: 70px;
+  /* min-height: 40rem; */
+}
+.booking-status-tag {
+  position: absolute;
+  top: 0px;
+  font-size: 0.8rem;
+  color: #fff;
+  padding: 6px 8px;
+  font-weight: 500;
+  border-radius: 13px;
+}
+.grp-card > img {
+  margin-top: 10px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.red-tag {
+  background-color: #fe0000;
+}
+.yellow-tag {
+  background-color: #fca500;
+}
+@media (max-width: 460px) {
+  .booking-status-tag {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    font-size: 0.5rem;
+    padding: 4px 6px;
+    font-weight: 600;
+    border-radius: 10px;
+  }
+}
+.search-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  z-index: 99;
+  position: absolute;
+  border-radius: 29px;
+  top: 100px;
+  left: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f3faff;
+  width: 638px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.search-box input {
+  background: #f3faff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4ca9ee;
+  padding: 0px 10px;
+  width: 90%;
+  outline: none;
+}
+
+.input-area {
+  padding: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 29px;
+  width: 703px;
+  overflow: hidden;
+}
+
+.search-box img {
+  width: 25px;
+  margin: 0px 10px;
+}
+
+.search-box input::placeholder {
+  color: #4ca9ee;
+}
+
+.search-box span {
+  color: #3f3e3e;
+  background-color: #fff;
+  padding: 18.5px 18px;
+  display: none;
+  cursor: pointer;
+  transition: 2s;
+}
+
+.search-box input:focus ~ span {
+  display: block;
+}
+
+.suggestion-con {
+  display: none;
+}
+
+.search-box input:focus ~ .suggestion-con {
+  display: flex;
+}
+
+.search-suggestions {
+  display: flex;
+  flex-direction: column;
+  width: 638px;
+  padding-left: 50px;
+}
+
+.active-suggestions {
+  display: block;
+}
+
+.search-suggestions button {
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 18px;
+  padding: 5px 0px;
+  color: #5a6885;
+  cursor: pointer;
+}
+
+.search-suggestions button span {
+  font-weight: 600;
+}
+
+.trending-container button {
+  font-weight: normal;
+  font-size: 16px;
+  width: 130px;
+  height: 30px;
+  background: #4ca9ee;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+}
+
+.trending-container {
+  padding: 0px 10px;
+}
+
+.trending-icon {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.trending-icon p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #3c4860;
+  padding-left: 10px;
+}
+
+.trending-classes-container {
+  /* position: relative; */
+  /* margin-top: 10rem; */
+  z-index: 2;
+}
+
+.trending-heading,
+.yoga-session-heading {
+  font-weight: bold;
+  display: flex;
+  font-weight: bold;
+  padding-left: 10rem;
+}
+
+.trending-heading h2 {
+  padding: 0px 10px;
+  font-size: 26px;
+}
+
+/* grp card main css starts here */
+
+.filtered-result,
+.trending-classes,
+.yoga-classes {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 60px;
+  column-gap: 50px;
+  flex-wrap: wrap;
+  padding: 2rem;
+  padding-left:13rem;
+  margin-top: 1rem;
+  z-index: 1;
+}
+
+.grp-card {
+  width: 381px;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  filter: drop-shadow(6px 10px 13px rgba(76, 169, 238, 0.15));
+  overflow: hidden;
+}
+
+.grp-card-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background-color: #fff;
+}
+
+.grp-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 216px;
+  margin-bottom: 5px;
+}
+
+.grp-card-title h3 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+}
+
+.grp-card-title p {
+  background-color: #29e7cd;
+  color: #fffcfc;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width: 85.1px;
+  padding: 0px 5px 3px;
+}
+
+.grp-card-details h4 {
+  font-weight: 600;
+  color: #595858;
+  font-size: 14px;
+}
+
+.grp-card-trust {
+  width: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.grp-card-trust h4 {
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  color: #4ca9ee;
+}
+
+.active-search {
+  background: #ffffff;
+  box-shadow: 0px 4px 25px rgba(76, 168, 238, 0.445);
+  display: block;
+}
+
+.session-filter {
+  height: 10rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5rem;
+  position: absolute;
+  top: 12rem;
+  display: none;
+  z-index: 88;
+}
+
+.time-filter {
+  border: none;
+  transform: translateY(1px);
+  outline: none;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  width: 286.13px;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.search-background {
+  display: flex;
+  width: 100%;
+}
+
+select {
+  padding: 1rem;
+}
+
+option {
+  all: none;
+  width: 100px;
+}
+
+.top-filter {
+  display: flex;
+  padding: 0px 10px;
+  align-items: center;
+}
+
+.top-filter .active-cancel {
+  display: block;
+}
+
+.top-filter span {
+  padding: 0px 8px;
+  display: none;
+  cursor: pointer;
+  color: #a7a9ab;
+  font-size: 16px;
+}
+
+.top-filter h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  padding-right: 5px;
+}
+
+.top-filter a {
+  font-size: 1rem;
+  font-weight: normal;
+  padding-left: 10px;
+  display: flex;
+  cursor: pointer;
+}
+
+.time-filter ul li {
+  text-align: center;
+  cursor: pointer;
+  padding: 5px 0px;
+  border-bottom: 1px solid rgba(110, 110, 110, 0.534);
+}
+
+.time-filter ul {
+  background: white;
+  list-style: none;
+  width: 100%;
+}
+
+.label-button {
+  display: flex;
+  align-items: center;
+  background-color: #c4dff3;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.dropdown-btn img {
+  padding: 0px 10px;
+  pointer-events: none;
+}
+
+.dropdown-btn {
+  background-color: #fff;
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 5px;
+}
+.yoga-session-heading h2 {
+  padding-left: 12px;
+  color: #3c4860;
+}
+.trending-heading h2 {
+  padding-left: 12px;
+  color: #3c4860;
+}
+.list-options {
+  display: none;
+  padding-top: 0.8rem;
+}
+
+.active-option {
+  display: block;
+}
+
+.active-filter {
+  box-shadow: 0px 4px 25px rgba(76, 168, 238, 0.507);
+  background-color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.filtered-result .grp-card {
+  display: none;
+}
+
+.filtered-result {
+  position: absolute;
+  top: 19rem;
+  left: 10%;
+  z-index: 4;
+}
+ @media (max-width:1110px) {
+     .filtered-result,
+.trending-classes,
+.yoga-classes {
+  padding-left: 7rem;
+}
+  .trending-heading,
+  .yoga-session-heading{
+    padding-left: 6rem;
+  }
+}
+@media (max-width: 1034px) {
+  .trending-heading,
+  .yoga-session-heading {
+    padding-left: 80px;
+    align-items: center;
+  }
+}
+
+
+@media (max-width:965px) {
+     .filtered-result,
+.trending-classes,
+.yoga-classes {
+  padding-left: 3rem;
+}
+  
+}
+@media (max-width:900px) {
+     .filtered-result,
+.trending-classes,
+.yoga-classes {
+     justify-content: center;
+}
+}
+@media (max-width: 890px) {
+  .time-filter {
+    width: 240px;
+  }
+}
+
+@media (max-width: 720px) {
+  .trending-heading,
+  .yoga-session-heading {
+    padding-left: 100px;
+  }
+  .input-area {
+    width: 75vw;
+  }
+  .search-box {
+    width: 75vw;
+  }
+  .search-suggestions {
+    width: 100%;
+  }
+  .trending-container button {
+    font-size: 12px;
+    padding: 5px 10px;
+    width: unset;
+  }
+  .suggestion-con {
+    width: 90%;
+  }
+  .top-filter {
+    padding: 0px;
+  }
+}
+
+@media (max-width: 650px) {
+  .time-filter {
+    padding: 0px;
+    width: 180px;
+    height: 140px;
+  }
+  .label-button {
+    padding: 5px;
+  }
+  .label-button h2 {
+    font-size: 11px;
+  }
+  .label-button a {
+    font-size: 12px;
+  }
+  .list-options li {
+    font-size: 11px;
+  }
+  .top-filter span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 550px) {
+  .search-suggestions button {
+    font-size: 1rem;
+  }
+  .trending-heading,
+  .yoga-session-heading {
+    padding-left: 20px;
+  }
+  .trending-heading h2,
+  .yoga-session-heading h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 22px;
+  }
+  .search-box input {
+    width: 60%;
+  }
+  .time-filter {
+    padding: 0px;
+    width: 150px;
+  }
+  .label-button {
+    padding: 5px;
+  }
+  .search-box input {
+    width: 85%;
+  }
+}
+
+@media (max-width: 450px) {
+  /* 1.253 */
+  .grp-card {
+    width: 250px;
+  }
+  .trending-heading h2,
+  .yoga-session-heading h2 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .grp-card-details {
+    width: 140px;
+  }
+  .grp-card-title h3 {
+    font-size: 16px;
+    width: 98px;
+  }
+  .grp-card-title {
+    width: 162px;
+    align-items: unset;
+  }
+  .grp-card-title p {
+    font-size: 10px;
+    width: 58px;
+    height: 16px;
+    padding-top: 1.5px;
+    padding-left: 6px;
+  }
+  .grp-card-details h4 {
+    font-size: 12px;
+  }
+  .grp-card-trust img {
+    width: 20px;
+  }
+  .grp-card-trust h4 {
+    font-size: 8px;
+  }
+  .tags-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2em 5%;
+  }
+  .tag {
+    padding: 0.5em 1em;
+    margin: 0.3em 0.3em;
+  }
+}
+
+@media (max-width: 430px) {
+  .trending-btns button {
+    padding: 5px 9px;
+    width: unset;
+    height: unset;
+    font-size: 0.7rem;
+    margin: 0px 8px;
+  }
+  .trending {
+    padding: 10px;
+  }
+  .session-filter {
+    margin-top: 1rem;
+  }
+  .grp-card-container {
+    padding: 1rem 0rem;
+  }
+  .search-box input {
+    font-size: 14px;
+  }
+  .search-suggestions {
+    padding-left: 10px;
+  }
+  .trending-icon p {
+    font-size: 14px;
+  }
+  .trending-icon img {
+    width: 20px;
+  }
+  .search-box img {
+    padding: 5px;
+    margin: 0px;
+    margin-left: 5px;
+  }
+  .search-box input {
+    padding: 0px;
+  }
+  .trending-container {
+    padding: 0px;
+  }
+  .top-filter {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  .top-filter span {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .label-button a {
+    padding: 0px;
+  }
+  .list-options {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .time-filter ul li {
+    padding: 0px;
+    padding-bottom: 3px;
+    font-size: 10px;
+  }
+  .top-filter span {
+    padding-bottom: 0px;
+  }
+  .trending-heading,
+  .yoga-session-heading {
+    align-items: center;
+    justify-content: center;
+  }
+  .trending-heading img,
+  .yoga-session-heading img {
+    width: 23px;
+  }
+  .fitness-yoga-con {
+    margin-top: 20px;
+  }
+  .tags-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2em 5%;
+  }
+  .tag {
+    padding: 0.5em 1em;
+    margin: 0.3em 0.3em;
+  }
+}
+
+@media (max-width: 337px) {
+  .input-area {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 320px) {
+  .trend-icon-text {
+    padding: 10px 0px;
+  }
+  .filtered-result {
+    left: 0px;
+  }
+  .search-box input {
+    font-size: 12px;
+  }
+  .search-box span {
+    font-size: 14px;
+  }
+  .search-suggestions button {
+    font-size: 12px;
+  }
+  .search-box span {
+    font-size: 12px;
+    padding: 1.5rem 0.8rem;
+  }
+  .trending-classes,
+  .yoga-classes {
+    padding: 10px;
+  }
+  .trending-heading h2,
+  .yoga-session-heading h2 {
+    font-size: 14px;
+  }
+}

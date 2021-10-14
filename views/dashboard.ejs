@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - Health Highway</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@700&family=Work+Sans:wght@500;600&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/edit-profile.css" />
+    <link rel="stylesheet" href="/css/navbar_vidhu.css" />
+    <link rel="icon" href="/images/hh-favicon.png">
+</head>
+
+<body>
+    <header class="header-for-navbar">
+        <div class="navbar-top">
+            <div class="brandwrap-top">
+                <a href="index.html"><img src="https://ik.imagekit.io/healthhighway2020/Group_1YBxSKuiyUd.svg?updatedAt=1633715883579" alt="logo"></a>
+            </div>
+            <nav>
+                <ul class="nav-links-top">
+                    <li class="desk-link-nav"><a href="#">Blogs</a></li>
+                    <!-- <li class="desk-link-nav"><a href="#">Support</a></li> -->
+                    <li><a href="/logout" class="joinbtn" id="landing-joinus">Log out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+
+        <section class="mobile-version">
+            <div class=" download-app">
+                <h2 id="download-app-heading">Download <span>Health</span> <span class="highway-spn">Highway</span> App
+                </h2>
+                <div class="download-img">
+                    <img src="https://vxdhu.github.io/Healthhighway-Compiled/images/dwnld-app.png" alt="">
+
+                </div>
+                <p>For enhanced experience</p>
+                <a href="https://play.google.com/store/apps/details?id=com.healthhighwaylive" class="download-now-btn">Download Now</a>
+            </div>
+        </section>
+        <section class="dashboard">
+            <!-- Tiles  -->
+            <div class="title-filter">
+                <h1>Dashboard</h1>
+                <button class="edit-profile" onclick="window.location.href='/edit-profile'" >Edit Profile <span><img src="images/pen.svg" alt=""></span></button>
+            </div>
+            <div class="tiles">
+                <div class="message-tile">
+                    <div class="name-icon">
+                        <img class="user-icon" src=<%= PHOTO.length==0?'/images/user.png':PHOTO %> alt="user-img">
+                        <h2><%= NAME %></h2>
+
+                    </div>
+                    <div class="user-details">
+                        <p class="contact">Contact : <span class="user-stats"><%= PHONE_NUMBER %></span></p>
+                        <p class="mail">Mail : <span class="user-stats"><%= EMAIL %></span></p>
+                    </div>
+
+                </div>
+                <div class="stats-tiles">
+                    <p class="contact">Goal: <span class="user-stats"><%= BIO?.goal %></span></p>
+                    <p class="contact">Age : <span class="user-stats"><%= BIO?.age %></span></p>
+                    <p class="mail">Weight : <span class="user-stats"><%= BIO?.weight %></span></p>
+                    <p class="mail">Profession : <span class="user-stats"><%= BIO?.profession %></span></p>
+                    <p class="mail">Language Pref. : <span class="user-stats"><%= BIO?.language %></span></p>
+                </div>
+            </div>
+            <!-- Tiles(End)  -->
+
+            <!-- Calendar -->
+            <div class="month">
+            </div>
+            
+            <div class="upcoming download-app">
+                <h2 id="download-app-heading">Download <span>Health</span> <span class="highway-spn">Highway</span> App
+                </h2>
+                <div class="download-img">
+                    <img src="https://vxdhu.github.io/Healthhighway-Compiled/images/dwnld-app.png" alt="">
+                </div>
+                <p>For enhanced experience</p>
+                <a href="https://play.google.com/store/apps/details?id=com.healthhighwaylive" class="download-now-btn">Download Now</a>
+            </div>
+
+            </div>
+            <!-- Upcoming-Events(END) -->
+            <!-- Graph -->
+            <div class="events-graph sessions-swiper">
+                <h1>Your Sessions</h1>
+                <div class="card-container">
+                    <% PRIVATE.forEach(s => { %>
+                        <div style="cursor:pointer" onclick="window.location.href='/live-class/<%= s.VIDEO_CHANNEL %>'" class="card privateclass">
+                            <img class="card-img" src="https://media.istockphoto.com/photos/yoga-instructor-picture-id469802814?k=20&m=469802814&s=612x612&w=0&h=axn9DOFLifzo54wf03VrqgXkzFVCmwpILs1bhxW49I0=" alt="ssn-image">
+                            <div class="card-text-div">
+                                <div class="card-title">
+                                    <h3 class="card-head">Personalized Yoga Session</h3>
+                                    <p class="card-text">Goal/Ailment: <%= s.PROBLEM %></p>
+                                </div>
+                                <div class="card-time">
+                                    <p><%= s.TIMING.substring(0, 5) %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                    <% GROUP.forEach(s => { %>
+                        <div style="cursor:pointer" onclick="window.location.href='/live-class/<%= s.VIDEO_CHANNEL %>'" class="card groupclass">
+                            <img class="card-img" src=<%= s.IMG %> alt="ssn-image">
+                            <div class="card-text-div">
+                                <div class="card-title">
+                                    <h3 class="card-head"><%= s.SESSION_NAME %></h3>
+                                    <p class="card-text">by <%= s.TNAME %></p>
+                                </div>
+                                <div class="card-time">
+                                    <p><%= s.TIME.substring(0, 5) + s.TIME.substring(9) %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+            <!-- Graph{END} -->
+        </section>
+
+
+       
+    </main>
+    <footer></footer>
+
+</body>
+
+</html>

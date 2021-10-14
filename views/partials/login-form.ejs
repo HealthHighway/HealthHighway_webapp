@@ -1,0 +1,140 @@
+<div class="login-modal-bg">
+    <div class="login-modal">
+        <div class="loginBody" id="phoneDiv">
+            <img src="https://ik.imagekit.io/healthhighway2020/logo_DcXvHIoG7.svg?updatedAt=1631177447330" class="loginLogo">
+            <img src="https://ik.imagekit.io/healthhighway2020/logoText_Is7BIsFYx.svg?updatedAt=1631177452465" class="textLogo">
+            <p class="loginInput">+91 <i class="fa fa-caret-down"></i> <input class="loginInputBar" placeholder="Please Enter Your Phone Number" type="text" id="inputPhoneNo"></p><br>
+            <div id="recaptcha-verifier" ></div>
+            <button type="button" class="btn btn-light loginButton" id="loginContinue">
+              Continue
+            </button>
+            <p class="loginCondition">By Continuing you agree to the <a href="/terms-and-conditions" style="color:#29E7CD;text-decoration: underline">Terms of Services</a> and <a href="/privacy-policy" style="color:#29E7CD; text-decoration: underline">Privacy policy</a>.</p>
+            <button type="button" class="btn loginContinueButton" id="customBtn" style="display: flex; align-content: flex-start;">
+                <img src="https://ik.imagekit.io/healthhighway2020/google_80EpslXEKg.png?updatedAt=1631177403407" class="google" >Login Using Gmail</span>
+            </button>
+        </div>
+        <div id="OTP">
+            <p class="OTPTitle" id = "backOTP"><i id="modalBack"></i><span class="OTPText" style="color: #4ca9ee">BACK</span></p>
+            <div class="loginBody">
+                <p class="enterText">Please enter the code we just sent to <span id="phoneNumber"></span> proceed
+                </p>
+                <form class="otp" name="one-time-code" id="otp-div">
+                    <fieldset>
+                        <div>
+                            <input type="number" pattern="[0-9]*" value="" inputtype="numeric" autocomplete="one-time-code" id="otp-1" required>
+                            <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1" value="" inputtype="numeric" id="otp-2" required>
+                            <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1" value="" inputtype="numeric" id="otp-3" required>
+                            <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1" value="" inputtype="numeric" id="otp-4" required>
+                            <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1" value="" inputtype="numeric" id="otp-5" required>
+                            <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1" value="" inputtype="numeric" id="otp-6" required>
+                        </div>
+                    </fieldset>
+                </form>
+                <button type="button" class="btn btn-light loginButton" id="confirmLogin">
+                    Confirm
+                </button>
+            </div>
+        </div>
+        <div id="name">
+            <div class="loginBody">
+                <img class="nameImg" src="https://ik.imagekit.io/healthhighway2020/nameDiv_cHk_VP7U6-.svg?updatedAt=1631378890462">
+                <p class="nameText">Its always good to know each other before 
+                    we get started :)
+                </p>
+                <input class = "nameInput" placeholder = "Please Enter Your Fullname " id="inputFormName" >
+                <button type="button" class="btn btn-light loginButton" id="continueName" >
+                    Continue
+                </button>
+            </div>
+        </div>
+        <span> <i class="fa fa-times fa-1x close"></i></span>
+    </div>
+</div>
+
+<div class="info-modal-bg">
+    <div class="info-modal">
+        <div id="info-div">
+        <img id="infoIMG" />
+        <p style="color: #4ca9ee;font-weight: bold;" id="infoTITLE" ></p>
+        </div>
+        <span onclick="modalInfoCloseFunction()" > <i class="closeSend"></i></span>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    var firebaseConfig = {
+    apiKey: "AIzaSyCj_0en8nIIHQXE_5aa-pwjnEgIJ3McA9w",
+    authDomain: "healthhighway-45963.firebaseapp.com",
+    databaseURL: "https://healthhighway-45963.firebaseio.com",
+    projectId: "healthhighway-45963",
+    storageBucket: "healthhighway-45963.appspot.com",
+    messagingSenderId: "716392922291",
+    appId: "1:716392922291:web:ef7708be5a170c42a544c6",
+    measurementId: "G-B3ZVBEZ2H2"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+<script>
+    window.onload = function(){
+        render();
+    }
+
+    async function render() {
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-verifier', {
+            'size': 'invisible',
+            'callback': (response) => {
+            // reCAPTCHA solved, allow signInWithPhoneNumber.
+               console.log("captcha solved")
+            }
+        });
+        // recaptchaVerifier.render();
+        // recaptchaVerifier.verify().then(token => {
+        //     console.log(token);
+        //     document.getElementById("loginContinue").style.pointerEvents="auto";
+        // })
+    }
+</script>
+<script>
+    var googleUser = {};
+    var startApp = function() {
+        gapi.load('auth2', function(){
+        // Retrieve the singleton for the GoogleAuth library and set up the client.
+        auth2 = gapi.auth2.init({
+            client_id: '403433220043-cbmjvt9e7fkeglihn61obq1pruickdlh.apps.googleusercontent.com',
+            cookiepolicy: 'single_host_origin',
+            prompt : 'consent'
+            // Request scopes in addition to 'profile' and 'email'
+            //scope: 'additional_scope'
+        });
+        attachSignin(document.getElementById('customBtn'));
+        });
+    };
+
+    function attachSignin(element) {
+        console.log(element.id);
+        auth2.attachClickHandler(element, {},
+            async function(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log(profile.getEmail());
+            const response = await fetch("/oauth", {
+                    method  :"POST",
+                    mode : "same-origin",
+                    headers : {
+                    'Content-type' : 'application/json'
+                    },
+                    body : JSON.stringify({email : profile.getEmail(), name: profile.getName()})
+            });
+            const decode = await response.json();
+            console.log(decode);
+            // window.location.replace("/");
+            location.reload();
+            }, function(error) {
+            // alert(JSON.stringify(error, undefined, 2));
+            });
+    }
+</script>
+<script>startApp();</script>

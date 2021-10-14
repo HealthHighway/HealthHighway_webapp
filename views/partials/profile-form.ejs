@@ -1,0 +1,126 @@
+<div class="container-for-form">
+    <section id="onSiteForm" class="os-form">
+        <div class="close-next-btns">
+            <button class="osf-back-button"><img src="/images/arrow.png" alt="">
+            </button>
+            <div class="step-counter">
+                <p class="step-count">Step <span id="step">1</span> of <span id="total-steps">9</span></p>
+            </div>
+            <button class="osf-close-button"><img src="https://github.com/vxdhu/Healthhighway-Compiled/blob/main/images/close_btn.png?raw=true" alt="">
+            </button>
+        </div>
+
+
+
+        <div class="gif-and-content-grid">
+            <div class="osf-content active-state" id="choose-service">
+                <h3 class="osf-heading">Tell us about your Goals</h3>
+                <button class="osf-button osf-service" onclick="window.HH_Profile.PROBLEM = 'Fitness'">Fitness</button>
+                <button class="osf-button osf-heal">Heal Ailments</button>
+                <button class="osf-button osf-service" onclick="window.HH_Profile.PROBLEM = 'Mindfullness'">Mindfullness</button>
+                <button class="osf-button osf-service" onclick="window.HH_Profile.PROBLEM = 'Advanced Yoga'">Advanced
+                    Yoga</button>
+
+            </div>
+
+            <div class="osf-content " id="choose-ailment">
+                <h3 class="osf-heading">Select a particular ailment</h3>
+                <div class="buttttons">
+                    <button class="osf-button osf-ail" onclick="window.HH_Profile.PROBLEM = 'Diabetes'">Diabetes</button>
+                    <button class="osf-button osf-ail" onclick="window.HH_Profile.PROBLEM = 'Hypertension'">Hypertension</button>
+                    <button class="osf-button osf-ail" onclick="window.HH_Profile.PROBLEM = 'Eye Problems'">Eye Problems</button>
+                    <button class="osf-button osf-ail" onclick="window.HH_Profile.PROBLEM = 'Bone & Joint Pain'">Bone & Joint
+                        Pain</button>
+                    <button class="osf-button osf-ail" onclick="window.HH_Profile.PROBLEM = 'Thyroidism'">Thyroidism</button>
+                    <button class="osf-button osf-ail" onclick="window.HH_Profile.PROBLEM = 'Breathing Issues'">Breathing
+                        Issues</button>
+                    <button class="osf-button osf-ns">Not Sure</button>
+                </div>
+            </div>
+
+            <div class="osf-content " id="not-sure">
+                <h3 class="osf-heading ">Please type your problem/Goal</h3>
+                <form action="#" class="osf-form-problem">
+                    <input type="text" placeholder="Your problem..." required id="osf-problem">
+                    <p id="osf-invalid-problem">Please provide your problem.</p>
+                    <button class="osf-button">Next</button>
+                </form>
+            </div>
+
+            <div class="osf-content " id="basic-info">
+                <h3 class="osf-heading ">Basic Information</h3>
+                <form action="#" class="osf-form-basicinfo">
+                    <!-- <div class="name-div">
+                        <label for="name_input">Your Name</label>
+                        <input type="text" placeholder="Name..." id="osf-name" required>
+                        <p id="osf-invalid-name">Please enter name.</p>
+                    </div> -->
+                    <div class="age-div">
+                        <label for="age_input">Your Age</label>
+                        <input type="text" placeholder="Age..." id="osf-age" required inputmode="numeric">
+                        <p id="osf-invalid-age">Please enter age.</p>
+                    </div><br>
+
+                    <button class="osf-button">Next</button>
+                </form>
+            </div>
+
+            <div class="osf-content " id="weight-height">
+                <h3 class="osf-heading ">Basic Information</h3>
+                <form action="#" class="osf-form-contact">
+                    <div class="weight-div">
+                        <label for="age_input">Weight (in Kgs)</label>
+                        <input type="text" placeholder="Weight..." id="osf-weight" required inputmode="numeric">
+                        <p id="osf-invalid-weight">Please enter weight.</p>
+                    </div>
+                    <div class="height-div">
+                        <label for="age_input">Height (in cms)</label>
+                        <input type="text" placeholder="Height..." id="osf-height" required>
+                        <p id="osf-invalid-height">Please enter height.</p>
+                    </div>
+
+                    <button class="osf-button">Next</button>
+                </form>
+            </div>
+
+            <div class="osf-content " id="choose-profession">
+                <h3 class="osf-heading ">Select Your Profession</h3>
+
+                <div class="buttttons">
+                    <button class="osf-button osf-proff" onclick="window.HH_Profile.PROFESSION = 'Student'" >Student</button>
+                    <button class="osf-button osf-proff" onclick="window.HH_Profile.PROFESSION = 'Homemaker'" >Homemaker</button>
+                    <button class="osf-button osf-proff" onclick="window.HH_Profile.PROFESSION = 'Service'" >Service</button>
+                    <button class="osf-button osf-proff" onclick="window.HH_Profile.PROFESSION = 'Self Employed'" >Self Employed</button>
+                    <button class="osf-button osf-proff" onclick="window.HH_Profile.PROFESSION = 'Other'" >Other</button>
+                </div>
+
+            </div>
+
+            <div class="osf-content " id="choose-lang">
+                <h3 class="osf-heading ">Language Preference</h3>
+
+                <div class="buttttons">
+                    <button class="osf-button osf-lang" onclick="window.HH_Profile.LANGUAGE = 'Hindi'" >Hindi</button>
+                    <button class="osf-button osf-lang" onclick="window.HH_Profile.LANGUAGE = 'English'" >English</button>
+                    <button class="osf-button osf-lang" onclick="window.HH_Profile.LANGUAGE = 'Telugu'" >Telugu</button>
+                    <button class="osf-button osf-lang" onclick="window.HH_Profile.LANGUAGE = 'Bengali'" >Bengali</button>
+                    <button class="osf-button osf-lang" onclick="window.HH_Profile.LANGUAGE = 'Kannada'" >Kannada</button>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="osf-gif"><img src="/images/yoga-se-hi-hoga.gif" alt="yogasehihoga"></div>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+
+    </section>
+</div>

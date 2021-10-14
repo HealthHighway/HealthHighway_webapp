@@ -1,0 +1,109 @@
+.header-for-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar-top {
+    padding: 1em 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.brandwrap-top img {
+    width: 178px;
+    height: 30px;
+    object-fit: cover;
+    margin-bottom: -5px;
+}
+
+.desk-link-nav {
+    display: none;
+}
+
+.nav-links-top {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    a {
+        text-decoration: none;
+        font-weight: 400;
+        padding: .5em 1em;
+        font-size: 1rem;
+        color: #3C4860;
+    }
+    .joinbtn {
+        background-color: #4CA9EE;
+        color: white;
+        border-radius: 1em;
+        font-weight: 600;
+        padding: .5em 1em;
+    }
+}
+
+#loginbtn {
+    font-weight: 600;
+}
+
+.loginIcon {
+    border: none;
+    background: transparent;
+}
+
+.loginIcon img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: -5px;
+}
+
+@media (min-width:768px) {
+    .desk-link-nav {
+        display: unset;
+    }
+    .nav-links-top .joinbtn {
+        margin-left: 1em;
+        padding: .6em 2.2em;
+    }
+    .brandwrap-top img {
+        width: 80%;
+        height: 80%;
+    }
+    .loginIcon {
+        margin-left: .5em;
+    }
+    .loginIcon img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: -2px;
+    }
+}
+
+@media (min-width:1024px) {
+    .brandwrap img {
+        width: 100%;
+        height: 100%;
+    }
+    .nav-links-top a {
+        font-size: 16px;
+    }
+    .loginIcon img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: -3px;
+    }
+}
+
+@media (min-width:1440px) {
+    .nav-links-top a {
+        font-size: 16px;
+        margin: 0 1em;
+    }
+    .loginIcon img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: -5px;
+    }
+}

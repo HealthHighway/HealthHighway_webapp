@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/pricing.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/new_navbar.css" />
+    <link rel="stylesheet" href="/css/fix_budget.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/onSiteForm.css" />
+    <link rel="stylesheet" href="/css/footer_old.css" />
+    <title>Health Highway | Pricing</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
+</head>
+
+<body>
+    <header>
+        <%- include("partials/navbar") %>
+    </header>
+    <main>
+        <!-- Pricing Section (Start) -->
+        <section class="price-container">
+            <div class="price-heading">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Private Yoga Classes</p>
+            </div>
+            <div class="pricing-main">
+                <div class="price-benifits">
+                    <h3>100% Yoga | 0% Anything Else</h3>
+                    <ul class="benifit-items-container">
+                        <li class="benifit-item">
+                            <h4>Private Instructor</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                        <li class="benifit-item">
+                            <h4>Choice of Instructor (Male/Female)</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                        <li class="benifit-item">
+                            <h4>Choice of Timings</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                        <li class="benifit-item">
+                            <h4>Best Results</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                        <li class="benifit-item">
+                            <h4>Choice of Timings</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                    </ul>
+                    <button class="addtocart" onclick="location.href='#onSiteForm'" style="cursor: pointer;" >
+                        <h2>Add to cart</h2>
+                        <img src="/images/cart.svg" alt="" />
+                    </button>
+                </div>
+                <div class="session-container">
+                    <div class="session-item">
+                        <label id="single" class="p-label">
+                            <input type="radio" for="single" name="plan" checked="true" value="Single Session" />
+                            <span class="checkmark"
+                                ><img src="/images/tick-circle.svg" alt=""
+                            /></span>
+                        </label>
+                        <div class="session-save">
+                            <h3>Single session</h3>
+                            <h2>Save 0%</h2>
+                        </div>
+                        <div class="session-price">
+                            <h3>INR <span>150</span></h3>
+                        </div>
+                    </div>
+                    <div class="session-item">
+                        <label id="single" class="p-label">
+                            <input type="radio" for="16session" name="plan" value="16 Sessions" />
+                            <span class="checkmark"
+                                ><img src="/images/tick-circle.svg" alt=""
+                            /></span>
+                        </label>
+                        <div class="session-save">
+                            <h3>16 Sessions</h3>
+                            <h2>Save 13%</h2>
+                        </div>
+                        <div class="session-price">
+                            <h3>INR <span>2149</span></h3>
+                        </div>
+                    </div>
+                    <div class="session-item">
+                        <label id="single" class="p-label">
+                            <input type="radio" for="16session" name="plan" value = "20 Sessions" />
+                            <span class="checkmark"
+                                ><img src="/images/tick-circle.svg" alt=""
+                            /></span>
+                        </label>
+                        <div class="session-save">
+                            <h3>20 Sessions</h3>
+                            <h2>Save 18%</h2>
+                        </div>
+                        <div class="session-price">
+                            <h3>INR <span>2449</span></h3>
+                        </div>
+                    </div>
+                    <div class="session-item">
+                        <label id="single" class="p-label">
+                            <input type="radio" for="16session" name="plan" value="24 Sessions" />
+                            <span class="checkmark"
+                                ><img src="/images/tick-circle.svg" alt=""
+                            /></span>
+                        </label>
+                        <div class="session-save">
+                            <h3>24 Sessions</h3>
+                            <h2>Save 21%</h2>
+                        </div>
+                        <div class="session-price">
+                            <h3>INR <span>2849</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            const addToCart = () => {
+                var checked = "";
+                var ele = document.getElementsByName('plan');
+                for(i = 0; i < ele.length; i++) {
+                    if(ele[i].checked)
+                    {
+                        checked = ele[i].value;
+                        break;
+                    }
+                }
+                alert(checked);
+            }
+        </script>
+
+        <!-- Pricing Section (End) -->
+
+        <div class="container-for-form">
+            <section id="onSiteForm" class="os-form">
+
+                <button class="osf-back-button">&lsaquo;</button>
+
+                <div class="gif-and-content-grid">
+                    <div class="osf-content" id="choose-service">
+                        <h3 class="osf-heading">Tell us about your Goals</h3>
+                        <button class="osf-button osf-service" onclick="problem = 'Fitness'">Fitness</button>
+                        <button class="osf-button osf-heal">Heal Ailments</button>
+                        <button class="osf-button osf-service" onclick="problem = 'Mindfullness'">Mindfullness</button>
+                        <button class="osf-button osf-service" onclick="problem = 'Advanced Yoga'">Advanced Yoga</button>
+                    </div>
+
+                    <div class="osf-content " id="choose-ailment">
+                        <h3 class="osf-heading">Select a particular ailment</h3>
+                        <div class="buttttons">
+                            <button class="osf-button osf-ail" onclick="problem = 'Diabetes'">Diabetes</button>
+                            <button class="osf-button osf-ail" onclick="problem = 'Hypertension'">Hypertension</button>
+                            <button class="osf-button osf-ail" onclick="problem = 'Eye Problems'">Eye Problems</button>
+                            <button class="osf-button osf-ail" onclick="problem = 'Bone & Joint Pain'">Bone & Joint Pain</button>
+                            <button class="osf-button osf-ail" onclick="problem = 'Thyroidism'">Thyroidism</button>
+                            <button class="osf-button osf-ail" onclick="problem = 'Breathing Issues'">Breathing Issues</button>
+                            <button class="osf-button osf-ns">Not Sure</button>
+                        </div>
+                    </div>
+
+                    <div class="osf-content " id="not-sure">
+                        <h3 class="osf-heading ">Please type your problem/Goal</h3>
+                        <form action="#" class="osf-form-problem">
+                            <input type="text" placeholder="Your problem..." required id="osf-problem">
+                            <p id="osf-invalid-problem">Please provide your problem.</p>
+                            <button class="osf-button">Next</button>
+                        </form>
+                    </div>
+
+                    <div class="osf-content " id="basic-info">
+                        <h3 class="osf-heading ">Basic Information</h3>
+                        <form action="#" class="osf-form-basicinfo">
+                            <div class="name-div">
+                                <label for="name_input">Your Name</label>
+                                <input type="text" placeholder="Name..." id="osf-name" required>
+                                <p id="osf-invalid-name">Please enter name.</p>
+                            </div>
+                            <div class="age-div">
+                                <label for="age_input">Your Age</label>
+                                <input type="text" placeholder="Age..." id="osf-age" required inputmode="numeric">
+                                <p id="osf-invalid-age">Please enter age.</p>
+                            </div>
+                            <div class="weight-div">
+                                <label for="age_input">Weight (in Kgs)</label>
+                                <input type="text" placeholder="Weight..." id="osf-weight" required inputmode="numeric">
+                                <p id="osf-invalid-weight">Please enter weight.</p>
+                            </div>
+                            <div class="height-div">
+                                <label for="age_input">Height (in cms)</label>
+                                <input type="text" placeholder="Height..." id="osf-height" required inputmode="numeric">
+                                <p id="osf-invalid-height">Please enter height.</p>
+                            </div>
+                            <p class="pref">Preferred Trainer</p>
+                            <div class="pref-div">
+                                <input type="radio" id="radio1" name="trainer" value="Male" checked>
+                                <label for="radio1">Male</label>
+                                <input type="radio" id="radio2" name="trainer" value="Female">
+                                <label for="radio2">Female</label>
+                            </div>
+                            <button class="osf-button">Next</button>
+                        </form>
+                    </div>
+
+                    <div class="osf-content " id="provide-contact">
+                        <h3 class="osf-heading ">Please enter your contact number</h3>
+                        <form action="#" class="osf-form-contact">
+                            <input type="text" placeholder="+91" required id="osf-contact">
+                            <p id="osf-invalid-contact"> Please provide your contact...</p>
+                            <button class="osf-button">Next</button>
+                        </form>
+                    </div>
+
+                    <div class="osf-content " id="choose-timing">
+                        <h3 class="osf-heading ">Choose a time slot</h3>
+                        <form class="time-grid">
+                            <input type="radio" id="t1" name="timing" value="6am">
+                            <label for="t1">6:00 AM</label>
+                            <input type="radio" id="t2" name="timing" value="7am">
+                            <label for="t2">7:00 AM</label>
+                            <input type="radio" id="t3" name="timing" value="8am" checked>
+                            <label for="t3">8:00 AM</label>
+                            <input type="radio" id="t4" name="timing" value="9am">
+                            <label for="t4">9:00 AM</label>
+                            <input type="radio" id="t5" name="timing" value="4pm">
+                            <label for="t5">4:00 PM</label>
+                            <input type="radio" id="t6" name="timing" value="5pm">
+                            <label for="t6">5:00 PM</label>
+                            <input type="radio" id="t7" name="timing" value="6pm">
+                            <label for="t7">6:00 PM</label>
+                            <input type="radio" id="t8" name="timing" value="7pm">
+                            <label for="t8">7:00 PM</label>
+                            <input type="radio" id="t9" name="timing" value="8pm">
+                            <label for="t9">8:00 PM</label>
+
+                            <button class="osf-button">Next</button>
+                        </form>
+                    </div>
+
+                    <div class="osf-content " id="choose-days">
+                        <h3 class="osf-heading ">Your Fitness Routine</h3>
+
+                        <form class="day-grid">
+                            <input type="checkbox" id="day1" name="days" value="Mon">
+                            <label for="day1">Mon</label>
+                            <input type="checkbox" id="day2" name="days" value="Tue">
+                            <label for="day2">Tue</label>
+                            <input type="checkbox" id="day3" name="days" value="Wed">
+                            <label for="day3">Wed</label>
+                            <input type="checkbox" id="day4" name="days" value="Thu">
+                            <label for="day4">Thu</label>
+                            <input type="checkbox" id="day5" name="days" value="Fri">
+                            <label for="day5">Fri</label>
+                            <input type="checkbox" id="day6" name="days" value="Sat">
+                            <label for="day6">Sat</label>
+                            <input type="checkbox" id="day7" name="days" value="Sun">
+                            <label for="day7">Sun</label>
+
+                            <button class="osf-button">Next</button>
+                        </form>
+                    </div>
+                    <div class="osf-content " id="fitness-calendar">
+                        <h3 class="osf-heading ">Choose a starting date</h3>
+                        <div id="color-calendar"></div>
+                        <button class="osf-button final-btn" style="margin-top: 1em;">Next</button>
+
+                    </div>
+
+
+                    <div class="osf-content personal-session-card" id="final-card">
+                        <div class="personal-card-title">
+                            <h1>Personalized Yoga session</h1>
+                            <img src="/images/payment-1.png" alt="" />
+                        </div>
+                        <div class="personal-session-text">
+                            <ul>
+                                <li>
+                                    <img src="/images/accept.png" alt="" />
+                                    <p>Problem/Goal: <span class="f-input" id="f-problem"></span></p>
+                                </li>
+                                <li>
+                                    <h2>₹</h2>
+                                    <p>Starting Date: <span class="f-input" id="f-date"></span></p>
+                                </li>
+                                <li>
+                                    <img src="/images/alarm-clock.png" alt="" />
+                                    <p>Time: <span class="f-input" id="f-time"></span></p>
+                                </li>
+                                <li>
+                                    <img src="/images/Duration.png" alt="" />
+                                    <p>Duration: 50 mins/Session</p>
+                                </li>
+                                <li>
+                                    <img src="/images/calendar_1.png" alt="" />
+                                    <p>Preferred days : <span class="f-input" id="f-days"></span></p>
+                                </li>
+                                <li>
+                                    <img src="/images/bio.png" alt="" />
+                                    <p>Gender pref.: <span class="f-input" id="f-pref"></span></p>
+                                </li>
+                                <li>
+                                    <img src="/images/bio.png" alt="" />
+                                    <p>Name: <span class="f-input" id="f-name"></span>, <span id="f-age"></span></p>
+                                </li>
+                                <li>
+                                    <img src="/images/contact.png" alt="" />
+                                    <p>Contact : <span class="f-input" id="f-contact"></span></p>
+                                </li>
+                                <li>
+                                    <img src="/images/customer.png" alt="" />
+                                    <p>Weight: <span class="f-input" id="f-weight"></span>kgs, <span class="f-input" id="f-height"></span>cms</p>
+                                </li>
+                            </ul>
+                            <button onclick="location.href='paymentSuccess.html'">Pay INR 1500</button>
+                        </div>
+                    </div>
+
+                    <div class="osf-gif"><img src="/images/yoga-se-hi-hoga.gif" alt="yogasehihoga"></div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- Fixed-Budget Section -->
+        <div class="fix-budget-container">
+            <div class="fix-budget-heading">
+                <h1>Have a fix budget for fitness ?</h1>
+                <p>
+                    Dont worry we got you covered. We bring you a variety of group sessions that suits your need.
+                </p>
+            </div>
+            <div class="grp-card-container">
+                <% sessions.forEach(session => { %>
+                    <a href="/Group-Yoga-Classes/<%= session._id %>">
+                        <div class="grp-card">
+                            <img src=<%= session.IMG %> alt="" />
+                            <div class="grp-card-content">
+                                <div class="grp-card-details">
+                                    <div class="grp-card-title">
+                                        <h3><%= session.SESSION_NAME %></h3>
+                                        <p><%= session.TIME %></p>
+                                    </div>
+                                    <h4>by Yogacharya <%= session.TNAME %></h4>
+                                </div>
+                                <div class="grp-card-trust">
+                                    <img src="/images/man-vector.svg" alt="" />
+                                    <h4>Trusted by <%= session.PARTICIPANTS %>+ people</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <% }) %>
+                
+            </div>
+        </div>
+        <!-- Fixed-Budget Section (End) -->
+
+
+
+        <!-- USP Section (START) -->
+        <%- include('partials/usp') %>
+        <!-- USP Section (END) -->
+
+        <!-- VIdeo Section -->
+        
+        <%- include('partials/video') %>
+      <!-- VIdeo Section (END) -->
+
+
+      <!-- Testimonials Section (END) -->
+      <%- include('partials/testimonials') %>
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".myTestimonialSwiper", {
+                spaceBetween: 20,
+                // loop:true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
+
+        <!-- Testimonials(end) -->
+    </main>
+    <footer>
+       
+        <!-- Call-Us Section  -->
+        <%- include('partials/callback') %>
+        <!-- Call-Us Section (END) -->
+
+        <!-- login div -->
+        <%- include('partials/login-form') %>
+        <!-- login div (END) -->
+
+    </footer>
+
+    <script src="/js/video-component.js"></script>
+    <script src="/js/pricing.js"></script>
+    <script src="/js/landing.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+<div class="container-for-form">
+    <section id="onSiteForm" class="os-form">
+
+        <button class="osf-back-button"><img src="/images/arrow.png" alt="">
+        </button>
+
+        <div class="gif-and-content-grid">
+            <div class="osf-content active-state" id="choose-service">
+                <h3 class="osf-heading">Tell us about your Goals</h3>
+                <button class="osf-button osf-service" onclick="problem = 'Fitness'">Fitness</button>
+                <button class="osf-button osf-heal">Heal Ailments</button>
+                <button class="osf-button osf-service" onclick="problem = 'Mindfullness'">Mindfullness</button>
+                <button class="osf-button osf-service" onclick="problem = 'Advanced Yoga'">Advanced
+                    Yoga</button>
+
+            </div>
+
+            <div class="osf-content " id="choose-ailment">
+                <h3 class="osf-heading">Select a particular ailment</h3>
+                <div class="buttttons">
+                    <button class="osf-button osf-ail" onclick="problem = 'Diabetes'">Diabetes</button>
+                    <button class="osf-button osf-ail" onclick="problem = 'Hypertension'">Hypertension</button>
+                    <button class="osf-button osf-ail" onclick="problem = 'Eye Problems'">Eye Problems</button>
+                    <button class="osf-button osf-ail" onclick="problem = 'Bone & Joint Pain'">Bone & Joint
+                        Pain</button>
+                    <button class="osf-button osf-ail" onclick="problem = 'Thyroidism'">Thyroidism</button>
+                    <button class="osf-button osf-ail" onclick="problem = 'Breathing Issues'">Breathing
+                        Issues</button>
+                    <button class="osf-button osf-ns">Not Sure</button>
+                </div>
+            </div>
+
+            <div class="osf-content " id="not-sure">
+                <h3 class="osf-heading ">Please type your problem/Goal</h3>
+                <form action="#" class="osf-form-problem">
+                    <input type="text" placeholder="Your problem..." required id="osf-problem">
+                    <p id="osf-invalid-problem">Please provide your problem.</p>
+                    <button class="osf-button">Next</button>
+                </form>
+            </div>
+
+            <div class="osf-content " id="basic-info">
+                <h3 class="osf-heading ">Basic Information</h3>
+                <form action="#" class="osf-form-basicinfo">
+                    <div class="name-div">
+                        <label for="name_input">Your Name</label>
+                        <input type="text" placeholder="Name..." id="osf-name" required>
+                        <p id="osf-invalid-name">Please enter name.</p>
+                    </div>
+                    <div class="age-div">
+                        <label for="age_input">Your Age</label>
+                        <input type="text" placeholder="Age..." id="osf-age" required inputmode="numeric">
+                        <p id="osf-invalid-age">Please enter age.</p>
+                    </div>
+                    <div class="weight-div">
+                        <label for="age_input">Weight (in Kgs)</label>
+                        <input type="text" placeholder="Weight..." id="osf-weight" required inputmode="numeric">
+                        <p id="osf-invalid-weight">Please enter weight.</p>
+                    </div>
+                    <div class="height-div">
+                        <label for="age_input">Height (in inch)</label>
+                        <input type="text" placeholder="Height..." id="osf-height" required>
+                        <p id="osf-invalid-height">Please enter height.</p>
+                    </div>
+                    <p class="pref">Preferred Trainer</p>
+                    <div class="pref-div">
+                        <input type="radio" id="radio1" name="trainer" value="Male" checked>
+                        <label for="radio1">Male</label>
+                        <input type="radio" id="radio2" name="trainer" value="Female">
+                        <label for="radio2">Female</label>
+                    </div>
+                    <button class="osf-button">Next</button>
+                </form>
+            </div>
+
+            <div class="osf-content " id="provide-contact">
+                <h3 class="osf-heading ">Please enter your contact number</h3>
+                <form action="#" class="osf-form-contact">
+                    <input type="text" placeholder="+91" required id="osf-contact">
+                    <p id="osf-invalid-contact"> Please provide your contact...</p>
+                    <button class="osf-button">Next</button>
+                </form>
+            </div>
+
+            <div class="osf-content " id="choose-timing">
+                <h3 class="osf-heading ">Choose a time slot</h3>
+                <form class="time-grid">
+                    <input type="radio" id="t1" name="timing" value="6:00 AM" required>
+                    <label for="t1">6:00 AM</label>
+                    <input type="radio" id="t2" name="timing" value="7:00 AM">
+                    <label for="t2">7:00 AM</label>
+                    <input type="radio" id="t3" name="timing" value="8:00 AM">
+                    <label for="t3">8:00 AM</label>
+                    <input type="radio" id="t4" name="timing" value="9:00 AM">
+                    <label for="t4">9:00 AM</label>
+                    <input type="radio" id="t5" name="timing" value="4:00 PM">
+                    <label for="t5">4:00 PM</label>
+                    <input type="radio" id="t6" name="timing" value="5:00 PM">
+                    <label for="t6">5:00 PM</label>
+                    <input type="radio" id="t7" name="timing" value="6:00 PM">
+                    <label for="t7">6:00 PM</label>
+                    <input type="radio" id="t8" name="timing" value="7:00 PM">
+                    <label for="t8">7:00 PM</label>
+                    <input type="radio" id="t9" name="timing" value="8:00 PM">
+                    <label for="t9">8:00 PM</label>
+
+                    <button class="osf-button">Next</button>
+                </form>
+            </div>
+
+            <div class="osf-content " id="choose-days">
+                <h3 class="osf-heading ">Your Fitness Routine</h3>
+
+                <form class="day-grid">
+                    <input type="checkbox" id="day1" name="days" value="Mon">
+                    <label for="day1">Mon</label>
+                    <input type="checkbox" id="day2" name="days" value="Tue">
+                    <label for="day2">Tue</label>
+                    <input type="checkbox" id="day3" name="days" value="Wed">
+                    <label for="day3">Wed</label>
+                    <input type="checkbox" id="day4" name="days" value="Thu">
+                    <label for="day4">Thu</label>
+                    <input type="checkbox" id="day5" name="days" value="Fri">
+                    <label for="day5">Fri</label>
+                    <input type="checkbox" id="day6" name="days" value="Sat">
+                    <label for="day6">Sat</label>
+                    <input type="checkbox" id="day7" name="days" value="Sun">
+                    <label for="day7">Sun</label>
+
+                    <button class="osf-button">Next</button>
+                </form>
+            </div>
+            <div class="osf-content " id="fitness-calendar">
+                <h3 class="osf-heading ">Choose a starting date</h3>
+                <div id="my-calendar"></div>
+                <p id="osf-invalid-date">Please select a date</p>
+
+                <button class="osf-button final-btn" style="margin-top: 1em;" onclick="getDateDummy();">Next</button>
+
+
+
+            </div>
+
+
+            <div class="osf-content personal-session-card" id="final-card">
+                <div class="personal-card-title">
+                    <h1>Personalized Yoga session</h1>
+                    <img src="/images/payment-1.png" alt="" />
+                </div>
+                <div class="personal-session-text">
+                    <ul>
+                        <li>
+                            <img src="/images/accept.png" alt="" />
+                            <p>Problem/Goal: <span class="f-input" id="f-problem"></span></p>
+                        </li>
+                        <li>
+                            <h2>₹</h2>
+                            <p>Starting Date: <span class="f-input" id="f-date"></span></p>
+                        </li>
+                        <li>
+                            <img src="/images/alarm-clock.png" alt="" />
+                            <p>Time: <span class="f-input" id="f-time"></span></p>
+                        </li>
+                        <li>
+                            <img src="/images/Duration.png" alt="" />
+                            <p>Duration: 50 mins/Session</p>
+                        </li>
+                        <li>
+                            <img src="/images/calendar_1.png" alt="" />
+                            <p>Preferred days : <span class="f-input" id="f-days"></span></p>
+                        </li>
+                        <li>
+                            <img src="/images/bio.png" alt="" />
+                            <p>Gender pref.: <span class="f-input" id="f-pref"></span></p>
+                        </li>
+                        <li>
+                            <img src="/images/bio.png" alt="" />
+                            <p>Name: <span class="f-input" id="f-name"></span>, <span id="f-age"></span></p>
+                        </li>
+                        <li>
+                            <img src="/images/contact.png" alt="" />
+                            <p>Contact : <span class="f-input" id="f-contact"></span></p>
+                        </li>
+                        <li>
+                            <img src="/images/customer.png" alt="" />
+                            <p>Weight: <span class="f-input" id="f-weight"></span>kgs, <span class="f-input" id="f-height"></span>cms</p>
+                        </li>
+                    </ul>
+                    <button id="payNow" onclick="payPrivate()">Pay Now</button>
+                </div>
+            </div>
+
+            <div class="osf-gif"><img src="/images/yoga-se-hi-hoga.gif" alt="yogasehihoga"></div>
+        </div>
+
+    </section>
+</div>

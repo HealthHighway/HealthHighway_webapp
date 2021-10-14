@@ -1,0 +1,789 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600;400;500&family=Open+Sans:wght@300;600&display=swap");
+
+.login-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.4s;
+  backdrop-filter: blur(5px);
+  z-index: 200;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navBlur {
+  z-index: -1 !important;
+}
+
+.login-modal {
+  background-color: #fff;
+  width: 422px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 100;
+  border-radius: 15px;
+  height: auto;
+}
+
+.closeSend {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 28px;
+  right: 28px;
+  cursor: pointer;
+}
+
+.closeSend:before,
+.closeSend:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 25px;
+  width: 3px;
+  background-color: #b2b2b2;
+}
+.closeSend:before {
+  transform: rotate(45deg);
+}
+.closeSend:after {
+  transform: rotate(-45deg);
+}
+
+.close {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 28px;
+  right: 28px;
+  cursor: pointer;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 25px;
+  width: 3px;
+  background-color: #b2b2b2;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.loginBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 32px;
+  height: auto;
+}
+
+.loginLogo {
+  margin-top: 50px;
+  width: 120px;
+  height: 80px;
+}
+
+.loginInput {
+  background-color: transparent;
+  border-bottom: 2px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.loginInputBar {
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  width: 232px;
+}
+
+.loginInputBar::-webkit-input-placeholder {
+  font-size: 1rem;
+}
+
+.loginButton {
+  margin-top: 32px;
+  border-color: #4ca9ee;
+  color: #fff !important;
+  border-radius: 15px !important;
+  transition: 0.3s ease;
+  background-color: #4ca9ee !important;
+  width: 290px;
+  height: 42px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 34px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginCondition {
+  font-size: 10px;
+  line-height: 12px;
+  margin-top: 32px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  width: 190px;
+  height: 24px;
+}
+
+.loginContinueButton {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #4ca9ee;
+  width: 300px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 15px !important;
+  margin-top: 25px;
+  box-shadow: 1px 1px 3px #a5d4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginImageSideView,
+.loginImage {
+  cursor: pointer;
+  border-color: #4ca9ee;
+  padding: 8px 35px !important;
+  border-radius: 20px !important;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  background-color: white;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.google {
+  margin-right: 12px;
+}
+
+#OTP {
+  width: 422px;
+  height: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  display: none;
+}
+
+.fa-angle-left {
+  color: #4ca9ee;
+}
+
+.OTPText {
+  margin-left: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+
+.OTPTitle,
+.nameTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+  position: absolute;
+  margin-left: 32px;
+  margin-top: 31px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.enterText {
+  font-size: 18px;
+  width: 360px;
+  text-align: center;
+  line-height: 32px;
+  margin-top: 100px;
+}
+
+.otp {
+  position: relative;
+  margin: 15px auto 10px auto;
+}
+
+.otp fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.otp fieldset div {
+  display: flex;
+  align-items: center;
+}
+
+input[type="number"] {
+  width: 26px;
+  height: 33px;
+  margin: 0 2px;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 0;
+  color: black;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 30px;
+  box-shadow: none;
+  text-align: center;
+  background-color: none;
+  font-weight: 600;
+  border-radius: 0;
+  outline: 0;
+  transition: border 0.3s ease;
+  text-align: center;
+  appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:nth-child(n + 4) {
+  order: 2;
+}
+
+.OTPPara {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.phone {
+  color: #4ca9ee;
+  text-decoration: 1px underline #4ca9ee;
+}
+
+.loginInputBar::placeholder {
+  font-size: 0.94rem;
+}
+
+#OTPSend,
+#loginSuccess {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+}
+
+#OTPSend img,
+#loginSuccess img {
+  margin: 50px 0 20px 0;
+}
+
+#OTPSend p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  width: 237px;
+  margin-bottom: 24px;
+}
+
+#loginSuccess p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #4ca9ee;
+  margin-bottom: 10px;
+  width: 346px;
+}
+
+#modalBack {
+  border: solid #4ca9ee;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  height: 14px;
+  width: 14px;
+}
+
+.info-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.4s;
+  backdrop-filter: blur(5px);
+  z-index: 200;
+}
+
+.info-modal {
+  background-color: #fff;
+  width: 422px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 100;
+  border-radius: 15px;
+  height: auto;
+}
+
+#info-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+}
+
+#info-div img {
+  margin-top: 60px;
+  max-width: 360px;
+  max-height: 300px;
+}
+
+#info-div p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #000000;
+  width: 18vw;
+  margin-top: 15px;
+}
+
+.info-bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.textLogo {
+  margin-top: 5px;
+}
+
+.down-arrow {
+  border: solid #4ca9ee;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+#name {
+  display: none;
+}
+
+.nameImg {
+  margin: 80px 0 32px 0;
+}
+
+.nameText {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #29e7cd;
+  width: 311px;
+  margin-bottom: 32px;
+}
+
+.nameInput {
+  width: 262px;
+  height: 38px;
+  background: #ebf0f4;
+  border-radius: 4.58333px;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+}
+
+.nameInput::placeholder {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #535556;
+}
+
+.nameTitle {
+  left: 0;
+}
+
+#continueName {
+  margin-bottom: 20px;
+  width: 241px;
+}
+
+@media only screen and (max-width: 1440px) {
+  #info-div p {
+    width: 20vw;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #info-div p {
+    width: 25vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #info-div p {
+    width: 32vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #info-div p {
+    width: 40vw;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  #info-div p {
+    width: 45vw;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .login-modal {
+    width: 360px;
+  }
+  .info-modal {
+    width: 360px;
+  }
+  .loginInput {
+    width: 240px;
+  }
+  .loginInputBar {
+    width: 170px;
+  }
+  .loginButton,
+  .loginContinueButton,
+  .OTPPara,
+  #OTP,
+  .OTPText,
+  .enterText,
+  .OTPPara {
+    width: 260px;
+  }
+  .loginCondition {
+    width: 260px;
+  }
+
+  .OTPTitle {
+    margin-left: 1px;
+  }
+  .nameTitle {
+    margin-left: 48px;
+  }
+  .loginInputBar::placeholder {
+    font-size: 0.7rem;
+  }
+  #info-div p {
+    width: 54vw;
+  }
+  .nameText {
+    width: 280px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .loginLogo {
+    margin-top: 40px;
+    width: 100px;
+    height: 50px;
+  }
+  .loginInput {
+    margin-top: 32px;
+    font-size: 1.2rem;
+  }
+  #loginContinue {
+    margin-top: 15px;
+  }
+  .loginButton {
+    font-size: 1.2rem;
+  }
+  .loginContinueButton {
+    font-size: 1rem;
+  }
+  .loginInputBar {
+    width: 180px;
+  }
+  #loginSuccess p {
+    font-size: 20px;
+    width: 300px;
+  }
+  #info-div p {
+    width: 64vw;
+  }
+  #info-div img {
+    max-width: 200px;
+    max-height: 250px;
+  }
+  .textLogo {
+    height: 28px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .login-modal {
+    width: 320px;
+  }
+  .info-modal {
+    width: 320px;
+  }
+  .loginInput {
+    width: 240px;
+    margin-top: 15px;
+  }
+  .loginInputBar {
+    width: 180px;
+  }
+  .loginButton,
+  .loginContinueButton,
+  .OTPPara,
+  #OTP,
+  .OTPText,
+  .enterText,
+  .OTPPara,
+  .nameInput,
+  .nameText {
+    width: 240px;
+  }
+  .loginCondition {
+    width: 240px;
+  }
+  .loginCondition {
+    margin-top: 20px;
+  }
+  .loginLogo {
+    width: 80px;
+    height: 40px;
+  }
+  .loginInputBar {
+    font-size: 1.2rem;
+  }
+  #info-div p {
+    width: 72vw;
+  }
+  .textLogo {
+    height: 22px;
+  }
+  #continueName {
+    width: 230px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .login-modal {
+    width: 300px;
+  }
+  .info-modal {
+    width: 300px;
+  }
+  .OTPPara,
+  #OTP,
+  .OTPText,
+  .enterText,
+  .OTPPara {
+    width: 260px;
+  }
+  .nameInput,
+  .nameText {
+    width: 230px;  
+  }
+  .loginCondition {
+    width: 260px;
+  }
+  .loginContinueButton,
+  .loginButton {
+    font-size: 16px;
+  }
+  .otp-container input {
+    width: 22px;
+    height: 30px;
+  }
+  .loginLogoText {
+    font-size: 1.2rem;
+  }
+  #OTPSend p {
+    width: 210px;
+  }
+  #loginSuccess p {
+    font-size: 20px;
+    width: 240px;
+  }
+  .nameImg {
+    width: 100px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  .nameText {
+    margin-bottom: 20px;
+  }
+  #continueName {
+    margin: 20px 0 0 0;
+  }
+  #continueName {
+    width: 200px;
+  }
+  .nameTitle {
+    margin-left: 32px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .login-modal {
+    width: 260px;
+  }
+  .info-modal {
+    width: 260px;
+  }
+  .loginInput {
+    width: 200px;
+  }
+  .loginInputBar {
+    width: 140px;
+  }
+  .loginButton,
+  .loginContinueButton,
+  .OTPPara,
+  #OTP,
+  .OTPText,
+  .enterText,
+  .OTPPara,
+  .nameInput,
+  .nameText {
+    width: 210px;
+  }
+  .loginCondition {
+    width: 200px;
+  }
+  .loginInputBar::placeholder {
+    font-size: 0.54rem;
+  }
+  #OTPSend p {
+    width: 200px;
+  }
+  .OTPTitle {
+    margin-top: 40px;
+  }
+  #info-div img {
+    max-width: 180px;
+    max-height: 200px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .login-modal {
+    width: 250px;
+  }
+  .info-modal {
+    width: 250px;
+  }
+  .loginInput {
+    width: 190px;
+  }
+  .loginInputBar {
+    width: 130px;
+  }
+  .OTPPara,
+  #OTP,
+  .OTPText,
+  .enterText,
+  .OTPPara,
+  .nameInput,
+  .nameText {
+    width: 220px;
+  }
+  .loginCondition {
+    width: 220px;
+  }
+  .loginContinueButton,
+  .loginButton {
+    font-size: 16px;
+  }
+  .otp-container input {
+    width: 22px;
+    height: 30px;
+  }
+  .OTPActive {
+    height: 460px;
+  }
+  .OTPTitle {
+    margin-top: 32px;
+    margin-left: 10px;
+  }
+}

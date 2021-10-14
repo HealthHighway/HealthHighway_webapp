@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@700&display=swap");
+#landing-main-div {
+  width: 100vw;
+  height: 760px;
+  background-color: transparent;
+  position: relative;
+  background-image: url("../images/Vector\ 1.png");
+  background-repeat: no-repeat;
+  background-size: 75% 65%;
+}
+.landing-container {
+  display: flex;
+  flex-direction: column;
+}
+.landing-top-container {
+  display: flex;
+  flex-direction: row;
+}
+.pattern {
+  margin-top: 150px;
+}
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+  content: "\f0c9";
+}
+
+.instructor,
+.student {
+  width: 400px;
+  height: 414px;
+}
+
+.landing-main-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.landing-main-text1 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 65px;
+}
+
+.landing-main-text2 {
+  font-family: Dancing Script;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  margin-top: 20px;
+}
+
+.landing-main-button {
+  background: #4ca9ee;
+  box-shadow: 0px 2px 10px rgba(76, 169, 238, 0.3);
+  border-radius: 8px;
+  width: 214px;
+  height: 55px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  color: #ffffff;
+  border-color: #4ca9ee;
+  margin-top: 250px;
+}
+
+.fa-arrow-down {
+  color: #4ca9ee;
+  margin-top: 5px;
+}
+
+.know-more-div {
+  margin-top: -80px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #4ca9ee;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 2300px) {
+  #landing-main-div {
+    background-size: 75% 70%;
+    background-position: 0 570px 0 0;
+  }
+}
+
+@media only screen and (max-width: 2000px) {
+  #landing-main-div {
+    background-size: 75% 70%;
+    background-position: 0 520px 0 0;
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  #landing-main-div {
+    background-size: 75% 65%;
+    background-position: 0 430px 0 0;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .instructor,
+  .student {
+    width: 360px;
+    height: 400px;
+  }
+  .landing-main-left {
+    left: 80px;
+  }
+
+  .landing-main-right {
+    right: 80px;
+  }
+}
+
+@media only screen and (max-width: 1550px) {
+  #landing-main-div {
+    background-size: 75% 65%;
+    background-position: 0 380px 0 0;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  #landing-main-div {
+    background-size: 70% 60%;
+    background-position: 0 420px 0 0;
+  }
+  .instructor,
+  .student {
+    width: 350px;
+    height: 400px;
+  }
+  .landing-main-left {
+    left: 60px;
+  }
+
+  .landing-main-right {
+    right: 60px;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  #landing-main-div {
+    background-size: 70% 60%;
+    background-position: 0 410px 0 0;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #landing-main-div {
+    background-size: 70% 60%;
+    background-position: 0 400px 0 0;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #landing-main-div {
+    background-size: 65% 60%;
+    background-position: 0 420px 0 0;
+  }
+  .landing-main-text1 {
+    font-size: 44px;
+  }
+
+  .landing-main-text2 {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #landing-main-div {
+    background-size: 65% 60%;
+    background-position: 0 400px 0 0;
+  }
+  .landing-main-button {
+    width: 140px;
+    height: 50px;
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .instructor,
+  .student {
+    width: 320px;
+    height: 350px;
+  }
+  .landing-main-left {
+    left: 30px;
+  }
+
+  .landing-main-right {
+    right: 30px;
+  }
+  .pattern {
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #landing-main-div {
+    background-color: transparent;
+    background-size: 57% 40%;
+    background-position: 0 440px 0 0;
+  }
+}
+
+@media only screen and (max-width: 984px) {
+  #landing-main-div {
+    background-color: transparent;
+    background-size: 58% 40%;
+    background-position: 0 440px 0 0;
+  }
+  .know-more-div {
+    margin-top: -150px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #landing-main-div {
+    background-color: transparent;
+    background-size: 57% 35%;
+    background-position: 0 390px 0 0;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #landing-main-div {
+    background-size: 57% 35%;
+    background-position: 0 370px 0 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #landing-main-div {
+    background-size: 50% 35%;
+    background-position: 0 400px 0 0;
+  }
+  .landing-main-text1 {
+    font-size: 40px;
+  }
+
+  .landing-main-text2 {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  #landing-main-div {
+    background-size: 50% 35%;
+    background-position: 0 360px 0 0;
+  }
+  .instructor,
+  .student {
+    width: 280px;
+    height: 300px;
+  }
+  .landing-main-left {
+    top: 280px;
+  }
+
+  .landing-main-right {
+    top: 280px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #landing-main-div {
+    background-color: transparent;
+    background-size: 45% 30%;
+    background-position: 0 360px 0 0;
+  }
+  .landing-main-left {
+    top: 300px;
+  }
+
+  .landing-main-right {
+    top: 300px;
+  }
+  .instructor,
+  .student {
+    width: 200px;
+    height: 260px;
+  }
+  .pattern {
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .landing-main-text1 {
+    font-size: 36px;
+    line-height: 60px;
+  }
+
+  .landing-main-text2 {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 5px;
+  }
+  .landing-main-button {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #landing-main-div {
+    height: 750px;
+    background-color: transparent;
+    background-size: 48% 32%;
+    background-position: 0 280px 0 0;
+  }
+}
+
+@media only screen and (max-width: 516px) {
+  .landing-main-text1 {
+    font-size: 30px;
+    line-height: 48px;
+  }
+  .landing-main-button {
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #landing-main-div {
+    height: 750px;
+    background-size: 46% 30%;
+    background-position: 0 260px 0 0;
+  }
+}
+
+@media only screen and (max-width: 464px) {
+  #landing-main-div {
+    background-size: 42% 30%;
+    background-position: 0 260px 0 0;
+  }
+  .instructor,
+  .student {
+    width: 150px;
+    height: 260px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  #landing-main-div {
+    background-size: 45% 28%;
+    background-position: 0 250px 0 0;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  #landing-main-div {
+    background-size: 45% 28%;
+    background-position: 0 230px 0 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #landing-main-div {
+    height: 850px;
+    background-size: 45% 23%;
+    background-position: 0 215px 0 0;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .know-more-div {
+    margin-top: -280px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #landing-main-div {
+    background-size: 45% 26%;
+    background-position: 0 200px 0 0;
+  }
+  .landing-main-text1 {
+    font-size: 24px;
+    line-height: 42px;
+  }
+  .landing-main-text2 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .landing-main-button {
+    font-size: 16px !important;
+    margin-top: 10px;
+    padding: 0px 5px !important;
+    width: 110px;
+    height: 36px;
+  }
+  .pattern {
+    height: 420px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  #landing-main-div {
+    background-image: none;
+  }
+
+  .pattern {
+    height: 400px;
+  }
+  .know-more-div {
+    margin-top: -340px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .instructor,
+  .student {
+    width: 80px;
+    height: 180px;
+  }
+  .landing-main-left,
+  .landing-main-right {
+    top: 240px;
+  }
+  .pattern {
+    height: 320px;
+  }
+  .know-more-div {
+    margin-top: -420px;
+  }
+}

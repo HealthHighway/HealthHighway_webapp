@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Highway | Your Yoga Buddy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/navbar_vidhu.css">
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/landing-animation.css">
+    <link rel="icon" href="/images/hh-favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+    </style>
+</head>
+
+<body>
+    <%- include("partials/navbar") %>
+    <main>
+        <!-- landing -->
+        <%- include('partials/login-form') %>
+        <script type="text/javascript" src="/js/login.js"></script>
+        <div id="landing-main-div"> 
+            <div class="landing-main-center landing-main-center1">
+                <p class="landing-main-text1">Live Yoga Classes</p>
+                <div class="landing-line-text">
+                    <p class="landing-main-text2">From world yoga capital to your home</p>
+                </div>
+                <a class="landing-main-button desktop" onclick="scrollEase(1500, 'get-started-section')" style="cursor:pointer"  >Get Started</a>
+            </div>
+            <div class="animation-container">
+                <div class="animation_left"></div>
+                <div class="landing-main-center landing-main-center2">
+                    <p class="landing-main-text1">Live Yoga Classes</p>
+                    <div class="landing-line-text">
+                        <div class="animation_middle">
+                            <div class="middle-line"></div>
+                        </div>
+                        <p class="landing-main-text2">From world yoga capital to your home</p>
+
+                    </div>
+                    <a class="landing-main-button desktop" onclick="scrollEase(1500, 'get-started-section')" style="cursor:pointer" >Get Started</a>
+                </div>
+                <div class="animation_right"></div>
+            </div>
+            <script src="/landing-animation.js"></script>
+            <div class="landing-container"></div>
+            <div class="mobile-animation">
+                <img src="/images/landing-animation.gif" />
+            </div>
+        </div>
+        
+
+        <!-- landing (END)-->
+
+        <!-- know more div (START) --> 
+        <div class="know-more-div">
+            <a class="landing-main-button mobile" onclick="scrollEase(1500, 'get-started-section')" style="cursor:pointer" >Get Started</a>
+            <p style="text-align: center"><a onclick="scrollEase(800, 'usp')" style="cursor:pointer" class="know-more">Know More</a></p>
+            <p style="text-align: center"><a onclick="scrollEase(800, 'usp')" style="cursor:pointer" class="know-more"><i class="fa fa-arrow-down"></i></a></p>
+        </div><br><br><br><br><br>
+        <!-- know more div (END) -->
+
+        <!-- About-Us Section (START) -->
+        <section id="about-us" class="about-us-section">
+            <h2 class="about-us-heading">
+                <span>“</span><span style="color: #4CA9EE;" >Train</span> with the Best, <span style="color: #29E7CD">Forget</span> the Rest
+                <span>”</span>
+            </h2>
+            <!-- <div class="border"></div> -->
+            <p class="about-us-content">
+                Our platform connects high-spirited, devoted yogis with users who aspire to inculcate yoga in their daily lifestyle. We have a conviction that there should be no compromise when it comes to the well being of a individual. Health Highway is a private tutor for yoga, providing reliable and efficient solutions to ease your lifestyle requirements by tailoring them to your needs, your time and your lifestyle.
+            </p>
+        </section>
+        <!-- About-Us Section (END) -->
+
+        <!-- USP Section (START) -->
+        <section id="usp" class="usp-section">
+            <div class="usp-one">
+                <div class="usp-one-svg"></div>
+                <div class="left-item">
+                    <h3 class="usp-heading">Yoga for <span>Everyone</span></h3>
+                    <p class="usp-content">
+                        Why should there be any barrier when it comes to taking care of your health? Children, pregnant women, senior citizens we have Yoga routines for all!
+                    </p>
+                </div>
+            </div>
+            <div class="usp-two">
+                <div class="usp-two-svg"></div>
+                <div class="right-item">
+                    <h3 class="usp-heading">Yoga for <span>Everything</span></h3>
+                    <p class="usp-content">
+                        Discover Yoga routines tailored for your lifestyle and needs, be it a routine to boost your fitness, a remedy to manage diabetes or to learn a new fancy yoga pose. Here lies the answer to all your Yoga needs!
+                    </p>
+                </div>
+            </div>
+            <div class="usp-three">
+                <div class="usp-three-svg"></div>
+
+                <div class="left-item">
+                    <h3 class="usp-heading">Yoga for <span>Everytime</span></h3>
+                    <p class="usp-content">
+                        Not a morning person, no issues! No need to compromise on your health for the sake of your morning meeting. Choose from many session timings according to your comfort and schedule.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <script src="/js/usp-animation1.js"></script>
+        <!-- USP Section (END) -->
+
+        <!-- VIdeo Section -->
+        
+        <%- include('partials/video') %>
+      <!-- VIdeo Section (END) -->
+
+      <!-- Get Started -->
+      <section class="get-started" id="get-started-section">
+        <h2 class="gs-heading">Take your <span class="blue-text">First Step</span></h2>
+        <div class="gs-container">
+            <div class="private-session ">
+                <h3 class="gs-item-head">Private Sessions</h3>
+                <p class="tag-line">"I walk a lonely road..."</p>
+                <div class="perks-container">
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-white-tick.svg" alt="tick">
+                        <p class="perk-text">Marked Attention</p>
+                    </div>
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-white-tick.svg" alt="tick">
+                        <p class="perk-text">Choice of Instructor</p>
+                    </div>
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-white-tick.svg" alt="tick">
+                        <p class="perk-text">Tailored to your lifestyle</p>
+                    </div>
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-white-tick.svg" alt="tick">
+                        <p class="perk-text">For your pace and space</p>
+                    </div>
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-white-tick.svg" alt="tick">
+                        <p class="perk-text">Book whenever you want</p>
+                    </div>
+
+                </div>
+                <div class="after-hover-pvt">
+                    <img class="pvt-img" src="/images/Private.svg" alt="">
+                </div>
+                <a href="/1-on-1-Pricing-Plan" class="get-started-btn">Get Started</a>
+            </div>
+
+
+            <div class="group-session">
+                <div class="after-hover-grp">
+                    <img class="grp-img" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp_ssn.svg" alt="">
+                </div>
+                <h3 class="gs-item-head">Group Sessions</h3>
+                <p class="tag-line">"Ek aur Ek bane Gyarah"</p>
+                <div class="perks-container">
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-grey-tick.svg" alt="tick">
+                        <p class="perk-text">Make friends and ‘Pose’ together</p>
+                    </div>
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-grey-tick.svg" alt="tick">
+                        <p class="perk-text">Choice of Instructor</p>
+                    </div>
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-grey-tick.svg" alt="tick">
+                        <p class="perk-text">Timings as per class schedule </p>
+                    </div>
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-grey-tick.svg" alt="tick">
+                        <p class="perk-text">Choice of Group</p>
+                    </div>
+                    <div class="perk"><img class="perk-tick" src="https://raw.githubusercontent.com/vxdhu/Healthhighway-Compiled/f4fcaad049b73dd4b046835c22463f7b7770f715/images/grp-ssn-grey-tick.svg" alt="tick">
+                        <p class="perk-text">Group activities and challenges </p>
+                    </div>
+                </div>
+                <a href="/Group-Yoga-Classes" class="get-started-btn">Get Started</a>
+            </div>
+
+        </div>
+    </section>
+        <!-- Get Started (END) -->
+
+        <!-- Events -->
+        
+        
+        <!-- Events (END) -->
+
+        
+
+        <!-- Testimonials -->
+
+        <%- include('partials/testimonials') %>
+
+
+        <!-- Call-Us Section  -->
+        <%- include('partials/callback') %>
+        <!-- Call-Us Section (END) -->
+
+        <!-- login div -->
+        
+        <!-- login div (END) -->
+
+    </main>
+
+    <script type="text/javascript" src="/js/landing.js"></script>
+    <script type="text/javascript" src="/js/get-started.js"></script>
+    <script src="/js/video-component.js"></script>
+    <script src="/js/landing-animation.js"> </script>
+    <script src="/js/profile-form.js" ></script>
+
+    <script>
+        async function saveProfile(){
+            const id = '<%- _id %>';
+            console.log(id);
+            console.log(window.HH_Profile)
+            // const response = await fetch("http://192.168.29.48:5000/user/update-user-bio/"+id, {
+            //     method  :"POST",
+            //     mode : "same-origin",
+            //     headers : {
+            //     'Content-type' : 'application/json'
+            //     },
+            //     body : JSON.stringify({...window.HH_Profile})
+            // });
+
+            // const decode = await response.json();
+            // console.log(decode);
+            //   location.reload();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="/css/tavo-calendar.css" />
+    <link rel="stylesheet" href="/css/pricing.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/navbar_vidhu.css">
+    <link rel="stylesheet" href="/css/fix_budget.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/search-fliter.css">
+    <link rel="icon" href="/images/hh-favicon.png">
+    <title>Health Highway | Pricing</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/api:client.js"></script>
+</head>
+
+<body>
+    <%- include("partials/navbar") %>
+    <main>
+        <!-- Pricing Section (Start) -->
+        <div class="price-container">
+            <div class="price-heading">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Private Yoga Classes</p>
+            </div>
+            <div class="pricing-main">
+                <div class="price-benifits">
+                    <h3>100% Yoga | 0% Anything Else</h3>
+                    <ul class="benifit-items-container">
+                        <li class="benifit-item">
+                            <h4>Private Instructor</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                        <li class="benifit-item">
+                            <h4>Choice of Instructor (Male/Female)</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                        <li class="benifit-item">
+                            <h4>Choice of Timings</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                        <li class="benifit-item">
+                            <h4>Best Results</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                        <li class="benifit-item">
+                            <h4>Choice of Timings</h4>
+                            <img src="/images/Blue Tick.svg" alt="" />
+                        </li>
+                    </ul>
+                    <button class="addtocart" onclick="addToCart()" style="cursor: pointer;">
+                        <h2>Add to cart</h2>
+                        <img src="/images/newcart.svg" alt="" />
+                    </button>
+                    <div class="desktop-link">
+                      <a style="cursor:pointer" onclick="scrolltofunc('fixed-budget-private-section')" > <h4 >Have fixed budget ?</h4></a> 
+                    </div>
+                    
+                </div>
+                <div class="session-and-button">
+                    <div class="session-container">
+                        <div class="session-item">
+                            <label id="single" class="p-label">
+                                <input type="radio" for="single" name="plan" value="1" />
+                                <span class="checkmark"><img src="/images/tick-circle.svg" alt="" /></span>
+                            </label>
+                            <div class="session-title">
+                                <h2>Single session</h2>
+                            </div>
+                            <div class="session-price">
+                                <h3>INR <span>150</span></h3>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <label id="single" class="p-label">
+                                <input type="radio" for="16session" name="plan" value="16" />
+                                <span class="checkmark"><img src="/images/tick-circle.svg" alt="" /></span>
+                            </label>
+                            <div class="session-title">
+                                <h2>Yoga Fun</h2>
+                                <h3>16 Sessions</h3>
+                            </div>
+                            <div class="session-price">
+                                <p>2400</p>
+                                <h3>INR <span>2149</span></h3>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <label id="single" class="p-label">
+                                <input type="radio" for="16session" name="plan" value="20" />
+                                <span class="checkmark"><img src="/images/tick-circle.svg" alt="" /></span>
+                            </label>
+                            <div class="session-title">
+                                <h2>Yoga Buff</h2>
+                                <h3>20 Sessions</h3>
+
+                            </div>
+                            <div class="session-price">
+                                <p>3000</p>
+                                <h3>INR <span>2449</span></h3>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <label id="single" class="p-label">
+                                <input type="radio" for="16session" name="plan" value="24" />
+                                <span class="checkmark"><img src="/images/tick-circle.svg" alt="" /></span>
+                            </label>
+                            <div class="session-title">
+                                <h2>Yoga Addict</h2>
+                                <h3>24 Sessions</h3>
+
+                            </div>
+                            <div class="session-price">
+                                <p>3600</p>
+                                <h3>INR <span>2849</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-link">
+                        <button class="addtocart" onclick="addToCart()" style="cursor:pointer" >
+                            <h2>Add to cart</h2>
+                            <img src="/images/newcart.svg" alt="" />
+                        </button>
+                        <a style="cursor:pointer" onclick="scrolltofunc('fixed-budget-private-section')"  >Fixed budget ?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const addToCart = () => {
+                const _id = '<%- _id %>';
+                if(_id.length == 0)
+                {
+                    infoModalOpenFunction("/images/notLoggedInfo.svg", "Please login before booking Session");
+                }else
+                {
+                    var checked = "";
+                    var ele = document.getElementsByName('plan');
+                    for(i = 0; i < ele.length; i++) {
+                        if(ele[i].checked)
+                        {
+                            checked = ele[i].value;
+                            break;
+                        }
+                    }
+                    if(checked.length === 0){
+                        infoModalOpenFunction("/images/notLoggedInfo.svg", "Please Choose a Session Package");
+                    }
+                    else
+                    {
+                        // alert(checked);
+                        location.href="/checkout/"+checked;
+                    }
+                }
+            }
+        </script>
+
+        <!-- Pricing Section (End) -->
+        <!-- Pricing Section (End) -->
+
+        <!-- Onsite Form -->
+        
+        <!-- Onsite Form -->
+
+
+
+        <!-- USP Section (START) -->
+        <section id="usp" class="usp-section">
+            <div class="usp-one">
+                <div class="usp-one-svg"></div>
+                <div class="left-item">
+                    <h3 class="usp-heading"><span>One-on-One</span> Interaction</h3>
+                    <p class="usp-content">
+                        Practice Yoga with a personal instructor to guide you through your fitness journey. Easy to use video call format that allows maximum interaction.
+                    </p>
+                </div>
+            </div>
+            <div class="usp-two">
+                <div class="usp-two-svg"></div>
+                <div class="right-item">
+                    <h3 class="usp-heading"><span>Flexible </span>Timings</h3>
+                    <p class="usp-content">
+                        There is no perfect time to work on your fitness. Schedule a session with your instructor whenever you like as per your convenience.
+                    </p>
+                </div>
+            </div>
+            <div class="usp-three">
+                <div class="usp-three-svg"></div>
+                <div class="left-item">
+                    <h3 class="usp-heading"><span>Personal</span> Diet Coach</h3>
+                    <p class="usp-content">
+                        Top your fitness routine with a daily diet plan designed by an expert diet coach. Each coach will develop a personalized plan tailored to your health and lifestyle.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <script src="/js/usp-animation2.js"></script>
+        <!-- USP Section (END) -->
+
+        <!-- VIdeo Section -->
+        <%- include('partials/video') %>
+        <!-- VIdeo Section (END) -->
+
+
+        <!-- Testimonials Section (END) -->
+        <%- include('partials/testimonials') %>
+        <!-- Testimonials(end) -->
+         <!-- Fixed-Budget Section -->
+        <div class="fixed-budget-con" id="fixed-budget-private-section">
+            <div class="fixed-budget">
+                <a href="/Group-Yoga-Classes"  ><h3>Have a fixed budget for fitness ?</h3></a>
+                <p>
+                Dont worry we got you covered. We bring you a variety of group
+                sessions that suits your need.
+                </p>
+            </div>
+            <div class="fix-grp-card-container">
+                <% sessions.forEach(session => { %>
+                        <div style="cursor: pointer;" onclick="location.href='/Group-Yoga-Classes/<%= session._id %>'" class="new-grp-card">
+                            <% if(session.PARTICIPANTS>=session.LIMIT){ %>
+                                <div class="booking-status-tag red-tag">Session Over booked</div>
+                            <% } %>
+                            <img src=<%= session.IMG %> alt="" style="width:100%; height:auto" />
+                            <div class="grp-card-txt">
+                            <div class="card-title">
+                                <h3><%= session.SESSION_NAME %></h3>
+                                <p>by <%= session.TNAME %></p>
+                            </div>
+                            <div class="session-time">
+                                <p><%= session.TIME.substring(0, 5) + session.TIME.substring(8, 11) %></p>
+                            </div>
+                            </div>
+                        </div>
+                <% }) %>
+            </div>
+        </div>
+        <!-- Fixed-Budget Section (End) -->
+
+        <!-- Call-Us Section  -->
+        <%- include('partials/callback') %>
+        <!-- Call-Us Section (END) -->
+
+        <!-- login div -->
+        <%- include('partials/login-form') %>
+        <!-- login div (END) -->
+
+    </main>
+
+
+    <script src="/js/video-component.js"></script>
+    <script src="/js/pricing.js"></script>
+    <script src="/js/landing.js"></script>
+    <!-- <script src="/js/form.js"></script> -->
+    <script type="text/javascript" src="/js/login.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>  
+    <script>
+        var socket = io();
+        function payPrivate(private_session){
+            const _id = '<%- _id %>';
+            socket.emit('givedata', {private_session, _id});
+            document.getElementById("payNow").style.pointerEvents="none";
+        }
+
+        socket.on('welcome', async (msg) => {
+            console.log(msg);
+            var options = {
+                "key" : "rzp_test_gxIWjen8OxxznS",
+                "amount" : msg.paymentData.amount,
+                "currency" : msg.paymentData.currency,
+                "name": "Health Highway",
+                "description" : "Test Transaction",
+                "order_id" : msg.paymentData.id,
+                "handler" : async (res) => {
+                   console.log("payment done successfully");
+                   const response = await fetch("https://api.healthhighway.co.in/data/create-private/"+msg.sessionInfo._id, {
+                       method : "POST",
+                       timeout : 5000,
+                       headers : {
+                           "Content-Type" : "application/json"
+                       },
+                       body : JSON.stringify({...msg.sessionInfo.private_session})
+                   });
+                   console.log(response.status);
+                   if(response.status == 200) {
+                       const user = await response.json();
+                       console.log(user);
+                       infoModalOpenFunction("/images/sessionBooked.svg", "Hurray! Session Booked");
+                   }
+                   else
+                   {
+                       infoModalOpenFunction("/images/notLoggedInfo.svg", "Oops! Some Network issue, please try later");
+                       console.log("failed called");
+                   }
+                   setTimeout(() => {
+                    window.location.replace("/my-profile");
+                   }, 2000);
+                },
+                "prefill" : {
+                }
+            }
+            console.log(options);
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+            document.getElementById("payNow").style.pointerEvents="auto";
+            rzp1.on('payment.failed', function (response){
+               infoModalOpenFunction("/images/notLoggedInfo.svg", "Oops! Some Network issue, please try later");
+               setTimeout(() => {
+                 window.location.replace("/");
+               }, 2000);
+           })
+        })
+   </script>
+</body>
+
+</html>

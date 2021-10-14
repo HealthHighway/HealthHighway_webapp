@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  .search-section {
+    font-family: "Montserrat", sans-serif;
+    padding: 2em 5%;
+  }
+  
+  #search-bar {
+    padding: .6em 1em;
+    width: 88%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: none;
+    background-color: #EDF7FF;
+    font-size: 1rem;
+    color: #6B6B6B;
+  }
+  
+  #search-bar::placeholder {
+    color: #4ca9ee;
+  }
+  
+  #search-bar:focus {
+    outline: none;
+  }
+  
+  @media (min-width: 768px) {
+    #search-bar {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    #search-bar {
+      width: 40%;
+      font-size: 1.2rem;
+    }
+  }
+  
+  .sessions-section {
+    font-family: "Montserrat", sans-serif;
+    padding: 2em 7%;
+  }
+  
+  .headingandnavigation {
+    display: flex;
+    margin: 1em 0;
+    justify-content: center;
+    padding: 2em 0;
+  }
+  
+  .img-heading {
+    display: flex;
+    align-items: center;
+  }
+  
+  .img-heading img {
+    margin-right: 1em;
+  }
+  
+  .sessions-heading {
+    font-size: 19px;
+    color: #3C4860;
+  }
+  
+  .new-ssn-card {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    border-radius: 1em;
+    box-shadow: 5.14976px 8.58293px 11.1578px rgba(76, 169, 238, 0.15);
+  }
+  
+  .new-ssn-card img {
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+  }
+  
+  .ssn-card-txt {
+    padding: .2em .6em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .ssn-title h3 {
+    color: #4ca9ee;
+  }
+  
+  .ssn-title p {
+    color: #6B6B6B;
+    font-weight: 500;
+    padding: .2em 0;
+  }
+  
+  .ssn-time {
+    padding: .2em .5em;
+    border-radius: .25em;
+    background-color: #29E7CD;
+    min-width: max-content;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .overbooked::after,
+  .starting-soon::after {
+    content: 'Overbooked';
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .25em 1em;
+    width: max-content;
+    background-color: red;
+    border-radius: 1em;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: .8rem;
+  }
+  
+  .starting-soon::after {
+    content: 'Session Starting Soon';
+    background-color: orange;
+    color: white;
+  }
+  
+  @media (min-width: 768px) {
+    .headingandnavigation {
+      justify-content: flex-start;
+    }
+    .sessions-heading {
+      font-size: 1.6rem;
+    }
+    .ssn-card-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+      row-gap: 3em;
+    }
+    .new-ssn-card {
+      margin: 0 1em;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .ssn-card-container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .ssn-card-txt {
+      padding: .8em 1em;
+    }
+    .new-ssn-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .sessions-heading {
+      font-size: 2rem;
+    }
+  }

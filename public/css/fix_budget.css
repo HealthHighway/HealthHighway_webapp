@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.fixed-budget-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fix-grp-card-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1100px;
+  margin-bottom: 5rem;
+}
+.fixed-budget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  margin-top: 1rem;
+  text-align: center;
+}
+.fixed-budget h3 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #383838;
+}
+.fixed-budget p {
+  font-weight: 500;
+  font-size: 16px;
+  color: #585858;
+  padding: 20px 0px;
+}
+.new-grp-card > img {
+  width: 100%;
+}
+
+.new-grp-card {
+  width: 326.15px;
+  filter: drop-shadow(5.14976px 8.58293px 11.1578px rgba(76, 169, 238, 0.2));
+  border-radius: 13px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.grp-card-txt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 13px;
+  background-color: white;
+}
+.card-title {
+  max-width: 200px;
+}
+.card-title h3 {
+  font-weight: 600;
+  font-size: 18px;
+  color: #4ca9ee;
+}
+.card-title p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6b6b6b;
+  padding-top: 3px;
+}
+.session-time p {
+  background: #29e7cd;
+  border-radius: 6.19278px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fffcfc;
+  padding: 5px 6px;
+}
+@media (max-width: 1150px) {
+  .fix-grp-card-container {
+    width: 80%;
+  }
+}
+@media (max-width: 920px) {
+  .fix-grp-card-container {
+    width: 90%;
+  }
+}
+@media (max-width: 813px) {
+  .fix-grp-card-container {
+    width: unset;
+    flex-direction: column;
+  }
+  .fixed-budget p {
+    width: 460px;
+  }
+}
+@media (max-width: 460px) {
+  .fixed-budget p {
+    width: 80%;
+    font-size: 12px;
+  }
+  .fixed-budget h3 {
+    font-size: 18px;
+  }
+  .new-grp-card {
+    width: 280px;
+    margin: 12px 0px;
+  }
+  .card-title h3 {
+    font-size: 16px;
+  }
+  .card-title {
+    max-width: 175px;
+  }
+  .card-title p {
+    font-size: 14px;
+  }
+  .session-time p {
+    font-size: 14px;
+  }
+}

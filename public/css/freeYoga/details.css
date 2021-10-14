@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+
+#about-div {
+  margin-top: 70px;
+  width: 40vw;
+}
+
+.about-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  color: #333741;
+}
+
+.about-sub-div {
+  margin-left: 10%;
+}
+
+.about-content {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #5a6885;
+  margin-top: 25px;
+}
+
+.about-sub-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  color: #333741;
+  margin-top: 25px;
+}
+
+ol {
+  margin-top: 12px;
+}
+
+.details-div {
+  display: flex;
+  padding: 120px 10vw;
+}
+
+.details-div img {
+  margin-top: 150px;
+}
+
+ol li {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #5a6885;
+}
+
+@media only screen and (max-width: 1200px) {
+  .details-div {
+    padding: 80px 15vw 80px 12vw;
+  }
+  #about-div {
+    width: 40vw;
+  }
+  .details-div img {
+    width: 33vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .details-div img {
+    margin-top: 240px;
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #about-div {
+    width: 80vw;
+  }
+  .details-div img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about-title,
+  .about-content {
+    text-align: start;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #about-div {
+    display: none;
+    margin-bottom: 50px;
+  }
+  .about-content,
+  li {
+    font-size: 12px !important;
+    color: #5a6885;
+  }
+  .about-sub-title,
+  .about-title {
+    font-size: 16px;
+    line-height: 10px;
+  }
+  .details-div {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+  #overview-div {
+    margin-top: 24px;
+  }
+  #benefits-mobile-div {
+    margin-top: -20px;
+  }
+  .detailed-landing-main-right {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #about-div {
+    margin: 70px 10vw 50px 10vw;
+    width: 80vw;
+  }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/hh-favicon.png">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/navbar_vidhu.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap&family=Open+Sans:wght@300;600&display=swap"');
+    </style>
+    <title>Edit Profile - Health Highway</title>
+
+    <!-- <script>
+        const client = algoliasearch('PF77W5ATP0', '7cf45f6f20bc5ed3cace55bcb04ab8fa');
+        const index = client.initIndex('healthhighway');
+        index
+            .search("Neeraj")
+            .then(({ hits }) => {
+                console.log(hits);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    </script> -->
+
+</head>
+
+<body>
+
+    <header class="header-for-navbar">
+        <div class="navbar-top">
+            <div class="brandwrap-top">
+                <a href="index.html"><img src="https://ik.imagekit.io/healthhighway2020/Group_1YBxSKuiyUd.svg?updatedAt=1633715883579" alt="logo"></a>
+            </div>
+            <nav>
+                <ul class="nav-links-top">
+                    <li class="desk-link-nav"><a href="#">Blogs</a></li>
+                    <!-- <li class="desk-link-nav"><a href="#">Support</a></li> -->
+                    <li><a href="/logout" class="joinbtn" id="landing-joinus">Log out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="form-container">
+            <div id="mainform"  >
+                <label for="goal" class="main-label">Goal/Problem</label>
+                <div class="select-editable">
+                    <select onchange="this.nextElementSibling.value=this.value" id="goal">
+                        <option value="Select">Select</option>
+                        <option value="Lose Weight">Lose Weight</option>
+                        <option value="Mindfullness">Mindfullness</option>
+                        <option value="Heal Ailments">Heal Ailments</option>
+                        <option value="Advanced Yoga">Advanced Yoga</option>
+                        <option value="Get in Shape">Get in Shape</option>
+                    </select>
+                    <input type="text" name="format" value="<%= BIO.goal?BIO.goal:'' %>" id="other" />
+                </div>
+                <div class="basic-img">
+                    <label class="main-label">Basic Information</label>
+                    <div class="b-info">
+                        <div class="age-div">
+                            <label for="fage" class="sub-label">Age</label>
+                            <input type="text" id="fage" value="<%= BIO.age?BIO.age:'' %>" required>
+                        </div>
+                        <div class="weight-div">
+                            <label for="fweight" class="sub-label">Weight (in kg)</label>
+                            <input type="text" id="fweight" value="<%= BIO.weight?BIO.weight:'' %>" required>
+                        </div>
+                        <div class="profession-div">
+                            <label for="fprofession" class="sub-label">Profession</label>
+                            <input type="text" id="fprofession" value="<%= BIO.profession?BIO.profession:'' %>" required>
+                        </div>
+                        <div class="language-div">
+                            <label for="flanguage" class="sub-label">Language Preference</label>
+                            <input type="text" id="flanguage" value="<%= BIO.language?BIO.language:'' %>" required>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img id="yoga" src="https://ik.imagekit.io/healthhighway2020/yoga-se-hi-hoga_IW6O0AqhuU.gif?updatedAt=1631893349027" alt="gif">
+                    </div>
+                </div>
+                
+
+                <div class="btns">
+                    <button class="btn sel" type="button" onclick="submit()" >Submit</button>
+
+                </div>
+
+            </div>
+        </section>
+
+        
+    </main>
+
+    <script>
+        function idv(id){
+             return document.getElementById(id).value;
+        }
+        async function submit() {
+            const _id = '<%- _id %>';
+            let goal = idv('other');
+            let age = idv('fage');
+            let weight = idv('fweight');
+            let language = idv('flanguage');
+            let profession = idv('fprofession');
+            console.log( goal, weight, age, profession, language)
+            const response = await fetch("/edit-profile", {
+                method  :"POST",
+                mode : "same-origin",
+                headers : {
+                    'Content-type' : 'application/json'
+                },
+                body : JSON.stringify({ goal, weight, age, profession, language})
+            })
+            location.replace("/my-profile");
+        }
+        
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <link rel="icon" href="/images/hh-favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        </head>
+
+        <body>
+          <div id="jaas-container" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:99;" />
+        </body>
+
+        <script src='https://8x8.vc/external_api.js'></script>
+
+        <script type="text/javascript">
+          Object.defineProperty(navigator, 'userAgent', {
+              get: function () { return 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36'; }
+          });
+          const options = {
+              height: '100%',
+              width: '100%',
+              roomName: "/<%- room %>",
+              parentNode: document.querySelector('#jaas-container'),
+              configOverwrite : {
+                prejoinPageEnabled: true,
+                toolbarButtons: ['hangup', 'microphone', 'camera']
+              }
+            }
+          
+            const api = new JitsiMeetExternalAPI("8x8.vc", options);
+
+            api.addEventListener('videoConferenceLeft', (data) => {
+              console.log(data)
+              location.replace("/my-profile");
+            })
+
+            window.addEventListener('unload', (event) => {
+            api.dispose();
+            console.log('Jitsi Meet disposed');
+            });
+
+        </script>
+    </html>

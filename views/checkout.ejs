@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/navbar_vidhu.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" href="/images/hh-favicon.png">
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap&family=Open+Sans:wght@300;600&display=swap"');
+    </style>
+
+</head>
+
+<body>
+
+    <%- include("partials/navbar") %>
+    
+    <main>
+        <%- include('partials/login-form') %>
+        <section class="form-container">
+            <div id="mainform"  >
+                <label for="goal" class="main-label">Goal</label>
+                <div class="select-editable">
+                    <select onchange="this.nextElementSibling.value=this.value" id="goal">
+                      <option value="Select">Select</option>
+                      <option value="Hypertension">Hypertension</option>
+                      <option value="Diabetes">Diabetes</option>
+                      <option value="Insomnia">sleeplessness</option>
+                    </select>
+                    <input type="text" name="format" value="" id="other" />
+                </div>
+                <div class="basic-img">
+                    <label class="main-label">Basic Information</label>
+                    <div class="b-info">
+                        <div class="name-div">
+                            <label for="fname" class="sub-label">Name</label>
+                            <input type="text" id="fname" required>
+                        </div>
+                        <div class="age-div">
+                            <label for="fage" class="sub-label">Age</label>
+                            <input type="text" id="fage" required>
+                        </div>
+                        <div class="weight-div">
+                            <label for="fweight" class="sub-label">Weight (in kg)</label>
+                            <input type="text" id="fweight" required>
+                        </div>
+                        <div class="pref-div">
+                            <label class="sub-label">Trainer Preference</label>
+                            <input type="radio" id="radio1" name="trainer" value="Male" checked>
+                            <label class="sub-label" for="radio1">Male</label>
+                            <input type="radio" id="radio2" name="trainer" value="Female">
+                            <label class="sub-label" for="radio2">Female</label>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img id="yoga" src="https://ik.imagekit.io/healthhighway2020/yoga-se-hi-hoga_IW6O0AqhuU.gif?updatedAt=1631893349027" alt="gif">
+                    </div>
+
+
+                </div>
+                <label class="main-label">Schedule Session</label>
+                <div class="ssn-div">
+                    <div class="time-div">
+                        <label class="sub-label">Time Slot</label>
+                        <div class="timing-slots"><span id="selected-time">Choose</span> <img src="https://ik.imagekit.io/healthhighway2020/Clock__01AQB7Yn.png?updatedAt=1633421331660" width="20px" height="20px" alt="png"></div>
+                    </div>
+
+                    <div class="day-div">
+                        <label class="sub-label">Routine</label>
+                        <div class="day-slots"><span id="selected-days">Choose</span> <img src="https://ik.imagekit.io/healthhighway2020/Date_4_MCtZ27r.png?updatedAt=1633421363761" width="20px" height="20px" alt="png"></div>
+                    </div>
+                    <div class="time-grid disabled">
+                        <input type="radio" id="t1" name="timing" value="6:00 AM">
+                        <label for="t1">6 AM</label>
+                        <input type="radio" id="t2" name="timing" value="7:00 AM">
+                        <label for="t2">7 AM</label>
+                        <input type="radio" id="t3" name="timing" value="8:00 AM">
+                        <label for="t3">8 AM</label>
+                        <input type="radio" id="t4" name="timing" value="9:00 AM">
+                        <label for="t4">9 AM</label>
+                        <input type="radio" id="t5" name="timing" value="4:00 PM">
+                        <label for="t5">4 PM</label>
+                        <input type="radio" id="t6" name="timing" value="5:00 PM">
+                        <label for="t6">5 PM</label>
+                        <input type="radio" id="t7" name="timing" value="6:00 PM">
+                        <label for="t7">6 PM</label>
+                        <input type="radio" id="t8" name="timing" value="7:00 PM">
+                        <label for="t8">7 PM</label>
+                        <input type="radio" id="t9" name="timing" value="8:00 PM">
+                        <label for="t9">8 PM</label>
+                    </div>
+                    <div class="day-grid disabled">
+                        <input type="checkbox" id="day1" name="days" value="Mon">
+                        <label for="day1">Mon</label>
+                        <input type="checkbox" id="day2" name="days" value="Tue">
+                        <label for="day2">Tue</label>
+                        <input type="checkbox" id="day3" name="days" value="Wed">
+                        <label for="day3">Wed</label>
+                        <input type="checkbox" id="day4" name="days" value="Thu">
+                        <label for="day4">Thu</label>
+                        <input type="checkbox" id="day5" name="days" value="Fri">
+                        <label for="day5">Fri</label>
+                        <input type="checkbox" id="day6" name="days" value="Sat">
+                        <label for="day6">Sat</label>
+                        <input type="checkbox" id="day7" name="days" value="Sun">
+                        <label for="day7">Sun</label>
+                    </div>
+                    <div class="date-div">
+                        <label class="sub-label" for="date">Starting date *( Please select a date atleast 1 day ahead of current time 'n' date )</label>
+                        <input type="date" id="date">
+                    </div>
+                </div>
+
+                <div class="btns">
+                    <button class="btn sel" type="button" onclick="submit()" >Checkout</button>
+
+                </div>
+
+            </div>
+        </section>
+
+        
+    </main>
+
+
+
+    <script src="/js/newform.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script> 
+    <script>
+        function timeConvertor(hrs, mins, zone){
+            var temp = "";
+            (zone == "PM")?(temp+=String(Number(hrs)+12)):(temp+=(String(hrs).length == 1)?"0"+String(hrs):String(hrs));
+            temp+=":";
+            temp+=(Number(mins) == 0)?"00":String(mins);
+            temp+=":00";
+            return temp;
+        }
+        function idv(id){
+             return document.getElementById(id).value;
+        }
+        function submit(){
+            const _id = '<%- _id %>';
+            if(_id.length == 0)
+            {
+                infoModalOpenFunction("/images/notLoggedInfo.svg", "Please login before booking Session");
+                return;
+            }
+            let goal = idv('other');
+            let name = idv('fname');
+            let age = idv('fage');
+            let weight = idv('fweight');
+            let pref='';
+            let trainer = document.getElementsByName('trainer');
+            for (i = 0; i < trainer.length; i++) {
+                if (trainer[i].checked)
+                    pref = trainer[i].value;
+            }
+            let days=[];
+            var checkboxes = document.getElementsByName('days');
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    days.push(checkbox.value);
+                }
+            })
+            let timing='';
+            let timeRadio = document.getElementsByName('timing');
+            for (i = 0; i < timeRadio.length; i++) {
+                if (timeRadio[i].checked)
+                    timing = timeRadio[i].value;
+            }
+            timing = timeConvertor(timing.substring(0, 1), timing.substring(2, 4), timing.substring(5));
+            console.log("this is the timings : ", timing)
+            let starting_date = idv('date');
+            
+            console.log(name, age, weight, pref, days, timing, idv('date'));
+            if(name.length == 0 || age.length == 0 || goal.length == 0 || weight.length == 0 || pref.length == 0 || days.length == 0 || timing.length == 0 || starting_date.length == 0) {
+                infoModalOpenFunction("/images/notLoggedInfo.svg", "Please enter all the details before booking");
+            }
+            else
+            {
+                let daySet = new Set();
+                days.forEach(day => {
+                    console.log("the week days selected are : ",day)
+                    daySet.add(day);
+                })
+                let daySchedule={};
+                let temp = new Date(starting_date);
+                console.log(temp);
+                console.log(temp.toLocaleDateString('en-GB'));
+                console.log("Starting date : ", temp.toLocaleDateString('en-GB').substring(0, 2)+"-"+temp.toLocaleDateString('en-GB').substring(3, 5)+"-"+temp.toLocaleDateString('en-GB').substring(6));
+                let count = 0, noc = '<%- noc %>';
+                console.log("this is the noc : ", noc)
+                while(count < noc){
+                    console.log("before checking : ", temp.toDateString())
+                    if(daySet.has(temp.toDateString().substring(0, 3))) {
+                        console.log("here : ", temp);
+                        daySchedule[temp.toLocaleDateString('en-GB').substring(0, 2)+"-"+temp.toLocaleDateString('en-GB').substring(3, 5)+"-"+temp.toLocaleDateString('en-GB').substring(6)] = {date : temp.toLocaleDateString('en-GB').substring(0, 2)+"-"+temp.toLocaleDateString('en-GB').substring(3, 5)+"-"+temp.toLocaleDateString('en-GB').substring(6), time : timing, sessionAttended : false}
+                        count++;
+                    }
+                    temp = new Date(temp.setDate(temp.getDate() + 1)) 
+                }
+                console.log(daySchedule);
+                let private_session = {
+                    PROBLEM : goal,
+                    NAME : name,
+                    WEIGHT : weight,
+                    AGE : age,
+                    PRICE : '<%- price %>',
+                    DAYS : days,
+                    NOC : '<%- noc %>',
+                    TIMING : timing,
+                    GENDER_PREF : pref,
+                    CALENDAR : daySchedule
+                }
+                console.log(private_session);
+                var socket = io();
+                const _id = '<%- _id %>';
+                socket.emit('givedata', {private_session, _id});
+                socket.on('welcome', async (msg) => {
+                    console.log(msg);
+                    var options = {
+                        "key" : "rzp_test_0Yx7yX4fQ8wjrf",
+                        "amount" : msg.paymentData.amount,
+                        "currency" : msg.paymentData.currency,
+                        "name": "Health Highway",
+                        "description" : "Test Transaction",
+                        "order_id" : msg.paymentData.id,
+                        "handler" : async (res) => {
+                            console.log("payment done successfully");
+                            const response = await fetch("/create-private/"+_id, {
+                                method : "POST",
+                                timeout : 5000,
+                                headers : {
+                                    "Content-Type" : "application/json"
+                                },
+                                body : JSON.stringify({...private_session})
+                            })
+                            
+                            const decode = await response.json();
+                            console.log(decode);
+                            infoModalOpenFunction("/images/sessionBooked.svg", "Hurray! Session Booked");
+                            setTimeout(() => {
+                                window.location.replace("/");
+                            }, 2000)
+                        },
+                        "prefill" : {
+                        }
+                    }
+                    console.log(options);
+                    var rzp1 = new Razorpay(options);
+                    rzp1.open();
+                    rzp1.on('payment.failed', function (response){
+                        infoModalOpenFunction("/images/notLoggedInfo.svg", "Oops! Some Network issue, please try later");
+                        setTimeout(() => {
+                            window.location.replace("/");
+                        }, 2000);
+                    })
+                })
+            }
+        }
+    </script>
+
+</body>
+
+</html>
