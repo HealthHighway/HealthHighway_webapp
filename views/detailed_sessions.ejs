@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/navbar_vidhu.css">
-    <link rel="stylesheet" href="/css/freeYoga/landingDiv.css">
-    <link rel="stylesheet" href="/css/freeYoga/details.css">
-    <link rel="stylesheet" href="/css/freeYoga/call.css">
-    <link rel="stylesheet" href="/css/login.css" />      
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@700&family=Work+Sans:wght@500;600&display=swap');
+    </style>
     <link rel="stylesheet" href="/css/main.css" />      
+    <link rel="stylesheet" href="/css/navbar_vidhu.css">
+    <link rel="stylesheet" href="/css/detailed_page.css" />    
+    <link rel="stylesheet" href="/css/login.css" />     
+    <link rel="stylesheet" href="/css/callback.css" />
+    <link rel="stylesheet" href="/css/footer.css" /> 
     <title>Health Highway | Your Yoga Buddy</title>
     <link rel="icon" href="/images/hh-favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -21,64 +23,162 @@
 
 <body>
     <%- include("partials/navbar") %>
-    
+
     <main>
-        <!-- landing -->
-        <div id="detailed-landing-main-div">
-            <div class="detailed-landing-main-left">
-                <p class="title-para"><span class="title"><%= session.SESSION_NAME %> </span><span class="sub-title"></span>by <%= session.TNAME %></span></p>
-                <div class="points-div">
-                    <div class="points-top">
-                        <div class="points-common">
-                            <div class="points">
-                                <div>
-                                    <p class="rupees">₹</p>
-                                </div>
-                                <p class="points-text"><%= session.PRICE %> INR <span>Per Month</span></p>
-                            </div>
-                            <div class="points">
-                                <div><img src='/images/calendar.png'></div>
-                                <p class="points-text">Every <%= session.DAYS.toString() %></p>
-                            </div>
-                            <div class="points">
-                                <div><img src='/images/Clock.png'></div>
-                                <p class="points-text"><%= session.TIME %></p>
-                            </div>
-                            <div class="points">
-                                <div><img src='/images/Duration.png'></div>
-                                <p class="points-text">45 Minutes</p>
-                            </div>
-                            <div class="points">
-                                <div><img src='/images/Graph.png'></div>
-                                <p class="points-text"><%= session.LEVEL %> Level</p>
-                            </div>
-                            <div class="points">
-                                <div><img src='/images/people.png'></div>
-                                <p class="points-text">Trusted by <%= session.PARTICIPANTS==1?session.PARTICIPANTS+" Person":session.PARTICIPANTS+" People" %> </p>
-                            </div>
+        <div class="grid-container">
+            <section class="session-intro">
+
+                <img class="session_img" src=<%= session.IMG %> alt="ssn-img" />
+
+
+                <!-- <div class="trainer-div">
+                    <div class="trainer_details">
+                        <img class="trainer_icon" src="https://ik.imagekit.io/healthhighway2020/image2_e0GAGi6S_.png?updatedAt=1631714377933" alt="trainer-ico">
+                        <div class="trainer-text">
+                            <p>Trainer</p>
+                            <p class="trainer_name">Honey Singh</p>
                         </div>
                     </div>
-                    <div class="points-bottom">
-                        <p class="points-title"><img style="margin-right: 20px;" src='/images/right.png'>Suitable/ Beneficial for these people</p>  
-                        <div class="points-recommended">
-                            <% session.FP.forEach(fp => { %>
-                                <p class="points-text points"><%= fp %></p>
-                            <% }) %> 
-                        </div>
-                        <p class="points-title"><img style="margin-right: 20px;" src='/images/wrong.png'>Not advisable for these People</p> 
-                        <div class="points-not-recommended">
-                            <% session.NFP.forEach(nfp => { %>
-                                <p class="points-text points"><%= nfp %></p>
-                            <% }) %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="detailed-landing-main-right">
-                <div class="slides fade" style="overflow: hidden;border-radius: 10px;">
-                    <img src=<%= session.IMG %> style="object-fit : cover" >
-                </div><br><br>
-                <div class="enroll-div">
+                    <button class="like-btn"> <img src="https://ik.imagekit.io/healthhighway2020/thumbsup_eLssLMzbL9u.svg?updatedAt=1634054577230" alt="like"></button>
+                </div> -->
+
+                <script src="/socket.io/socket.io.js"></script>
+                <script src="https://checkout.razorpay.com/v1/checkout.js"></script> 
+                <script>
+                    isActive = () => {
+                        let startDate = new Date('<%-session.STARTING_DATE %>');
+                        let currDate = new Date();
+                        return startDate-currDate>0?false:true;
+                    }
+                    saveGrp = async (USERID, GRPID, GROUP) => {
+                        let present=false;
+                        GROUP.forEach(group => {
+                            if(group.GRPID === GRPID){
+                                present=true;
+                                return;
+                            }
+                        })
+                        console.log(present);
+                        if(present)
+                        {
+                            infoModalOpenFunction("/images/alreadyBookedInfo.svg", "Relax! Your Session is Booked Already");
+                            return;
+                        }
+                        
+                        // console.log("This is the starting date");
+                        // console.log(this.props.STARTING_DATE)
+                        let STARTING_DATE_FOR_USER = '<%-session.STARTING_DATE %>';
+                        if(isActive()){
+                            STARTING_DATE_FOR_USER = new Date();
+                            STARTING_DATE_FOR_USER = STARTING_DATE_FOR_USER.toGMTString();
+                        }
+                        console.log("this is final starting date")
+                        console.log(STARTING_DATE_FOR_USER);
+                        let END_DATE_FOR_USER = new Date(STARTING_DATE_FOR_USER);
+                        // console.log(END_DATE_FOR_USER);
+                        if( '<%-FSTA %>' > '<%- FSA %>' && '<%- session.FREEFOR %>' > 0){
+                            //save without pay
+                            END_DATE_FOR_USER = new Date( END_DATE_FOR_USER.setDate(END_DATE_FOR_USER.getDate() + Number('<%- session.FREEFOR %>')) )
+                            END_DATE_FOR_USER=END_DATE_FOR_USER.toGMTString();
+                            console.log("final end-date without payment");
+                            console.log(END_DATE_FOR_USER)
+                            const response = await fetch("/create-group", {
+                                method  :"POST",
+                                mode : "same-origin",
+                                headers : {
+                                'Content-type' : 'application/json'
+                                },
+                                body : JSON.stringify({
+                                    USERID : '<%- _id %>',
+                                    GRPID : '<%- session._id %>',
+                                    STARTING_DATE_FOR_USER, END_DATE_FOR_USER
+                                })
+                            });
+        
+                            const decode = await response.json();
+                            console.log(decode);
+                            infoModalOpenFunction("/images/sessionBooked.svg", "Hurray! Session Booked");
+                            setTimeout(() => {
+                                window.location.replace("/");
+                            }, 2000)
+                            // this.saveSessionOnBackEnd(USERID, GRPID, STARTING_DATE_FOR_USER, END_DATE_FOR_USER);
+                        }
+                        else
+                        {
+                            //save after payment
+                            END_DATE_FOR_USER = new Date( END_DATE_FOR_USER.setDate(END_DATE_FOR_USER.getDate() + 30) )
+                            END_DATE_FOR_USER=END_DATE_FOR_USER.toGMTString();
+                            console.log("Final date for user before payment")
+                            console.log(END_DATE_FOR_USER);
+                            let socket = io();
+                            const _id = '<%- _id %>';
+                            socket.emit('givedata', {private_session : {PRICE : '<%- session.PRICE %>'}, _id});
+                            socket.on('welcome', async (msg) => {
+                                console.log(msg);
+                                var options = {
+                                    "key" : "rzp_test_0Yx7yX4fQ8wjrf",
+                                    "amount" : msg.paymentData.amount,
+                                    "currency" : msg.paymentData.currency,
+                                    "name": "Health Highway",
+                                    "description" : "Test Transaction",
+                                    "order_id" : msg.paymentData.id,
+                                    "handler" : async (res) => {
+                                        console.log("payment done successfully");
+                                        const response = await fetch("/create-group", {
+                                            method  :"POST",
+                                            mode : "same-origin",
+                                            headers : {
+                                            'Content-type' : 'application/json'
+                                            },
+                                            body : JSON.stringify({
+                                                USERID : '<%- _id %>',
+                                                GRPID : '<%- session._id %>',
+                                                STARTING_DATE_FOR_USER, END_DATE_FOR_USER
+                                            })
+                                        });
+        
+                                        const decode = await response.json();
+                                        console.log(decode);
+                                        infoModalOpenFunction("/images/sessionBooked.svg", "Hurray! Session Booked");
+                                        setTimeout(() => {
+                                            window.location.replace("/");
+                                        }, 2000)
+                                    },
+                                    "prefill" : {
+                                    }
+                                }
+                                console.log(options);
+                                var rzp1 = new Razorpay(options);
+                                rzp1.open();
+                                rzp1.on('payment.failed', function (response){
+                                    infoModalOpenFunction("/images/notLoggedInfo.svg", "Oops! Some Network issue, please try later");
+                                    setTimeout(() => {
+                                        window.location.replace("/");
+                                    }, 2000);
+                                })
+                            })
+                        }
+                    }
+                </script>
+                <script>
+                    const bookGroupSession = async () => {
+                        const _id = '<%- _id %>';
+                        const FSA = '<%- FSA %>';
+                        console.log(_id, FSA);
+                        if(_id.length == 0)
+                        {
+                            infoModalOpenFunction("/images/notLoggedInfo.svg", "Please login before booking Session");
+                        }
+                        else
+                        {
+                            var old_group = <%- JSON.stringify(GROUP) %>;
+                            console.log(old_group);
+                            saveGrp('<%- _id %>', '<%- session._id %>', old_group);
+                        }
+                    }
+                </script>
+
+                <div class="action-btns desktop">
                     <% if(session.PARTICIPANTS >= session.LIMIT){ %>
                         <a style="cursor: pointer;" class="enroll-btn" >Overbooked</a>
                     <% }else { if(session.FREEFOR > 0 && FSA < FSTA){ %>
@@ -87,297 +187,135 @@
                             <a style="cursor: pointer;" class="enroll-btn" onclick="bookGroupSession()" >Pay <%= session.PRICE %></a>
                         <% } %>
                     <% } %>
-                    <a href="/1-on-1-Pricing-Plan" class="personalisation-text">Want Personalisation ?</a>
+                    <!-- <a href="#" class="enroll-btn">Enroll 4 Free</a> -->
+                    <a href="/1-on-1-Pricing-Plan" class="prsnl-btn">Want personalization?</a>
                 </div>
-            </div>
-        </div>
-        <!-- landing (END)-->
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>  
-        <script>
-            isActive = () => {
-                let startDate = new Date('<%-session.STARTING_DATE %>');
-                let currDate = new Date();
-                return startDate-currDate>0?false:true;
-            }
-            saveGrp = async (USERID, GRPID, GROUP) => {
-                let present=false;
-                GROUP.forEach(group => {
-                    if(group.GRPID === GRPID){
-                        present=true;
-                        return;
-                    }
-                })
-                console.log(present);
-                if(present)
-                {
-                    infoModalOpenFunction("/images/alreadyBookedInfo.svg", "Relax! Your Session is Booked Already");
-                    return;
-                }
-                
-                // console.log("This is the starting date");
-                // console.log(this.props.STARTING_DATE)
-                let STARTING_DATE_FOR_USER = '<%-session.STARTING_DATE %>';
-                if(isActive()){
-                    STARTING_DATE_FOR_USER = new Date();
-                    STARTING_DATE_FOR_USER = STARTING_DATE_FOR_USER.toGMTString();
-                }
-                console.log("this is final starting date")
-                console.log(STARTING_DATE_FOR_USER);
-                let END_DATE_FOR_USER = new Date(STARTING_DATE_FOR_USER);
-                // console.log(END_DATE_FOR_USER);
-                if( '<%-FSTA %>' > '<%- FSA %>' && '<%- session.FREEFOR %>' > 0){
-                    //save without pay
-                    END_DATE_FOR_USER = new Date( END_DATE_FOR_USER.setDate(END_DATE_FOR_USER.getDate() + Number('<%- session.FREEFOR %>')) )
-                    END_DATE_FOR_USER=END_DATE_FOR_USER.toGMTString();
-                    console.log("final end-date without payment");
-                    console.log(END_DATE_FOR_USER)
-                    const response = await fetch("/create-group", {
-                        method  :"POST",
-                        mode : "same-origin",
-                        headers : {
-                        'Content-type' : 'application/json'
-                        },
-                        body : JSON.stringify({
-                            USERID : '<%- _id %>',
-                            GRPID : '<%- session._id %>',
-                            STARTING_DATE_FOR_USER, END_DATE_FOR_USER
-                        })
-                    });
+            </section>
 
-                    const decode = await response.json();
-                    console.log(decode);
-                    infoModalOpenFunction("/images/sessionBooked.svg", "Hurray! Session Booked");
-                    setTimeout(() => {
-                        window.location.replace("/");
-                    }, 2000)
-                    // this.saveSessionOnBackEnd(USERID, GRPID, STARTING_DATE_FOR_USER, END_DATE_FOR_USER);
-                }
-                else
-                {
-                    //save after payment
-                    END_DATE_FOR_USER = new Date( END_DATE_FOR_USER.setDate(END_DATE_FOR_USER.getDate() + 30) )
-                    END_DATE_FOR_USER=END_DATE_FOR_USER.toGMTString();
-                    console.log("Final date for user before payment")
-                    console.log(END_DATE_FOR_USER);
-                    let socket = io();
-                    const _id = '<%- _id %>';
-                    socket.emit('givedata', {private_session : {PRICE : '<%- session.PRICE %>'}, _id});
-                    socket.on('welcome', async (msg) => {
-                        console.log(msg);
-                        var options = {
-                            "key" : "rzp_test_0Yx7yX4fQ8wjrf",
-                            "amount" : msg.paymentData.amount,
-                            "currency" : msg.paymentData.currency,
-                            "name": "Health Highway",
-                            "description" : "Test Transaction",
-                            "order_id" : msg.paymentData.id,
-                            "handler" : async (res) => {
-                                console.log("payment done successfully");
-                                const response = await fetch("/create-group", {
-                                    method  :"POST",
-                                    mode : "same-origin",
-                                    headers : {
-                                    'Content-type' : 'application/json'
-                                    },
-                                    body : JSON.stringify({
-                                        USERID : '<%- _id %>',
-                                        GRPID : '<%- session._id %>',
-                                        STARTING_DATE_FOR_USER, END_DATE_FOR_USER
-                                    })
-                                });
 
-                                const decode = await response.json();
-                                console.log(decode);
-                                infoModalOpenFunction("/images/sessionBooked.svg", "Hurray! Session Booked");
-                                setTimeout(() => {
-                                    window.location.replace("/");
-                                }, 2000)
-                            },
-                            "prefill" : {
-                            }
-                        }
-                        console.log(options);
-                        var rzp1 = new Razorpay(options);
-                        rzp1.open();
-                        rzp1.on('payment.failed', function (response){
-                            infoModalOpenFunction("/images/notLoggedInfo.svg", "Oops! Some Network issue, please try later");
-                            setTimeout(() => {
-                                window.location.replace("/");
-                            }, 2000);
-                        })
-                    })
-                }
-            }
-        </script>
+            <!-- Navigation -->
+            <!-- <section class="details-navigation-mobile">
+                <ul>
+                    <li>
+                        <a href="#ssnoverview">Overview</a>
+                    </li>
+                    <li>
+                        <a href="#ssnabout">About</a>
+                    </li>
+                    <li>
+                        <a href="#ssnbenefits">Benefits</a>
+                    </li>
+                </ul>
+            </section> -->
 
-        <script>
-            const bookGroupSession = async () => {
-                const _id = '<%- _id %>';
-                const FSA = '<%- FSA %>';
-                console.log(_id, FSA);
-                if(_id.length == 0)
-                {
-                    infoModalOpenFunction("/images/notLoggedInfo.svg", "Please login before booking Session");
-                }
-                else
-                {
-                    var old_group = <%- JSON.stringify(GROUP) %>;
-                    console.log(old_group);
-                    saveGrp('<%- _id %>', '<%- session._id %>', old_group);
-                }
-            }
-        </script>
-        
-
-        <div class="instructor-div">
-            <div class="trainer">
-                <img src="/images/yogaInstructor.png" alt="trainer" style="margin-right: 20px;"/>
-                <div class="trainer-details">
-                    <p style="text-align: start;font-family: Montserrat; font-style: normal; font-weight: normal; font-size: 14px; line-height: 22px; color: #716E6E;">Trainer</p>
-                    <p style="text-align: start;font-family: Montserrat; font-style: normal; font-weight: normal; font-size: 16px; line-height: 22px; color: #4CA9EE;"><%= session.TNAME %></p>
+            <!-- Overview Table -->
+            <section class="session-overview " id="ssnoverview">
+                <h3 class="session-title "><%= session.SESSION_NAME %> <span class="title-trainer">by <%= session.TNAME %></span></h3>
+                <div class="ovw">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/badge_L_rVKOLgY.png?updatedAt=1634233519561" alt="ico">
+                    <p class="details-text">Free Acess for <%= session.FREEFOR %> Days</p>
                 </div>
-            </div>
-            <img src="/images/like.png" alt="like" style="width: 28px; height: 25px"/>
-        </div>
-
-        <div class="page-navbar">
-            <p class="navbar-option active-option" id="overview">Overview</p>
-            <p class="navbar-option" id="about">About</p>
-            <p class="navbar-option" id="benefits">Benefits</p>
-        </div>
-
-        <div id="overview-div">
-            <div class="points-top">
-                <div class="points-common">
-                    <div class="points">
-                        <div>
-                            <p class="rupees">₹</p>
-                        </div>
-                        <p class="points-text"><%= session.PRICE %> INR <span>Per Month</span></p>
-                    </div>
-                    <div class="points">
-                        <div><img src='/images/calendar.png'></div>
-                        <p class="points-text">Every <%= session.DAYS.toString() %></p>
-                    </div>
-                    <div class="points">
-                        <div><img src='/images/Clock.png'></div>
-                        <p class="points-text"><%= session.TIME %></p>
-                    </div>
-                    <div class="points">
-                        <div><img src='/images/Duration.png'></div>
-                        <p class="points-text">45 Minutes</p>
-                    </div>
-                    <div class="points">
-                        <div><img src='/images/Graph.png'></div>
-                        <p class="points-text"><%= session.LEVEL %> Level</p>
-                    </div>
-                    <div class="points">
-                        <div><img src='/images/people.png'></div>
-                        <p class="points-text"><%= session.PARTICIPANTS %> People </p>
-                    </div>
+                <div class="ovw">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/rupee_2lDLYB8ZA_f.png?updatedAt=1634234176028" alt="ico">
+                    <p class="details-text"><%= session.PRICE %> INR (per month)</p>
                 </div>
-                
-            </div>
-            <div class="points-bottom">
-                <p class="points-title"><img style="margin-right: 20px;" src='/images/right.png'>Suitable/ Beneficial for these people</p>  
-                <div class="points-recommended">
+                <div class="ovw">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/indi-cal_U0ztD48rL.png?updatedAt=1634233536928" alt="ico">
+                    <p class="details-text"><%= session.DAYS.length==6&&session.DAYS[0]=="Mon"&&session.DAYS[5]=="Sat"?"Mon-Sat":session.DAYS.toString() %></p>
+                </div>
+                <div class="ovw">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/Clock_k-uMwYg-2.svg?updatedAt=1634060422976" alt="ico">
+                    <p class="details-text"><%= session.TIME %></p>
+                </div>
+                <div class="ovw">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/Duration_lCO2Q3FRA.svg?updatedAt=1634060020700" alt="ico">
+                    <p class="details-text">50 Minutes</p>
+                </div>
+                <div class="ovw">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/batch_vASvqOqiA.svg?updatedAt=1634060022536" alt="ico">
+                    <p class="details-text">Trusted by <%= session.PARTICIPANTS %> People</p>
+                </div>
+                <div class="ovw">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/Graph_SxkyD-yR7.svg?updatedAt=1634060019123" alt="ico">
+                    <p class="details-text"><%= session.LEVEL %> Level</p>
+                </div>
+                <div class="ovw">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/limited__1__vdW4UhfPh_1.png?updatedAt=1634235766302" alt="ico">
+                    <p class="details-text">Only <%= session.LIMIT %> People Allowed</p>
+                </div>
+                <div class="ovw ssn-for">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/ssnfor_wRiUj4sTeyE.svg?updatedAt=1634060019579" alt="ico">
+                    <p class="details-text">Suitable For</p>
+                </div>
+                <div class="suitable-for-text">
+                    <!-- <p>- All age groups</p> -->
                     <% session.FP.forEach(fp => { %>
-                        <p class="points-text points"><%= fp %></p>
+                        <p >- <%= fp %></p>
                     <% }) %> 
                 </div>
-                <p class="points-title"><img style="margin-right: 20px;" src='/images/wrong.png'>Not advisable for these People</p> 
-                <div class="points-not-recommended">
+                <div class="ovw ssn-notfor">
+                    <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/notfor_XAJDD4fxKUh.svg?updatedAt=1634060021541" alt="ico">
+                    <p class="details-text">Not Suitable For</p>
+                </div>
+                <div class="not-suitable-for-text">
                     <% session.NFP.forEach(nfp => { %>
-                        <p class="points-text points"><%= nfp %></p>
+                        <p>- <%= nfp %></p>
                     <% }) %>
                 </div>
-            </div>
-            <div style="margin: 32px 8vw 0 8vw;">
-                <p class="about-title">Overview</p>
-                <p class="about-content"><%= session.ABOUT %></p>
-            </div>
+            </section>
+
+            <p class="personalization-text" onclick="location.href='/1-on-1-Pricing-Plan'" style="color:#4ca9ee;cursor:pointer;font-size: 12px;
+            font-weight: 400;" >Want personalization ?</p>
+
+
+            <!-- Text details -->
+            <section class="overview-text ">
+                <h4 class="details-heading">Overview</h4>
+                <p class="details-text"><%= session.ABOUT %></p>
+            </section>
+
+
+
+            <section class="benefits-text" id="ssnbenefits">
+                <h4 class="details-heading">Main Practices and Benefits</h4>
+                <ul class="numbered-list">
+                    <% session.BENEFITS.forEach(bfs => { %>
+                        <li>
+                            <p class="details-text"><%= bfs %></p>
+                        </li>
+                    <% }) %>
+                </ul>
+            </section>
+
+            <section class="yoga-illustration desktop">
+                <img src="https://ik.imagekit.io/healthhighway2020/Yogagril_YnKna1S0Geb.svg?updatedAt=1634139682562" alt="yoga-ill">
+            </section>
+
+            <% if(session.PARTICIPANTS >= session.LIMIT){ %>
+                <button class="pay-now-btn" style="cursor: pointer" >Overbooked</button>
+                <!-- <a style="cursor: pointer;" class="enroll-btn" >Overbooked</a> -->
+            <% }else { if(session.FREEFOR > 0 && FSA < FSTA){ %>
+                    <button onclick="bookGroupSession()" class="pay-now-btn" style="cursor: pointer" >Enrol for free</button>
+                    <!-- <a style="cursor: pointer;" class="enroll-btn" onclick="bookGroupSession()" >Enroll For Free</a> -->
+                <% }else{ %>
+                    <button onclick="bookGroupSession()" class="pay-now-btn" style="cursor: pointer" >Pay <%= session.PRICE %></button>
+                    <!-- <a style="cursor: pointer;" class="enroll-btn" onclick="bookGroupSession()" >Pay <%= session.PRICE %></a> -->
+                <% } %>
+            <% } %>
+
         </div>
 
-        <div class="details-div">
-        <!-- about -->
-        <div id="about-div">
-                <p class="about-title">About the Session </p>
-                <p class="about-content"><%= session.ABOUT %></p>
-                <div class="about-sub-div">
-                    <p class="about-sub-title">Main Practices</p>
-                    <ol type="1">
-                        <li>Malasana Lateral Stretch + Twist</li>
-                        <li>Sivananda Surya Namaskar x 3 Rounds</li>
-                        <li>Uttana Pristhasana + Twist</li>
-                        <li>Prasarita Padottanasana C</li>
-                        <li>Ardha Shalabhasana</li>
-                        <li>Supta Virasana</li>
-                        <li>Gomukasana Fold Forward + Twist</li>
-                        <li>Kandharasana</li>
-                        <li>Nadi Shodhan Pranayama</li>
-                        <li>AUM Chanting</li>
-                    </ol>
-                    <p class="about-sub-title">Benefits</p>
-                    
-                    <ol type="1">
-                        <% session.BENEFITS.forEach(bf => { %>
-                            <li><%= bf %></li>
-                        <% }) %> 
-                    </ol>
-                </div>
-        </div>
-        
-        <div id="about-mobile-div">
-            <p class="about-title">About the Session </p>
-            <p class="about-content"><%= session.ABOUT %></p>
-            <div class="about-sub-div">
-                <p class="about-sub-title">Main Practices</p>
-                <ol type="1">
-                    <li>Malasana Lateral Stretch + Twist</li>
-                    <li>Sivananda Surya Namaskar x 3 Rounds</li>
-                    <li>Uttana Pristhasana + Twist</li>
-                    <li>Prasarita Padottanasana C</li>
-                    <li>Ardha Shalabhasana</li>
-                    <li>Supta Virasana</li>
-                    <li>Gomukasana Fold Forward + Twist</li>
-                    <li>Kandharasana</li>
-                    <li>Nadi Shodhan Pranayama</li>
-                    <li>AUM Chanting</li>
-                </ol>
-            </div>
-        </div>
-        <div id="benefits-mobile-div">
-            <p class="about-sub-title">Benefits</p>
-                    <ol type="1">
-                        <li>Malasana Lateral Stretch + Twist</li>
-                        <li>Sivananda Surya Namaskar x 3 Rounds</li>
-                        <li>AUM Chanting</li>
-                        <li>Supta Virasana</li>
-                        <li>Gomukasana Fold Forward + Twist</li>
-                        <li>Kandharasana</li>
-                        <li>Nadi Shodhan Pranayama</li>
-                        <li>AUM Chanting</li>
-                    </ol>
-        </div>
-        <img src="/images/detailImg.svg" />
-        <!-- about (END) -->
-        </div>
 
-               <!-- Call-Us Section  -->
-               <%- include('partials/callback') %>
-            <!-- Call-Us Section (END) -->
+        <!-- Call-Us Section  -->
+            <%- include('partials/callback') %>
+        <!-- Call-Us Section (END) -->
 
-                  <!-- login div -->
-                  <%- include('partials/login-form') %>
-                <!-- login div (END) -->
-
-                
-            
-    </main>
-    <script type="text/javascript" src="/js/landing.js"></script>
-    <script type="text/javascript" src="/js/login.js"></script>
-    <script type="text/javascript" src="/js/detailed-page-navbar.js"></script>
+        <!-- login div -->
+            <%- include('partials/login-form') %>
+        <!-- login div (END) -->
+        <script type="text/javascript" src="/js/landing.js"></script>
+        <script type="text/javascript" src="/js/login.js"></script>
+        <script type="text/javascript" src="/js/detailed-page-navbar.js"></script>
 </body>
 
 </html>

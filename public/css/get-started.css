@@ -1,0 +1,299 @@
+/* GET STARTED CSS (MOBILE) */
+
+.get-started {
+    background: url("../images/pattern.png");
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    background-size: contain;
+    background-repeat: repeat-x;
+    padding: 2em 10%;
+    margin-top: 1em;
+}
+
+.gs-heading {
+    font-size: 20px;
+    font-family: Montserrat, sans-serif;
+    padding-bottom: 2em;
+}
+
+.blue-text {
+    color: #4ca9ee;
+}
+
+.private-session {
+    background-color: #4ca9ee;
+    padding: 20px 35px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.group-session {
+    background-color: #eff8ff;
+    padding: 20px 35px;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.gs-item-head {
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    text-align: left;
+    padding-bottom: 0.5em;
+}
+
+.gs-item-head::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 35px;
+}
+
+.tag-line {
+    font-size: 12px;
+    padding: 1.5em 0;
+    font-weight: 700;
+}
+
+.perks-container {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.perk {
+    display: flex;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.perk-tick {
+    margin-right: 19px;
+}
+
+.perk-text {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.get-started-btn {
+    display: inline-block;
+    margin: 1em 0;
+    margin-top: 1.5em;
+    padding: 0.8em 2em;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+.private-session .gs-item-head {
+    color: white;
+}
+
+.group-session .gs-item-head {
+    color: #4ca9ee;
+}
+
+.private-session .gs-item-head::after {
+    background-color: white;
+}
+
+.group-session .gs-item-head::after {
+    background-color: #4ca9ee;
+}
+
+.private-session .tag-line {
+    color: white;
+}
+
+.group-session .tag-line {
+    color: #4ca9ee;
+}
+
+.private-session .perk-text {
+    color: white;
+}
+
+.group-session .perk-text {
+    color: #5a5151;
+}
+
+.private-session .get-started-btn {
+    color: #4ca9ee;
+    background-color: white;
+}
+
+.group-session .get-started-btn {
+    background-color: #4ca9ee;
+    color: white;
+}
+
+
+/* Transition Code */
+
+@keyframes ltr {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes rtl {
+    0% {
+        left: 50%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.gs-container {
+    position: relative;
+}
+
+.private-session.hovered::after {
+    content: "";
+    position: absolute;
+    background-color: #4ca9ee;
+    right: 0;
+    left: 48%;
+    top: 0;
+    bottom: 0;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    animation: ltr 1s forwards;
+}
+
+.group-session.hovered::after {
+    content: "";
+    position: absolute;
+    background-color: #eff8ff;
+    left: 0;
+    right: 48%;
+    top: 0;
+    bottom: 0;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    animation: rtl 1s forwards;
+}
+
+.after-hover-grp,
+.after-hover-pvt {
+    display: none;
+}
+
+.pvt-img {
+    width: 70%;
+}
+
+.grp-img {
+    width: 70%;
+}
+
+
+/* Only works after 768px(via JS) */
+
+@media (min-width: 768px) {
+    .gs-heading {
+        font-size: 24px;
+    }
+    .gs-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .private-session {
+        border-radius: 0;
+        border-top-left-radius: 1em;
+        border-bottom-left-radius: 1em;
+    }
+    .group-session {
+        border-radius: 0;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+    }
+    .group-session {
+        grid-column: 2/3;
+    }
+    .after-hover-pvt {
+        position: absolute;
+        width: 40%;
+        right: 0;
+        top: 0;
+        z-index: 100;
+        animation: fade 2s ease-in-out;
+    }
+    .after-hover-grp {
+        position: absolute;
+        width: 40%;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        animation: fade 2s ease-in-out;
+    }
+    .pvt-img {
+        margin-bottom: -200px;
+        margin-left: -100px;
+        width: 80%;
+    }
+    .grp-img {
+        margin-bottom: -220px;
+        margin-right: -100px;
+        width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pvt-img {
+        margin-bottom: -290px;
+        margin-left: -150px;
+    }
+    .grp-img {
+        margin-bottom: -300px;
+        margin-right: -100px;
+    }
+    .gs-heading {
+        font-size: 32px;
+    }
+    .gs-item-head {
+        font-size: 26px;
+    }
+    .gs-item-head::after {
+        height: 4px;
+        width: 50px;
+    }
+    .tag-line {
+        font-size: 18px;
+    }
+    .perk-text {
+        font-size: 16px;
+    }
+    .get-started-btn {
+        font-size: 22px;
+        padding: 0.5em;
+    }
+}
+
+@media (min-width: 1440px) {
+    .gs-container {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
+/* GET STARTED CSS ENDS HERE */

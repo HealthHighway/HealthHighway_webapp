@@ -1,0 +1,80 @@
+/* FOOTER CSS (start)*/
+
+footer {
+    padding: 2em 5%;
+    font-family: "Open Sans";
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    color: black;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.terms-privacy ul {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+.terms-privacy a {
+    color: grey;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.terms-privacy a:hover {
+    color: black;
+    font-size: 0.9rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    padding: 0.5em 0;
+    padding-top: 1.5em;
+    text-align: center;
+    color: grey;
+}
+
+.desk-links {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .desk-links {
+        display: unset;
+    }
+    .mob-links {
+        display: none;
+    }
+    .nav-links {
+        width: 65%;
+        justify-content: space-around;
+    }
+    .terms-privacy ul {
+        width: 30%;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-links {
+        width: 50%;
+    }
+    .terms-privacy ul {
+        width: 20%;
+    }
+}
+
+
+/* FOOTER CSS  (END) */

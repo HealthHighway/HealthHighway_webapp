@@ -44,7 +44,6 @@
   width: calc(100% + 100px);
 }
 
-
 .middle-line {
   height: 4px;
   border-radius: 4px 200% 200% 4px;
@@ -572,10 +571,39 @@
     height: 180px;
   }
 }
-@media (max-width: 520px) and (min-height: 700px) {
+@media only screen and (max-height: 1400px) {
   #landing-main-div {
-    padding-top: 150px;
+    height: 65vh;
+    padding-top: 5vh;
   }
+
+}
+
+@media only screen and (max-height: 1024px) {
+  #landing-main-div {
+    height: 65vh;
+    padding-top: 5vh;
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-height: 840px) {
+  #landing-main-div {
+    height: 56vh;
+    padding-top: 0;
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (max-height: 800px) {
+  #landing-main-div {
+    height: 72vh;
+    padding-top: 5vh;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 520px) and (min-height: 700px) {
   .animation_left,
   .animation_right {
     height: 220px;
@@ -587,17 +615,95 @@
     margin-bottom: 40px;
   }
 }
-@media (max-width: 420px) and (min-height: 700px) {
-  #landing-main-div {
-    padding-top: 120px;
-  }
-}
 
 @media (max-width: 400px) {
   .animation-container {
     margin-top: 20px;
   }
 }
+
+@media only screen and (max-height: 740px) {
+  #landing-main-div {
+    height: 65vh;
+    padding-top: 5vh;
+  }
+  .mobile {
+    margin-bottom: 4vh;
+  }
+  .know-more-div {
+    margin-bottom: 5vh;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  #landing-main-div {
+    height: 75vh;
+    padding-top: 5vh;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  #landing-main-div {
+    height: 68vh;
+    padding-top: 12vh;
+  }
+  .mobile {
+    margin-bottom: 8vh;
+  }
+  .know-more-div {
+    margin-bottom: 5vh;
+  }
+}
+
+@media only screen and (max-height: 680px) {
+  #landing-main-div {
+    height: 66vh;
+    padding-top: 5vh;
+  }
+  .mobile {
+    margin-bottom: 5vh;
+  }
+  .know-more-div {
+    margin-bottom: 20vh;
+  }
+  .landing-main-center {
+    margin-bottom: 10vh;
+  }
+}
+
+@media only screen and (max-height: 640px) {
+  #landing-main-div {
+    height: 65vh;
+    padding-top: 5vh;
+  }
+  .mobile {
+    margin-bottom: 5vh;
+  }
+  .know-more-div {
+    margin-bottom: 7vh;
+  }
+  .landing-main-center {
+    margin-bottom: 5vh;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  #landing-main-div {
+    height: 63vh;
+    padding-top: 3vh;
+    margin-top: 0;
+  }
+  .mobile {
+    margin-bottom: 4vh;
+  }
+  .know-more-div {
+    margin-bottom: 7vh;
+  }
+  .landing-main-center {
+    margin-bottom: 3vh;
+  }
+}
+
 @media (max-width: 370px) {
   #client,
   #instructor {

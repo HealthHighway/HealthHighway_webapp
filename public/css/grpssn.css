@@ -10,7 +10,11 @@
   }
   
   #search-bar {
+    background: url(https://ik.imagekit.io/healthhighway2020/magnifying-glass__2__fZJMfV3qnLx.png?updatedAt=1634026084044);
+    background-position: center left 8px;
+    background-repeat: no-repeat;
     padding: .6em 1em;
+    padding-left: 2.8em;
     width: 88%;
     display: block;
     margin: 0 auto;
@@ -19,7 +23,7 @@
     background-color: #EDF7FF;
     font-size: 1rem;
     color: #6B6B6B;
-  }
+}
   
   #search-bar::placeholder {
     color: #4ca9ee;
@@ -44,12 +48,12 @@
   
   .sessions-section {
     font-family: "Montserrat", sans-serif;
-    padding: 2em 7%;
+    padding: 0em 7%;
   }
   
   .headingandnavigation {
     display: flex;
-    margin: 1em 0;
+    margin: 0em 0;
     justify-content: center;
     padding: 2em 0;
   }
@@ -92,7 +96,7 @@
     justify-content: space-between;
   }
   
-  .ssn-title h3 {
+  .ssn-title h5 {
     color: #4ca9ee;
   }
   
@@ -100,6 +104,7 @@
     color: #6B6B6B;
     font-weight: 500;
     padding: .2em 0;
+    font-size: .8rem;
   }
   
   .ssn-time {
@@ -109,6 +114,7 @@
     min-width: max-content;
     color: white;
     font-weight: 600;
+    font-size: .75em;
   }
   
   .overbooked::after,

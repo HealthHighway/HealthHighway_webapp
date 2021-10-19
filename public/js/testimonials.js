@@ -92,6 +92,7 @@ const startBackwardAnimate = () => {
 };
 
 const slideForward = () => {
+  if (currentSlide == 5) return;
   swiperWrapper.style.transform = `translateX(${
     -swiperWidth * currentSlide
   }px)`;
@@ -136,9 +137,21 @@ const autoplay = () => {
 
 const forwardSlideAnimation = () => {
   if (currentSlide >= 4) {
-    currentSlide = -1;
+    currentSlide = 3;
   }
   currentSlide++;
+  console.log(currentSlide);
+  if (currentSlide === 4) {
+    console.log("if");
+    arrowNextButton.classList.remove("button-active");
+    arrowNextButton.classList.add("button-inactive");
+  } else {
+    console.log("else");
+    arrowNextButton.classList.remove("button-inactive");
+    arrowNextButton.classList.add("button-active");
+  }   
+  arrowPrevButton.classList.remove('button-inactive')
+  arrowPrevButton.classList.add('button-active')
   setSwiperWidth();
   slideForward();
 };
@@ -146,14 +159,27 @@ const forwardSlideAnimation = () => {
 const onClickForwardSlideAnimation = () => {
   forwardSlideAnimation();
   clearInterval(intervalID);
-  autoplay();
+  // autoplay();
 };
 
 const backwardSlideAnimation = () => {
   if (currentSlide <= 0) {
-    currentSlide = 5;
+    currentSlide = 1;
   }
   currentSlide--;
+  console.log(currentSlide);
+  if (currentSlide === 0) {
+    console.log("if");
+    arrowPrevButton.classList.remove("button-active");
+    arrowPrevButton.classList.add("button-inactive");
+  } else {
+    console.log("else");
+    arrowPrevButton.classList.remove("button-inactive");
+    arrowPrevButton.classList.add("button-active");
+  }
+  arrowNextButton.classList.remove('button-inactive')
+  arrowNextButton.classList.add('button-active')
+  
   setSwiperWidth();
   slideBackward();
 };
@@ -161,10 +187,10 @@ const backwardSlideAnimation = () => {
 const onClickBackwardSlideAnimation = () => {
   backwardSlideAnimation();
   clearInterval(intervalID);
-  autoplay();
+  // autoplay();
 };
 
-autoplay();
+// autoplay();
 arrowNextButton.addEventListener("click", onClickForwardSlideAnimation);
 arrowPrevButton.addEventListener("click", onClickBackwardSlideAnimation);
 screen.orientation.addEventListener("change", setSwiperWidth);

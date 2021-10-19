@@ -1,0 +1,429 @@
+main {
+    font-family: "Montserrat", sans-serif;
+}
+
+.navigation-mobile {
+    padding: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.session-title {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: -.8em;
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.session-intro {
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.session_img {
+    width: 359px;
+    height: 231px;
+    max-width: 100%;
+    border-radius: 1em;
+    margin-bottom: 2em;
+}
+
+.trainer-div {
+    display: flex;
+    justify-content: space-between;
+    padding: .8em 1em;
+    border-radius: 1em;
+    box-shadow: 0px 4px 10px rgba(178, 222, 255, 0.31);
+}
+
+.trainer_icon {
+    width: 60px;
+    height: 60px;
+    border-radius: .8em;
+    object-fit: cover;
+}
+
+.trainer_details {
+    display: flex;
+    align-items: center;
+}
+
+.trainer-text {
+    margin-left: 1em;
+    color: #716E6E;
+    font-size: 14px;
+}
+
+.trainer-text p {
+    padding: .1em 0;
+}
+
+.trainer_name {
+    color: #4CA9EE;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.like-btn {
+    background-color: transparent;
+    border: none;
+    display: block;
+    padding: 0 1em;
+}
+
+.like-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+.details-navigation-mobile ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.details-navigation-mobile a {
+    text-decoration: none;
+    color: #716E6E;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 1.5em;
+}
+
+.details-navigation-mobile a:focus,
+.details-navigation-mobile a:active {
+    color: #4CA9EE;
+}
+
+.session-overview {
+    padding: 1em 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1em;
+    column-gap: 1em;
+}
+
+.details-text {
+    font-size: 12px;
+    color: #716E6E;
+    font-weight: 400;
+}
+
+.ovw {
+    display: flex;
+    align-items: center;
+}
+
+.overview-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: .4em;
+}
+
+.overview-text {
+    font-family: "Montserrat", sans-serif;
+    padding: 1em 0;
+}
+
+.details-heading {
+    color: #333741;
+    font-weight: 700;
+    font-size: 16px;
+    margin: .5em 0;
+}
+
+.about-text {
+    padding: 1em 0;
+}
+
+.sub-details {
+    padding: 1em 0;
+    padding-bottom: 0;
+    padding-left: 6%;
+}
+
+.numbered-list {
+    display: flex;
+    padding-left: 4.5%;
+    flex-direction: column;
+    list-style-type: decimal;
+    font-size: 12px;
+    color: #716E6E;
+}
+
+.details-sub-heading {
+    font-size: 14px;
+    color: #333741;
+    margin: .5em 0;
+}
+
+.benefits-text {
+    padding: 1em 0;
+}
+
+.desktop {
+    display: none;
+}
+
+.grid-container {
+    padding: 1em 6%;
+    padding-bottom: 5em;
+}
+
+.enroll-btn,
+.prsnl-btn {
+    text-decoration: none;
+    display: block;
+    color: #4CA9EE;
+    font-weight: 600;
+}
+
+.enroll-btn {
+    padding: .5em .6em;
+    background-color: #4CA9EE;
+    color: white;
+    border-radius: .2em;
+    font-weight: 700;
+}
+
+
+/* UPdates */
+
+.session-overview .details-text {
+    font-weight: 700;
+}
+
+.session-title {
+    display: block;
+    grid-column: 1/3;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    color: #333741;
+    padding-bottom: .2em;
+    margin: 0;
+    margin-top: -20px;
+}
+
+.title-trainer {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pay-now-btn {
+    display: block;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    background-color: #4CA9EE;
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.ssn-for,
+.ssn-notfor {
+    grid-column: 1/3;
+}
+
+.suitable-for-text,
+.not-suitable-for-text {
+    grid-column: 1/3;
+    font-size: 12px;
+    color: #716E6E;
+    font-weight: 500;
+}
+
+@media(min-width:768px) {
+    .personalization-text{
+        display: none;
+    }
+    .pay-now-btn {
+        display: none;
+    }
+    .navigation-mobile {
+        display: none;
+    }
+    .details-navigation-mobile {
+        display: none;
+    }
+    .trainer-div {
+        display: none;
+    }
+    .desktop {
+        display: unset;
+    }
+    .grid-container {
+        padding: 1em 6%;
+        padding-top: 2em;
+        display: grid;
+        grid-template-columns: 55% 45%;
+    }
+    .session-intro {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        padding: 0;
+        justify-self: center;
+    }
+    .action-btns {
+        margin-top: .8em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .session-overview {
+        row-gap: 1em;
+        height: max-content;
+        padding: 0;
+    }
+    .benefits-text {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+    .details-heading {
+        font-size: 1.8rem;
+    }
+    .details-sub-heading {
+        font-size: 1.2rem;
+    }
+    .details-text {
+        font-size: 1rem;
+    }
+    .session_img {
+        margin: 0;
+    }
+    .overview-icon {
+        width: 25px;
+        height: 25px;
+    }
+    .session-title {
+        display: block;
+        grid-column: 1/3;
+        text-align: left;
+        font-size: 1.8rem;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        color: #333741;
+        padding-bottom: .2em;
+        margin: 0;
+    }
+    .title-trainer {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .yoga-illustration {
+        grid-column: 2/3;
+        grid-row: 2/4;
+    }
+    .yoga-illustration img {
+        width: 100%;
+        height: 100%;
+    }
+    .numbered-list {
+        padding-left: 4%;
+    }
+    .suitable-for-text,
+    .not-suitable-for-text {
+        font-size: 16px;
+    }
+}
+
+@media(min-width:1024px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        padding: 3em 10%;
+    }
+    .details-heading {
+        font-size: 2rem;
+    }
+    .details-sub-heading {
+        font-size: 1.5rem;
+    }
+    .details-text {
+        font-size: 1rem;
+    }
+    .title-trainer {
+        display: inline;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .session-title {
+        font-size: 2rem;
+    }
+    .session-intro {
+        justify-self: flex-end;
+    }
+    .action-btns {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 1.5em;
+        justify-content: space-around;
+    }
+    .session-intro {
+        margin-right: 2em;
+    }
+    .session_img {
+        width: 400px;
+        height: 280px;
+    }
+    .enroll-btn {
+        padding: .5em .6em;
+        font-size: 1.1rem;
+    }
+    .session-overview {
+        row-gap: 1.5em;
+    }
+    .numbered-list {
+        padding-left: 3%;
+    }
+    .yoga-illustration {
+        margin-top: 50px;
+    }
+}
+
+@media(min-width:1440px) {
+    .session-intro {
+        margin-right: 3.5em;
+    }
+    .session_img {
+        width: 450px;
+        height: 280px;
+    }
+    .enroll-btn {
+        padding: .8em 1.5em;
+        font-size: 1.1rem;
+    }
+    .overview-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 1em;
+    }
+    .yoga-illustration {
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+}
+
+
+/* Footer and callback fix */
+
+@media(max-width:767px) {
+    footer,
+    .call-back {
+        display: none !important;
+    }
+}

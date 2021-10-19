@@ -1,0 +1,268 @@
+/* USP and about us CSS (START) */
+
+.about-us-section {
+    font-family: "Open Sans", sans-serif;
+    padding: 1em 7%;
+    text-align: center;
+}
+
+.about-us-heading {
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0.8em 0;
+}
+
+.about-us-heading span {
+    color: #4ca9ee;
+}
+
+.border {
+    width: 40%;
+    background-color: #4ca9ee;
+    height: 0.2em;
+    margin: 0 auto;
+}
+
+.about-us-content {
+    padding-top: 1em;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.about-us-content span {
+    font-weight: bold;
+    font-size: 16px;
+    color: #4ca9ee;
+}
+
+.usp-section {
+    font-family: "Open Sans", sans-serif;
+    padding: 1em 7%;
+    text-align: center;
+}
+
+.usp-section svg {
+    width: 60%;
+    padding-top: 2em;
+    overflow: visible;
+}
+
+.usp-heading {
+    padding: 1em 0;
+}
+
+.usp-heading span {
+    color: #4ca9ee;
+}
+
+.usp-content {
+    color: #757575;
+    font-weight: 500;
+}
+
+.usp-one,
+.usp-two,
+.usp-three {
+    margin-top: 4em;
+}
+
+.float-to-down {
+    transform: translateY(0);
+    animation: float-down 3s infinite ease-in-out;
+}
+
+@keyframes float-down {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(7px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.float-to-up {
+    transform: translateY(-6px);
+    animation: float-up 3s infinite ease-in-out;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(-6px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-6px);
+    }
+}
+
+@media (min-width: 768px) {
+    .about-us-section {
+        padding: 1em 10%;
+    }
+    .about-us-heading {
+        font-size: 1.4rem;
+    }
+    .border {
+        width: 35%;
+    }
+    .about-us-content {
+        font-size: 1.1rem;
+        padding-top: 2.5em;
+    }
+    .about-us-content span {
+        font-size: 1.1rem;
+    }
+    .usp-section {
+        padding: 2em 10%;
+    }
+    .usp-one {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 60% 40%;
+        grid-template-columns: 60% 40%;
+    }
+    .usp-one svg {
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+        grid-column: 2/3;
+        width: 70%;
+        justify-self: flex-end;
+    }
+    .usp-heading {
+        padding-top: 0;
+        font-size: 1rem;
+    }
+    .usp-content {
+        font-size: 0.8rem;
+    }
+    .left-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        grid-row: 1/2;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: left;
+    }
+    .usp-two {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+    }
+    .usp-two svg {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+        grid-column: 1/2;
+        width: 70%;
+        justify-self: flex-start;
+    }
+    .right-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        grid-row: 1/2;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: left;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+        grid-column: 2/3;
+    }
+    .usp-three {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 60% 40%;
+        grid-template-columns: 60% 40%;
+    }
+    .usp-three img {
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+        grid-column: 2/3;
+        width: 70%;
+        justify-self: flex-end;
+    }
+    .usp-one-svg {
+        justify-self: flex-end;
+    }
+    .usp-one-svg svg {
+        width: 100%;
+    }
+    .usp-two-svg {
+        justify-self: flex-start;
+    }
+    .usp-two-svg svg {
+        width: 100%;
+    }
+    .usp-three-svg {
+        justify-self: flex-end;
+    }
+    .usp-three-svg svg {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-us-section {
+        padding: 2em 15%;
+    }
+    .about-us-heading {
+        font-size: 1.5rem;
+    }
+    .about-us-content {
+        padding: 0 0;
+        padding-top: 2em;
+    }
+    .usp-section {
+        padding: 2em 15%;
+    }
+    .usp-heading {
+        font-size: 1.2rem;
+    }
+    .usp-content {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .about-us-section {
+        padding: 2em 15%;
+    }
+    .about-us-heading {
+        font-size: 1.8rem;
+    }
+    .about-us-content {
+        padding-top: 2em;
+        font-size: 1.3rem;
+    }
+    .usp-heading {
+        font-size: 1.8rem;
+    }
+    .usp-content {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* USP CSS (END) */
