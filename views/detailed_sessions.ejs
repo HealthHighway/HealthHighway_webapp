@@ -69,7 +69,11 @@
                         // console.log(this.props.STARTING_DATE)
                         let STARTING_DATE_FOR_USER = '<%-session.STARTING_DATE %>';
                         if(isActive()){
-                            STARTING_DATE_FOR_USER = new Date();
+                            if(session.PARTICIPANTS == 0){
+                                STARTING_DATE_FOR_USER = new Date(Date.now() + 24*60*60*1000)
+                            }else{
+                                STARTING_DATE_FOR_USER = new Date();
+                            }
                             STARTING_DATE_FOR_USER = STARTING_DATE_FOR_USER.toGMTString();
                         }
                         console.log("this is final starting date")
@@ -167,7 +171,8 @@
                         console.log(_id, FSA);
                         if(_id.length == 0)
                         {
-                            infoModalOpenFunction("/images/notLoggedInfo.svg", "Please login before booking Session");
+                            modalOpenFunction()
+                            // infoModalOpenFunction("/images/notLoggedInfo.svg", "Please login before booking Session");
                         }
                         else
                         {
@@ -182,7 +187,7 @@
                     <% if(session.PARTICIPANTS >= session.LIMIT){ %>
                         <a style="cursor: pointer;" class="enroll-btn" >Overbooked</a>
                     <% }else { if(session.FREEFOR > 0 && FSA < FSTA){ %>
-                            <a style="cursor: pointer;" class="enroll-btn" onclick="bookGroupSession()" >Enroll For Free</a>
+                            <a style="cursor: pointer;" class="enroll-btn" onclick="bookGroupSession()" >Enrol For Free</a>
                         <% }else{ %>
                             <a style="cursor: pointer;" class="enroll-btn" onclick="bookGroupSession()" >Pay <%= session.PRICE %></a>
                         <% } %>
@@ -190,6 +195,7 @@
                     <!-- <a href="#" class="enroll-btn">Enroll 4 Free</a> -->
                     <a href="/1-on-1-Pricing-Plan" class="prsnl-btn">Want personalization?</a>
                 </div>
+                <!-- <p style="color: orange;" >* You can start attending the session from tomorrow after booking today</p> -->
             </section>
 
 
@@ -213,7 +219,7 @@
                 <h3 class="session-title "><%= session.SESSION_NAME %> <span class="title-trainer">by <%= session.TNAME %></span></h3>
                 <div class="ovw">
                     <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/badge_L_rVKOLgY.png?updatedAt=1634233519561" alt="ico">
-                    <p class="details-text">Free Acess for <%= session.FREEFOR %> Days</p>
+                    <p class="details-text">Free Access for <%= session.FREEFOR %> <%= Number(session.FREEFOR)==1?"Day":"Days" %>  </p>
                 </div>
                 <div class="ovw">
                     <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/rupee_2lDLYB8ZA_f.png?updatedAt=1634234176028" alt="ico">
@@ -225,7 +231,7 @@
                 </div>
                 <div class="ovw">
                     <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/Clock_k-uMwYg-2.svg?updatedAt=1634060422976" alt="ico">
-                    <p class="details-text"><%= session.TIME %></p>
+                    <p class="details-text"><%= session.TIME.substring(0, 5) + session.TIME.substring(8) %></p>
                 </div>
                 <div class="ovw">
                     <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/Duration_lCO2Q3FRA.svg?updatedAt=1634060020700" alt="ico">
@@ -233,7 +239,7 @@
                 </div>
                 <div class="ovw">
                     <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/batch_vASvqOqiA.svg?updatedAt=1634060022536" alt="ico">
-                    <p class="details-text">Trusted by <%= session.PARTICIPANTS %> People</p>
+                    <p class="details-text">Attendee(s) <%= session.PARTICIPANTS %> People</p>
                 </div>
                 <div class="ovw">
                     <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/Graph_SxkyD-yR7.svg?updatedAt=1634060019123" alt="ico">
@@ -243,9 +249,15 @@
                     <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/limited__1__vdW4UhfPh_1.png?updatedAt=1634235766302" alt="ico">
                     <p class="details-text">Only <%= session.LIMIT %> People Allowed</p>
                 </div>
+                <% if(session.PARTICIPANTS == 0){ %>
+                    <div class="not-suitable-for-text" style="margin-top: 10px;" >
+                        <p style="color: orange;width: 100%;" >* You can start attending the session from tomorrow after booking today</p>
+                    </div>
+                <% } %>
+               
                 <div class="ovw ssn-for">
                     <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/ssnfor_wRiUj4sTeyE.svg?updatedAt=1634060019579" alt="ico">
-                    <p class="details-text">Suitable For</p>
+                    <p class="details-text">Suitable/Beneficial for these People</p>
                 </div>
                 <div class="suitable-for-text">
                     <!-- <p>- All age groups</p> -->
@@ -255,11 +267,11 @@
                 </div>
                 <div class="ovw ssn-notfor">
                     <img class="overview-icon" src="https://ik.imagekit.io/healthhighway2020/notfor_XAJDD4fxKUh.svg?updatedAt=1634060021541" alt="ico">
-                    <p class="details-text">Not Suitable For</p>
+                    <p class="details-text">Not Advisable For/ Precautions</p>
                 </div>
                 <div class="not-suitable-for-text">
                     <% session.NFP.forEach(nfp => { %>
-                        <p>- <%= nfp %></p>
+                        <p class="indent-para" >- <%= nfp %></p>
                     <% }) %>
                 </div>
             </section>

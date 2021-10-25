@@ -71,9 +71,9 @@
                 </div>
                 <div class="session-and-button">
                     <div class="session-container">
-                        <div class="session-item">
+                        <div class="session-item" style="cursor: pointer" onclick="document.getElementById('radio-1').checked = true" >
                             <label id="single" class="p-label">
-                                <input type="radio" for="single" name="plan" value="1" />
+                                <input type="radio" for="single" name="plan" value="1" id="radio-1" />
                                 <span class="checkmark"><img src="/images/tick-circle.svg" alt="" /></span>
                             </label>
                             <div class="session-title">
@@ -83,9 +83,9 @@
                                 <h3>INR <span>150</span></h3>
                             </div>
                         </div>
-                        <div class="session-item">
+                        <div class="session-item" style="cursor: pointer" onclick="document.getElementById('radio-16').checked = true" >
                             <label id="single" class="p-label">
-                                <input type="radio" for="16session" name="plan" value="16" />
+                                <input type="radio" for="16session" name="plan" value="16" id="radio-16" />
                                 <span class="checkmark"><img src="/images/tick-circle.svg" alt="" /></span>
                             </label>
                             <div class="session-title">
@@ -97,9 +97,9 @@
                                 <h3>INR <span>2149</span></h3>
                             </div>
                         </div>
-                        <div class="session-item">
+                        <div class="session-item" style="cursor: pointer" onclick="document.getElementById('radio-20').checked = true" >
                             <label id="single" class="p-label">
-                                <input type="radio" for="16session" name="plan" value="20" />
+                                <input type="radio" for="16session" name="plan" value="20" id="radio-20" />
                                 <span class="checkmark"><img src="/images/tick-circle.svg" alt="" /></span>
                             </label>
                             <div class="session-title">
@@ -112,9 +112,9 @@
                                 <h3>INR <span>2449</span></h3>
                             </div>
                         </div>
-                        <div class="session-item">
+                        <div class="session-item" style="cursor: pointer" onclick="document.getElementById('radio-24').checked = true" >
                             <label id="single" class="p-label">
-                                <input type="radio" for="16session" name="plan" value="24" />
+                                <input type="radio" for="16session" name="plan" value="24" id="radio-24" />
                                 <span class="checkmark"><img src="/images/tick-circle.svg" alt="" /></span>
                             </label>
                             <div class="session-title">
@@ -144,7 +144,8 @@
                 const _id = '<%- _id %>';
                 if(_id.length == 0)
                 {
-                    infoModalOpenFunction("/images/notLoggedInfo.svg", "Please login before booking Session");
+                    modalOpenFunction()
+                    // infoModalOpenFunction("/images/notLoggedInfo.svg", "Please login before booking Session");
                 }else
                 {
                     var checked = "";
@@ -227,8 +228,9 @@
                 sessions that suits your need.
                 </p>
             </div>
-            <div class="fix-grp-card-container">
-                <% sessions.forEach(session => { %>
+            <div class="fix-grp-card-container" style="align-items: center;">
+                <% sessions.forEach((session, index) => { %>
+                    <% if(index<3){ %>
                         <div style="cursor: pointer;" onclick="location.href='/Group-Yoga-Classes/<%= session._id %>'" class="new-grp-card">
                             <% if(session.PARTICIPANTS>=session.LIMIT){ %>
                                 <div class="booking-status-tag red-tag">Session Over booked</div>
@@ -244,9 +246,33 @@
                             </div>
                             </div>
                         </div>
+                    <% } %>
+                        
                 <% }) %>
             </div>
+            <style>
+                .exp_mr {
+                    background-color: #4CA9EE;
+                    color: white;
+                    border-radius: 1em;
+                    font-weight: 500;
+                    padding: .7em 1em;
+                    align-self: center;
+                    margin-bottom: 4rem;
+                }
+                @media (min-width: 768px){
+                    .exp_mr {
+                        margin-left: 1em;
+                        padding: .6em 2.2em;
+                    }
+                }
+                
+            </style>
+            <a style="cursor: pointer;" class="exp_mr" href="/Group-Yoga-Classes" >Explore More</a>
         </div>
+
+        
+
         <!-- Fixed-Budget Section (End) -->
 
         <!-- Call-Us Section  -->

@@ -182,16 +182,16 @@ app.get("/Group-Yoga-Classes/:id", setCache, (req, res) => {
         {
             if(req.session.HH_user._id)
             {
-                res.render("detailed_sessions", {session : data, FSTA : 2 , FSA : req.session.HH_user.FSA , _id : req.session.HH_user._id, GROUP : req.session.HH_user.GROUP });
+                res.render("detailed_sessions", {session : data, FSTA : 1 , FSA : req.session.HH_user.FSA , _id : req.session.HH_user._id, GROUP : req.session.HH_user.GROUP });
             }
             else
             {
-                res.render("detailed_sessions", { _id : "", session : data, FSTA : 2 , FSA : 0 , GROUP : [] });
+                res.render("detailed_sessions", { _id : "", session : data, FSTA : 1 , FSA : 0 , GROUP : [] });
             }
         }
         else
         {
-            res.render("detailed_sessions", { _id : "", session : data, FSTA : 2 , FSA : 0 , GROUP : []});
+            res.render("detailed_sessions", { _id : "", session : data, FSTA : 1 , FSA : 0 , GROUP : []});
         }
     })
     .catch(err => {

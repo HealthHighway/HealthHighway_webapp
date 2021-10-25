@@ -77,39 +77,55 @@
                         <div class="day-slots"><span id="selected-days">Choose</span> <img src="https://ik.imagekit.io/healthhighway2020/Date_4_MCtZ27r.png?updatedAt=1633421363761" width="20px" height="20px" alt="png"></div>
                     </div>
                     <div class="time-grid disabled">
-                        <input type="radio" id="t1" name="timing" value="6:00 AM">
-                        <label for="t1">6 AM</label>
+                        <input  type="radio" id="t1" name="timing" value="6:00 AM">
+                        <label onclick="document.getElementById('selected-time').innerText='6 AM'" for="t1">6 AM</label>
                         <input type="radio" id="t2" name="timing" value="7:00 AM">
-                        <label for="t2">7 AM</label>
+                        <label onclick="document.getElementById('selected-time').innerText='7 AM'" for="t2">7 AM</label>
                         <input type="radio" id="t3" name="timing" value="8:00 AM">
-                        <label for="t3">8 AM</label>
+                        <label onclick="document.getElementById('selected-time').innerText='8 AM'" for="t3">8 AM</label>
                         <input type="radio" id="t4" name="timing" value="9:00 AM">
-                        <label for="t4">9 AM</label>
+                        <label onclick="document.getElementById('selected-time').innerText='9 AM'" for="t4">9 AM</label>
                         <input type="radio" id="t5" name="timing" value="4:00 PM">
-                        <label for="t5">4 PM</label>
+                        <label onclick="document.getElementById('selected-time').innerText='4 PM'" for="t5">4 PM</label>
                         <input type="radio" id="t6" name="timing" value="5:00 PM">
-                        <label for="t6">5 PM</label>
+                        <label onclick="document.getElementById('selected-time').innerText='5 PM'" for="t6">5 PM</label>
                         <input type="radio" id="t7" name="timing" value="6:00 PM">
-                        <label for="t7">6 PM</label>
+                        <label onclick="document.getElementById('selected-time').innerText='6 PM'" for="t7">6 PM</label>
                         <input type="radio" id="t8" name="timing" value="7:00 PM">
-                        <label for="t8">7 PM</label>
+                        <label onclick="document.getElementById('selected-time').innerText='7 PM'" for="t8">7 PM</label>
                         <input type="radio" id="t9" name="timing" value="8:00 PM">
-                        <label for="t9">8 PM</label>
+                        <label onclick="document.getElementById('selected-time').innerText='8 PM'" for="t9">8 PM</label>
                     </div>
+                    <script>
+                        function selectedDays(){
+                            let days=[];
+                            var checkboxes = document.getElementsByName('days');
+                            checkboxes.forEach((checkbox) => {
+                                if (checkbox.checked) {
+                                    days.push(checkbox.value);
+                                }
+                            })
+                            if(days.length != 0){
+                                document.getElementById('selected-days').innerText='Selected'
+                            }else{
+                                document.getElementById('selected-days').innerText='Choose'
+                            }
+                        }
+                    </script>
                     <div class="day-grid disabled">
-                        <input type="checkbox" id="day1" name="days" value="Mon">
+                        <input onchange="selectedDays()" type="checkbox" id="day1" name="days" value="Mon">
                         <label for="day1">Mon</label>
-                        <input type="checkbox" id="day2" name="days" value="Tue">
+                        <input onchange="selectedDays()" type="checkbox" id="day2" name="days" value="Tue">
                         <label for="day2">Tue</label>
-                        <input type="checkbox" id="day3" name="days" value="Wed">
+                        <input onchange="selectedDays()" type="checkbox" id="day3" name="days" value="Wed">
                         <label for="day3">Wed</label>
-                        <input type="checkbox" id="day4" name="days" value="Thu">
+                        <input onchange="selectedDays()" type="checkbox" id="day4" name="days" value="Thu">
                         <label for="day4">Thu</label>
-                        <input type="checkbox" id="day5" name="days" value="Fri">
+                        <input onchange="selectedDays()" type="checkbox" id="day5" name="days" value="Fri">
                         <label for="day5">Fri</label>
-                        <input type="checkbox" id="day6" name="days" value="Sat">
+                        <input onchange="selectedDays()" type="checkbox" id="day6" name="days" value="Sat">
                         <label for="day6">Sat</label>
-                        <input type="checkbox" id="day7" name="days" value="Sun">
+                        <input onchange="selectedDays()" type="checkbox" id="day7" name="days" value="Sun">
                         <label for="day7">Sun</label>
                     </div>
                     <div class="date-div">
@@ -117,6 +133,8 @@
                         <input type="date" id="date">
                     </div>
                 </div>
+
+                
 
                 <div class="btns">
                     <button class="btn sel" type="button" onclick="submit()" >Checkout</button>
