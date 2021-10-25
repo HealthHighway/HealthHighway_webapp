@@ -305,11 +305,11 @@
         socket.on('welcome', async (msg) => {
             console.log(msg);
             var options = {
-                "key" : "rzp_test_gxIWjen8OxxznS",
+                "key" : "rzp_live_gXNmHts9xWKyy8",
                 "amount" : msg.paymentData.amount,
                 "currency" : msg.paymentData.currency,
                 "name": "Health Highway",
-                "description" : "Test Transaction",
+                "description" : "Payment for Private Session",
                 "order_id" : msg.paymentData.id,
                 "handler" : async (res) => {
                    console.log("payment done successfully");

@@ -68,8 +68,9 @@
                         // console.log("This is the starting date");
                         // console.log(this.props.STARTING_DATE)
                         let STARTING_DATE_FOR_USER = '<%-session.STARTING_DATE %>';
+                        let PARTICIPANTS = '<%- session.PARTICIPANTS %>';
                         if(isActive()){
-                            if(session.PARTICIPANTS == 0){
+                            if(Number(PARTICIPANTS) == 0){
                                 STARTING_DATE_FOR_USER = new Date(Date.now() + 24*60*60*1000)
                             }else{
                                 STARTING_DATE_FOR_USER = new Date();
@@ -120,11 +121,11 @@
                             socket.on('welcome', async (msg) => {
                                 console.log(msg);
                                 var options = {
-                                    "key" : "rzp_test_0Yx7yX4fQ8wjrf",
+                                    "key" : "rzp_live_gXNmHts9xWKyy8",
                                     "amount" : msg.paymentData.amount,
                                     "currency" : msg.paymentData.currency,
                                     "name": "Health Highway",
-                                    "description" : "Test Transaction",
+                                    "description" : "Payment For Group Session",
                                     "order_id" : msg.paymentData.id,
                                     "handler" : async (res) => {
                                         console.log("payment done successfully");

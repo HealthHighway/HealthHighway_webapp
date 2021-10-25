@@ -28,9 +28,6 @@ app.use(session({
     cookie: { secure: false, httpOnly : false, path : "/", maxAge : 12342424 }
 }))
 
-
-
-
 io.on('connection', (socket) => {
     socket.on('givedata', async(msg) => {
         console.log(msg);
@@ -46,7 +43,7 @@ io.on('connection', (socket) => {
                 url : 'https://api.razorpay.com/v1/orders',
                 timeout : 6000,
                 headers : {
-                    "Authorization" : "Basic cnpwX3Rlc3RfMFl4N3lYNGZROHdqcmY6T0FpYUM3YkRYeWxpcHE1dDFkdWc2RVEy",
+                    "Authorization" : "Basic cnpwX2xpdmVfZ1hObUh0czl4V0t5eTg6T3o2T0FPeWM5ZHd5eXNONVhOZTc5VHpj",
                     "Content-Type" : "application/json"
                 },
                 data : {
