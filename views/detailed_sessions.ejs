@@ -53,7 +53,7 @@
                     saveGrp = async (USERID, GRPID, GROUP) => {
                         let present=false;
                         GROUP.forEach(group => {
-                            if(group.GRPID === GRPID){
+                            if(group === GRPID){
                                 present=true;
                                 return;
                             }

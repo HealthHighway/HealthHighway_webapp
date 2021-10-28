@@ -341,7 +341,7 @@ app.post("/phoneauth", async (req, res) => {
                     PHONE_NUMBER : req.body.phoneNumber,
                     NAME : r1.user.NAME,
                     _id : r1.user._id,
-                    GROUP : [...r1.user.GROUP],
+                    GROUP : r1.user.GROUP?Object.keys(r1.user.GROUP):[],
                     FSA : r1.user.FSA
                 }
             }
@@ -391,7 +391,7 @@ app.post("/add-name-with-phone-number", async (req, res) => {
                 PHONE_NUMBER : req.session.HH_user.PHONE_NUMBER,
                 NAME : req.body.name,
                 _id : r1.user._id,
-                GROUP : [...r1.user.GROUP],
+                GROUP : r1.user.GROUP?Object.keys(r1.user.GROUP):[],
                 FSA : r1.user.FSA
             }
         }
@@ -433,7 +433,7 @@ app.post("/oauth", async (req, res) => {
             resp={"verified" : true};
             req.session.HH_user = {
                 _id : r1.user._id,
-                GROUP : [...r1.user.GROUP],
+                GROUP : r1.user.GROUP?Object.keys(r1.user.GROUP):[],
                 FSA : r1.user.FSA
             }
         }
@@ -474,7 +474,7 @@ app.post("/create-group", async (req, res) => {
             resp={"verified" : true};
             req.session.HH_user = {
                 _id : r1.user._id,
-                GROUP : [...r1.user.GROUP],
+                GROUP : r1.user.GROUP?Object.keys(r1.user.GROUP):[],
                 FSA : r1.user.FSA
             }
         }
@@ -573,13 +573,7 @@ app.get("/my-profile", setCache, async (req, res) => {
     }
 })
 
-// app.get("/profile", (req, res) => {
-//     res.render("dashboard", { _id : "" });
-// })
 
-// app.get("/payment-success", (req, res) => {
-//     res.render("payment-success");
-// })
 
 app.get("/terms-and-conditions", (req, res) => {
     res.render("tnc");
