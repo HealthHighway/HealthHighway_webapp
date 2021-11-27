@@ -1,0 +1,110 @@
+#calltoaction-main-div
+{
+    background-color:#4CA9EE
+}
+#calltoaction-main-div .row
+{
+    padding: 10px 60px;
+}
+#calltoaction-first-div
+{
+   display:flex;
+   flex-direction: column;
+   justify-content:center;
+   padding: 40px 20px;
+   padding-right: 0px;
+   /* width: 100%; */
+   /* background-color:red */
+}
+#calltoaction-first-div p:nth-child(1)
+{
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-display: swap;
+    color: white;
+}
+#calltoaction-first-div p:nth-child(2)
+{
+    font-size: 14px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-display: swap;
+    font-weight: 100;
+}
+#calltoaction-second-div
+{
+    /* background-color: orange; */
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 30px ;
+}
+#calltoaction-second-div :nth-child(1)
+{
+    margin-right: 20px;border-radius: 40px!important;padding: 10px 30px!important;margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;font-weight:100;font-size: 14px;
+    font-display: swap;
+}
+#calltoaction-second-div :nth-child(1):hover
+{
+    color: #4CA9EE;
+}
+#calltoaction-second-div :nth-child(2)
+{
+    margin-right: 20px;border-radius: 40px!important;padding: 10px 30px!important;margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;font-weight:100;font-size: 14px;color: #4CA9EE!important;
+    font-display: swap;
+}
+#calltoaction-second-div :nth-child(2):hover
+{
+    background-color:#4CA9EE;
+    color: white!important;
+}
+
+@media only screen and (max-width: 991px)
+{
+    #calltoaction-main-div .row
+    {
+        padding: 0px 0px;
+    }
+    #calltoaction-first-div
+    {
+       padding-top: 50px;
+       padding-left: 30px;
+    }
+    #calltoaction-second-div
+    {
+        /* background-color: red; */
+        justify-content:flex-start;
+        padding: 20px 30px ;
+    }
+    #calltoaction-second-div :nth-child(1)
+    {
+        font-size: 15px;
+    }
+    #calltoaction-second-div :nth-child(2)
+    {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width:450px)
+{
+    #calltoaction-first-div p:nth-child(1)
+    {
+        font-size: 27px;
+        font-family: 'Montserrat', sans-serif;
+        font-display: swap;
+        color: white;
+    }
+    #calltoaction-second-div
+    {
+        padding: 10px 30px ;
+    }
+    #calltoaction-first-div
+    {
+       padding-bottom: 30px;
+    }
+}

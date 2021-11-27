@@ -1,0 +1,659 @@
+.navbar-container-unscrolled
+{
+  display:flex;flex-direction: row;align-items:center!important;margin-top: 15px; 
+}
+.navbar-container-scrolled
+{
+  display:flex;flex-direction: row;align-items:center!important;margin-top: 0px;
+}
+#landing-main-div
+{
+     width: 100vw;
+     height: 760px;
+     background-color:transparent;
+     position: relative;
+     background-image: url("../../images/campaign-123456/wave1.png");
+     background-repeat:no-repeat;
+     background-size: 75% 65%;
+     background-position: 400px 0px;
+}
+.navbar-brand
+{
+  margin-left: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar-brand img
+{
+   width: 80px;
+   height: 53.33px;
+}
+.nav-link
+{
+   font-size: 17px!important;
+}
+.navbar-brand span
+{
+  color:#4CA9EE;font-family: 'Montserrat', sans-serif;font-weight: 500;font-size: 23px;margin-left: 5px;
+}
+#landing-extra-div1
+{
+  width: 100vw;height: 200px;background-color:transparent;
+}
+#landing-content-div
+{
+  height:500px;
+  padding: 0px 100px;
+  display: flex;
+  flex-direction: row;
+}
+#landing-left-div
+{
+   width: 50vw;
+   padding-top:40px;
+}
+#landing-extra-div2
+{
+  width: 100vw;height: 30px;background-color:transparent
+}
+#landing-right-div
+{
+   width: 50vw;
+   height: 400px;
+   /* background-color: red; */
+   background-image: url("../../images/campaign-123456/landing-ad.png");
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: top center;
+}
+#landing-joinus
+{
+   border-color: #4CA9EE;
+   color: #4CA9EE;
+   padding: 8px 35px!important;
+   border-radius: 20px!important;
+   font-family: 'Roboto', sans-serif;font-size: 14px;font-weight: 500;
+   transition: 0.3s ease;
+   background-color:white;
+}
+#landing-joinus:hover
+{
+   background-color: #4CA9EE;
+   border-color: white;
+   color: white;
+}
+.nav-colored{
+  background-color:white!important;
+}
+.nav-transparent{
+  background-color:transparent!important;
+}
+#landing-left-text
+{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color:black;
+  margin-top: 50px;
+}
+.navbar-toggler
+{
+   margin-right: 20px;
+   color: white;
+   border: none;
+}
+.navbar-toggler i
+{
+  color: white;
+  border:none
+}
+#landing-left-button-div
+{
+  display:flex;flex-wrap:wrap;
+  margin-top: 50px;
+}
+#landing-left-button-div :nth-child(1)
+{
+  padding: 10px 35px!important;
+  border-radius: 50px!important;
+  background-color: #4CA9EE;
+  color: white;
+  border-color: #4CA9EE;
+  margin-right: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+#landing-left-button-div :nth-child(1):hover
+{
+  background-color: #fff;
+  color: #4CA9EE;
+}
+#landing-left-button-div :nth-child(2)
+{
+  padding: 10px 35px;
+  border-radius: 50px;
+  color: #4CA9EE;
+  border-color: #4CA9EE;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background-color:white;
+}
+#landing-left-button-div :nth-child(2):hover
+{
+  color: #fff;
+  border-color: #4CA9EE;
+  background-color: #4CA9EE;
+}
+
+#landing-left-div h1
+{
+  font-family: 'Montserrat', sans-serif;font-size: 56px;font-weight: 700;
+}
+
+@media only screen and (max-width: 2300px)
+{
+  #landing-main-div
+  {
+      background-size: 75% 70%;
+      background-position: 570px 0px;
+  }
+}
+
+@media only screen and (max-width: 2000px)
+{
+  #landing-main-div
+  {
+      background-size: 75% 70%;
+      background-position: 520px 0px;
+  }
+}
+
+@media only screen and (max-width: 1700px)
+{
+  #landing-main-div
+  {
+      background-size: 75% 65%;
+      background-position: 430px 0px;
+  }
+}
+
+@media only screen and (max-width: 1550px)
+{
+  #landing-main-div
+  {
+      background-size: 75% 65%;
+      background-position: 380px 0px;
+  }
+}
+
+@media only screen and (max-width: 1400px)
+{
+  #landing-main-div
+  {
+      background-size: 70% 60%;
+      background-position: 420px 0px;
+  }
+}
+
+@media only screen and (max-width: 1350px)
+{
+  #landing-main-div
+  {
+      background-size: 70% 60%;
+      background-position: 410px 0px;
+  }
+}
+
+@media only screen and (max-width: 1300px)
+{
+  #landing-main-div
+  {
+      background-size: 70% 60%;
+      background-position: 400px 0px;
+  }
+}
+
+@media only screen and (max-width: 1200px)
+{
+  #landing-main-div
+  {
+      background-size: 65% 60%;
+      background-position: 420px 0px;
+  }
+}
+
+@media only screen and (max-width: 1100px)
+{
+  #landing-main-div
+  {
+      background-size: 65% 60%;
+      background-position: 400px 0px;
+  }
+}
+
+@media only screen and (max-width: 991px)
+{
+  /* .navbar-toggler i
+  {
+     color:#4CA9EE!important;
+  } */
+  #landing-main-div
+  {
+       height: 1100px;
+       background-color:transparent;
+       background-size: 57% 40%;
+       background-position: 440px 0px;
+  }
+  #landing-extra-div1
+  {
+    width: 100vw;height: 90px;background-color:transparent;
+  }
+  #landing-content-div
+  {
+    height:900px;background-color: transparent;
+    padding-left: 80px;
+    flex-direction: column-reverse;
+  }
+  #landing-extra-div2
+  {
+    width: 100vw;height: 50px;background-color:white
+  }
+  #landing-left-text
+  {
+    margin-top: 30px;
+  }
+  #landing-right-div
+  {
+    height: 400px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top left;
+    margin-top: 30px;
+  }
+  #landing-left-div
+  {
+    margin-top: 100px;
+  }
+}
+
+
+@media only screen and (max-width: 984px)
+{
+  #landing-main-div
+  {
+       height: 1150px;
+       background-color:transparent;
+       background-size: 58% 40%;
+       background-position: 440px 0px;
+  }
+  #landing-content-div
+  {
+    height:850px;background-color: transparent;
+    padding-left: 80px;
+    flex-direction: column-reverse;
+  }
+  #landing-left-text
+  {
+    margin-top: 30px;
+  }
+  #landing-left-div
+  {
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 900px)
+{
+  #landing-main-div
+  {
+       height: 950px;
+       background-color:transparent;
+       background-size: 57% 35%;
+       background-position: 390px 0px;
+  }
+  #landing-extra-div1
+  {
+    width: 100vw;height: 0px;background-color:transparent;
+  }
+  #landing-left-div h1
+  {
+    font-family: 'Montserrat', sans-serif;font-size: 40px;font-weight: 700;
+  }
+  .slidingVertical span
+  {
+    font-size: 40px;
+  }
+  #landing-left-div
+  {
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width:850px)
+{
+  #landing-main-div
+  {
+       background-size: 57% 35%;
+       background-position: 370px 0px;
+  }
+}
+
+@media only screen and (max-width:800px)
+{
+  #landing-main-div
+  {
+       background-size: 50% 35%;
+       background-position: 400px 0px;
+  }
+}
+
+@media only screen and (max-width: 745px)
+{
+  #landing-main-div
+  {
+       background-size: 50% 35%;
+       background-position: 380px 0px;
+  }
+  #landing-left-button-div :nth-child(1)
+  {
+    margin-bottom: 20px;
+  }
+  #landing-left-button-div :nth-child(2)
+  {
+    margin-bottom: 20px;
+  }
+  #landing-left-div
+  {
+    margin-top: 0px;
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 650px)
+{
+  #landing-main-div
+  {
+       height: 900px;
+       background-color:transparent;
+       background-size: 45% 30%;
+       background-position: 360px 0px;
+  }
+  #landing-extra-div1
+  {
+    height: 100px;
+  }
+  #landing-content-div{
+    height: 700px;
+  }
+  #landing-right-div
+  {
+     height: 300px;
+  }
+  #landing-left-div
+  {
+    margin-top: 0px;
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 550px)
+{
+  #landing-main-div
+  {
+       height: 750px;
+       background-color:transparent;
+       background-size: 48% 32%;
+       background-position: 280px 0px;
+  }
+  .navbar-brand
+  {
+    margin-left: 30px;
+  }
+  .navbar-brand img
+  {
+    width: 70px;
+    height: 46.67px;
+  }
+  .navbar-brand span
+  {
+    color:#4CA9EE;font-family: 'Montserrat', sans-serif;font-weight: 500;font-size: 18px;margin-left: 3px;
+  }
+  #landing-content-div
+  {
+    padding-left: 50px;
+    height: 630px;
+  }
+  #landing-right-div
+  {
+     height: 280px;
+     width: 300px;
+     /* background-color: green; */
+  }
+  #landing-extra-div1
+  {
+    height: 60px;
+    /* background-color: pink; */
+  }
+  #landing-left-div h1
+  {
+    font-family: 'Montserrat', sans-serif;font-size: 30px;font-weight: 700;
+  }
+  .slidingVertical span
+  {
+    font-size: 30px;
+  }
+  #landing-left-button-div
+  {
+     margin-top: 35px;
+  }
+}
+
+@media only screen and (max-width:500px)
+{
+  #landing-main-div
+  {
+       height: 750px;
+       background-size: 46% 30%;
+       background-position: 280px 0px;
+  }
+}
+
+@media only screen and (max-width: 464px)
+{
+  #landing-main-div
+  {
+       height: 850px;
+       background-size: 42% 30%;
+       background-position: 280px 0px;
+  }
+  .navbar-brand
+  {
+    margin-left: 10px;
+  }
+  .navbar-brand img
+  {
+    width: 70px;
+    height: 46.67px;
+  }
+  .navbar-brand span
+  {
+    color:#4CA9EE;font-family: 'Montserrat', sans-serif;font-weight: 500;font-size: 16px;margin-left: 3px;
+  }
+  #landing-content-div
+  {
+    padding-left: 35px;
+    height: 700px;
+  }
+  #landing-left-div
+  {
+     margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 460px)
+{
+  #landing-main-div
+  {
+       height: 850px;
+       background-size: 45% 28%;
+       background-position: 259px 0px;
+       background-image: url("../../images/campaign-123456/wave.png");
+  }
+  #landing-right-div
+  {
+    background-image: url("../../images/campaign-123456/landing-ad.png");
+  }
+  /* .navbar-toggler
+  {
+    margin-top: 20px;
+  } */
+}
+
+@media only screen and (max-width: 440px)
+{
+  #landing-main-div
+  {
+       background-size: 45% 28%;
+       background-position: 246px 0px;
+  }
+}
+
+@media only screen and (max-width: 414px)
+{
+  #landing-extra-div1
+  {
+      height: 100px;
+       /* background-color: red; */
+  }
+}
+
+@media only screen and (max-width: 400px)
+{
+  .navbar-brand img
+  {
+    width: 60px;
+    height: 40px;
+  }
+  .navbar-brand span
+  {
+    color:#4CA9EE;font-family: 'Montserrat', sans-serif;font-weight: 500;font-size: 14px;margin-left: 1px;
+  }
+  #landing-main-div
+  {
+       height: 850px;
+       background-size: 45% 23%;
+       background-position: 225px 0px;
+  }
+  /* .navbar-brand
+  {
+    margin-top: 10px;
+  } */
+  .navbar-container-unscrolled
+  {
+    display:flex;flex-direction: row;align-items:center;margin-top: 10px;  
+  }
+  .navbar-container-scrolled
+  {
+    display:flex;flex-direction: row;align-items:center;margin-top: 0px;  
+  }
+  /* .navbar-toggler
+  {
+    margin-top: 10px;
+    color: white;
+  } */
+  #landing-left-div h1
+  {
+    font-family: 'Montserrat', sans-serif;font-size: 20px;font-weight: 700;
+  }
+  .slidingVertical span
+  {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 360px)
+{
+  #landing-main-div
+  {
+       height: 850px;
+       background-size: 45% 26%;
+       background-position: 200px 0px;
+  }
+  #landing-right-div
+  {
+      height: 250px;
+  }
+}
+
+@media only screen and (max-width: 330px)
+{
+  #landing-main-div
+  {
+       height: 800px;
+       background-image: none;
+  }
+  .navbar-toggler i
+  {
+     color:#4CA9EE!important;
+  }
+  #landing-extra-div1{
+    height: 30px;
+  }
+  #landing-content-div
+  {
+    padding-left: 35px;
+    height: 700px;
+  }
+  #landing-left-text
+  {
+     font-size: 12px;
+  }
+  #landing-right-div
+  {
+    height: 250px;
+    width: 270px;
+  }
+  #landing-left-div{
+     margin-top: 10px;
+  }
+  #landing-left-button-div :nth-child(1)
+  {
+    padding: 8px 30px!important;
+    font-size: 14px;
+  }
+  #landing-left-button-div :nth-child(2)
+  {
+    padding: 8px 30px!important;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 300px)
+{
+  .navbar-brand img
+  {
+    width: 50px;
+    height: 33.33px;
+  }
+  .navbar-brand span
+  {
+    font-size: 13px;margin-left: 1px;
+  }
+  #landing-content-div
+  {
+    padding-left: 25px;
+  }
+  #landing-right-div
+  {
+    height: 250px;
+    width: 250px;
+  }
+  .navbar-toggler
+  {
+    margin-right: 10px;
+  }
+}

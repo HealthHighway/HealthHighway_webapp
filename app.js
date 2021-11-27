@@ -81,6 +81,10 @@ app.get("/", (req, res) => {
     }
 })
 
+app.get("/Yoga-sessions-for-weight-loss", (req, res) => {
+    res.render("campaign-123456")
+})
+
 
 app.get("/calendar", (req, res) => {
     res.render("calendar");

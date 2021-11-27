@@ -1,0 +1,599 @@
+.image-div img {
+    border-top: 5px solid #27e7cd;
+    width: 100px;
+    margin-right: 50px;
+  }
+  .image-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+
+  .image-div div
+  {
+      width: 420px;
+      /* background-color:blue; */
+  }
+
+  .image-div div p:nth-child(1) {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28.7077px;
+    line-height: 39px;
+    color: #4ca9ee;
+    /* width: 420px; */
+    text-align: left;
+    align-self: center;
+    /* background-color: red; */
+  }
+
+  .image-div div p:nth-child(2) {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    /* line-height: 39px; */
+    color: #757575;
+    /* width: 420px; */
+    text-align: left;
+    align-self: center;
+  }
+
+  .middle-div {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .middle-left-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 80px;
+  }
+  .form-div {
+    width: 430px;
+    height: 520px;
+    background: linear-gradient(0deg, #4ca9ee, #4ca9ee);
+    border-radius: 10.7px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .form-title {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 38px;
+    color: #ffffff;
+    /* width: ; */
+    margin-bottom: 40px;
+    /* background-color: red; */
+    /* text-align: left; */
+  }
+  .form-text {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 32px;
+    margin-bottom: 20px;
+  }
+  #schedule-form input,
+  #schedule-form button {
+    width: 350px;
+    margin-bottom: 18px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+  }
+
+  #schedule-form input
+  {
+      padding-left: 20px;
+  }
+  #schedule-form {
+    margin-top: 25px;
+  }
+  #schedule-form button {
+    background-color: #fff;
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #4ca9ee;
+    border: 2.14px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 10.7px;
+    margin-top: 20px;
+  }
+
+  @media only screen and (max-width:1300px)
+  {
+    .image-div img {
+        width: 100px;
+        /* height: 100px; */
+        margin-right: 40px;
+      }
+      .image-div {
+        margin-bottom: 35px;
+      }
+      .image-div div
+      {
+          width: 420px;
+      }
+      .image-div div p:nth-child(1) {
+        font-size: 28.7077px;
+        line-height: 39px;
+      }
+      .image-div div p:nth-child(2) {
+        font-weight: 500;
+        font-size: 13px;
+      }
+      .form-div {
+        width: 400px;
+        height: 580px;
+      }
+      .form-title {
+        font-size: 28px;
+      }
+      #schedule-form input,
+      #schedule-form button {
+        width: 350px;
+        margin-bottom: 18px;
+        height: 45px;
+        padding: 5px;
+        border-radius: 6px;
+        border: none;
+        font-size: 13px;
+      }
+    
+      #schedule-form input
+      {
+          padding-left: 20px;
+      }
+      #schedule-form {
+        margin-top: 25px;
+      }
+      #schedule-form button {
+        font-size: 18px;
+        border: 2.14px solid #ffffff;
+        box-sizing: border-box;
+        border-radius: 10.7px;
+        margin-top: 20px;
+      }
+  }
+
+  @media only screen and (max-width:1100px)
+  {
+    .middle-div {
+        display: flex;
+        justify-content: center;
+      }
+    .image-div img {
+        width: 80px;
+        /* height: 80px; */
+        margin-right: 30px;
+      }
+      .image-div {
+        margin-bottom: 45px;
+      }
+      .image-div div
+      {
+          width: 350px;
+          /* background-color:red */
+      }
+      .image-div div p:nth-child(1) {
+        font-size: 22;
+      }
+      .image-div div p:nth-child(2) {
+        font-size: 13px;
+        width: 300px;
+      }
+      .form-div {
+        width: 400px;
+        height: 580px;
+      }
+      .form-title {
+        font-size: 28px;
+      }
+      #schedule-form input,
+      #schedule-form button {
+        width: 350px;
+        margin-bottom: 18px;
+        height: 45px;
+        padding: 5px;
+        border-radius: 6px;
+        border: none;
+        font-size: 13px;
+      }
+    
+      #schedule-form input
+      {
+          padding-left: 20px;
+      }
+      #schedule-form {
+        margin-top: 25px;
+      }
+      #schedule-form button {
+        background-color: #fff;
+        font-family: Work Sans;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: #4ca9ee;
+        border: 2.14px solid #ffffff;
+        box-sizing: border-box;
+        border-radius: 10.7px;
+        margin-top: 20px;
+      }
+  }
+
+  @media only screen and (max-width:1000px)
+  {
+    .middle-div {
+        display: flex;
+        justify-content: space-around;
+      }
+    .image-div img {
+        width: 80px;
+        height: 80px;
+        margin-right: 30px;
+      }
+      .image-div {
+        margin-bottom: 45px;
+      }
+      .image-div div
+      {
+          width: 300px;
+          /* background-color:red */
+      }
+      .image-div div p:nth-child(1) {
+        font-size: 22;
+      }
+      .image-div div p:nth-child(2) {
+        font-size: 13px;
+        width: 100%;
+      }
+      .form-div {
+        width: 400px;
+        height: 580px;
+      }
+      .form-title {
+        font-size: 27px;
+      }
+      #schedule-form input,
+      #schedule-form button {
+        width: 350px;
+        margin-bottom: 18px;
+        height: 45px;
+        padding: 5px;
+        border-radius: 6px;
+        border: none;
+        font-size: 13px;
+      }
+    
+      #schedule-form input
+      {
+          padding-left: 20px;
+      }
+      #schedule-form {
+        margin-top: 25px;
+      }
+      #schedule-form button {
+        /* background-color: #4ca9ee; */
+        font-family: Work Sans;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        /* color: #ffffff; */
+        /* border: 2.14px solid #ffffff; */
+        box-sizing: border-box;
+        border-radius: 10.7px;
+        margin-top: 20px;
+      }
+  }
+  
+  @media only screen and (max-width: 820px) {
+    .middle-div {
+      display: flex;
+      flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .form-div {
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
+    #schedule-form {
+      margin-top: 5px;
+    }
+    .middle-left-div {
+      margin-top: 60px;
+      margin-bottom: 50px;
+    }
+    .image-div img {
+        width: 100px;
+        /* height: 100px; */
+        margin-right: 40px;
+    }
+    .image-div {
+    margin-bottom: 45px;
+    }
+    .image-div div
+    {
+        width: 300px;
+        /* background-color:red */
+    }
+    .image-div div p:nth-child(1) {
+    font-size: 22;
+    }
+    .image-div div p:nth-child(2) {
+    font-size: 13px;
+    width: 100%;
+    }
+  }
+
+  /* @media only screen and (max-width: 630px) {
+    
+    .middle-left-div {
+      margin-top:20px;
+      margin-bottom: 50px;
+    }
+    .image-div img {
+        width: 100px;
+        height: 100px;
+        margin-right: 40px;
+    }
+    .image-div {
+    margin-bottom: 45px;
+    }
+    .image-div p {
+    font-size: 22px;
+    width: 300px;
+    }
+  } */
+
+  @media only screen and (max-width: 630px) {
+    .form-div {
+      width: 400px;
+      height: 550px;
+    }
+    .middle-left-div {
+      margin-top:20px;
+      margin-bottom: 50px;
+    }
+    .image-div img {
+        width: 80px;
+        height: 80px;
+        margin-right: 40px;
+    }
+    .image-div {
+    margin-bottom: 45px;
+    }
+    .image-div p {
+    font-size: 22px;
+    width: 250px;
+    /* background-color: #000; */
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .middle-left-div {
+      margin-top:20px;
+      margin-bottom: 50px;
+    }
+    .image-div img {
+        width: 80px;
+        height: 80px;
+        margin-right: 40px;
+    }
+    .image-div {
+    margin-bottom: 45px;
+    }
+    .image-div div
+    {
+        width: 250px;
+        /* background-color:red */
+    }
+    .image-div div p:nth-child(1) {
+    font-size: 22;
+    }
+    .image-div div p:nth-child(2) {
+    font-size: 13px;
+    width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 460px) {
+  .form-div {
+      width: 85vw;
+    }
+  }
+  
+  @media only screen and (max-width: 450px) {
+    #schedule-form input,
+    #schedule-form button {
+      width: 330px;
+    }
+    .image-div img {
+      width: 80px;
+      /* height: 80px; */
+      margin-right: 30px;
+    }
+    .image-div div
+    {
+        width: 200px;
+        /* background-color:red */
+    }
+    .image-div div p:nth-child(1) {
+    font-size: 22;
+    }
+    .image-div div p:nth-child(2) {
+    font-size: 13px;
+    width: 100%;
+    }
+    .middle-div
+    {
+        /* background-color: orange; */
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    #schedule-form input,
+    #schedule-form button {
+      width: 280px;
+    }
+    .image-div img {
+      width: 80px;
+      /* height: 80px; */
+      margin-right: 30px;
+    }
+    .image-div div
+    {
+        width: 200px;
+        /* background-color:red */
+    }
+    .image-div div p:nth-child(1) {
+    font-size: 19px;
+    }
+    .image-div div p:nth-child(2) {
+    font-size: 13px;
+    width: 100%;
+    }
+    .form-title {
+        font-size: 27px;
+        line-height: 38px;
+        color: #ffffff;
+        width: 200px;
+        /* background-color: #27e7cd; */
+      }
+      .form-text {
+        font-family: Work Sans;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        color: #ffffff;
+        margin: 0 27px;
+        margin-bottom: 20px;
+      }
+  }
+  
+  @media only screen and (max-width: 380px) {
+    #schedule-form input,
+    #schedule-form button {
+      width: 280px;
+    }
+    .middle-div
+    {
+        /* background-color: orange; */
+    }
+    .image-div img {
+        width: 80px;
+        /* height: 80px; */
+        margin-left: 10px;
+    }
+    .image-div div
+    {
+        width: 150px;
+        /* background-color:red */
+    }
+    .image-div div p:nth-child(1) {
+    font-size: 19px;
+    width: 100%;
+    line-height:25px;
+    }
+    .image-div div p:nth-child(2) {
+    font-size: 13px;
+    width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    .image-div img {
+        width: 80px;
+        /* height: 80px; */
+        margin-right: 20px;
+    }
+    .image-div div
+    {
+        width: 150px;
+        /* background-color:red */
+    }
+    .image-div div p:nth-child(1) {
+    font-size: 19px;
+    }
+    .image-div div p:nth-child(2) {
+    font-size: 13px;
+    width: 100%;
+    }
+  } 
+  
+  @media only screen and (max-width: 360px) {
+    #schedule-form input,
+    #schedule-form button {
+      width: 250px;
+    }
+  } 
+
+  @media only screen and (max-width: 325px) {
+    #schedule-form input,
+    #schedule-form button {
+      width: 240px;
+    }
+  } 
+  
+  @media only screen and (max-width: 300px) {
+      .middle-div
+      {
+          /* background-color: red; */
+      }
+      .middle-left-div
+      {
+          margin-bottom: 20px;
+      }
+    #schedule-form input,
+    #schedule-form button {
+      width: 200px;
+    }
+    .image-div img {
+      width: 80px;
+      /* height: 80px; */
+      margin-right: 15px;
+    }
+    .image-div div
+    {
+        /* width: 250px; */
+        /* background-color:red */
+    }
+    .image-div div p:nth-child(1) {
+    font-size: 18px;
+    }
+    .image-div div p:nth-child(2) {
+    font-size: 13px;
+    width: 100%;
+    }
+  }
+  
+  

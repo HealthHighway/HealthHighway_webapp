@@ -1,0 +1,301 @@
+.modal-body-schedule
+{
+    background-color: white;
+    overflow: hidden;
+    width: 800vw;
+    display: flex;
+    flex-direction: row;
+}
+.modal-body-book
+{
+    background-color: white;
+    overflow: hidden;
+    width: 800vw;
+    display: flex;
+    flex-direction: row;
+}
+.modal-choose-div
+{
+    background-color:white;
+    height: 100vh;
+    width: 100vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 100px 150px;
+}
+.modal-choose-first-sub
+{
+    display:flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* align-content: center!important; */
+    margin-bottom: 10px;
+}
+
+.btn-close
+{
+    margin-left: 200px!important;
+}
+
+.modal-choose-extra-para
+{
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.btn-form-manual
+{
+    background-color: #4CA9EE!important;
+    border-color: #4CA9EE!important;
+}
+
+.modal-choose-first-sub p:nth-child(1)
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    margin-top: 70px;
+    background-color:transparent;
+    font-weight: 200;
+}
+
+.modal-choose-first-sub p:nth-child(2)
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color:transparent;
+}
+
+.modal-choose-first-sub button
+{
+    margin-top: 80px;
+    margin-left: 20px;
+}
+
+.modal-choose-second-sub {
+    margin-left: -16px;
+}
+
+.choose-para
+{
+    background-color: #43BAE5;
+    border-radius: 10px;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 20px;
+    color: rgb(44, 41, 41);
+    cursor: pointer;
+}
+
+.modal-btngrp
+{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+.modal-gonext
+{
+    padding:10px 10px;
+    background-color: #43BAE5;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 40px;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    color: rgb(44, 41, 41);
+}
+.modal-type-second-sub input
+{
+    padding: 10px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    max-width: 500px;
+}
+.modal-valid
+{
+    color: red;
+    margin-top: 10px;
+    display:none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.progress
+{
+    position: fixed;
+    top: 0px!important;
+    left:0px!important;
+    right:0px!important;
+}
+
+@media only screen and (max-width: 1069px)
+{
+    /* .modal-choose-div
+    {
+        padding: 100px 70px;
+    } */
+}
+
+@media only screen and (max-width: 768px)
+{
+    .modal-choose-div
+    {
+        /* padding: 0px 70px; */
+    }
+    .modal-choose-extra-para
+    {
+        /* margin-bottom: 20px; */
+    }
+    .btn-close
+    {
+        margin-left: 150px!important;
+    }
+}
+
+@media only screen and (max-width: 745px)
+{
+    .modal-choose-div
+    {
+        /* padding: 20px 40px; */
+    }
+}
+
+@media only screen and (max-width: 640px)
+{
+    .modal-choose-div
+    {
+        padding: 20px 100px;
+    }
+    .modal-choose-first-sub p
+    {
+        font-size: 24px!important;
+        margin-bottom: 5px;
+    }
+    .modal-btngrp
+    {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 550px)
+{
+    .modal-choose-div
+    {
+        padding: 30px 40px;
+    }
+    .modal-choose-first-sub
+    {
+        margin-bottom: 10px;
+    }
+    .modal-choose-first-sub p
+    {
+        font-size: 20px!important;
+    }
+    .btn-close
+    {
+    }
+}
+
+@media only screen and (max-width: 470px)
+{
+    .modal-choose-div
+    {
+        padding: 10px 40px;
+    }
+    .modal-choose-first-sub
+    {
+        margin-bottom: 0px;
+    }
+    .modal-choose-first-sub p
+    {
+        font-size: 18px!important;
+    }
+    .modal-choose-first-sub button
+    {
+        font-size: 12px;
+    }
+    .modal-btngrp
+    {
+        margin-top: 25px;
+    }
+    .btn-close
+    {
+        margin-left: 50px!important;
+    }
+    .modal-choose-extra-para
+    {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 400px)
+{
+    .modal-choose-div
+    {
+        padding: 10px 30px;
+    }
+    .modal-choose-first-sub p
+    {
+        font-size: 16px!important;
+    }
+    .modal-choose-first-sub button
+    {
+        font-size: 12px;
+    }
+    .modal-btngrp
+    {
+        margin-top: 25px;
+        margin-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 350px)
+{
+    .modal-choose-div
+    {
+        /* padding: 0px 20px; */
+    }
+    .modal-choose-first-sub
+    {
+        margin-bottom: 10px;
+    }
+    .modal-choose-first-sub p
+    {
+        font-size: 16px!important;
+    }
+    .modal-choose-first-sub button
+    {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 324px)
+{
+    .modal-choose-div
+    {
+        /* padding: 0px 20px; */
+    }
+    .modal-choose-first-sub
+    {
+        margin-bottom: 10px;
+    }
+    .modal-choose-first-sub p
+    {
+        font-size: 16px!important;
+    }
+}
