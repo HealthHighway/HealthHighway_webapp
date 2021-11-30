@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/css/landing-animation.css" />
     <link rel="stylesheet" href="/css/callback.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/testimonials.css" />
     <link rel="icon" href="/images/hh-favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -40,6 +41,20 @@
     <%- include("partials/navbar") %>
     <%- include('partials/login-form') %>
     <script type="text/javascript" src="/js/login.js"></script>
+    <script>
+        const _id = '<%- _id %>';
+        console.log("printing id of user : ", _id == false)
+        let isStored = sessionStorage.getItem("is_prompt_given");
+        if(!isStored) {
+            sessionStorage.setItem("is_prompt_given", "prompt shown");
+            if(!_id){
+                setTimeout(() => {
+                    signupModalOpenFunction();
+                }, 2000)
+            }
+        }        
+        
+    </script>
     <main>
         <!-- landing -->
         

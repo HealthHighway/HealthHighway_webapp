@@ -11,6 +11,7 @@ var phoneDiv = document.getElementById("phoneDiv");
 var loginModal = document.querySelector(".login-modal");
 var modalBackOTP = document.getElementById("backOTP");
 var infoBg = document.querySelector(".info-modal-bg");
+var signupBg = document.querySelector(".signup-prompt-modal");
 var nameDiv = document.getElementById("name");
 
 phoneDivActive = () => {
@@ -60,6 +61,16 @@ infoModalOpenFunction = (IMG, TITLE) => {
     document.getElementById("infoTITLE").innerText=TITLE;
 	navbar.style.zIndex = "0";
 }
+
+signupModalOpenFunction = () => {
+	signupBg.classList.add("info-bg-active");
+	navbar.style.zIndex = "0";
+}
+
+signupModalCloseFunction = () => {
+    signupBg.classList.remove("info-bg-active");
+	modalOpenFunction()
+};
 
 
 modalClose.addEventListener("click", function() {
