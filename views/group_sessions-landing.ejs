@@ -32,7 +32,10 @@
         ongoingDiv.innerHTML = '';
         upcomingDiv.innerHTML = '';
         data.forEach(s => {
-            let start_date = new Date(s.STARTING_DATE)
+
+            if(s.ACTIVE_FOR_PLATFORM) {
+
+                let start_date = new Date(s.STARTING_DATE)
             if(start_date-today <= 0){
                 if(s.PARTICIPANTS >= s.LIMIT){
                   const divMain = document.createElement('div');
@@ -107,6 +110,8 @@
                   divMain.innerHTML = childPart;
                   upcomingDiv.appendChild(divMain);
                 }
+            }
+
             }
             
           })
