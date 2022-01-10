@@ -587,6 +587,10 @@ app.get("/privacy-policy", (req, res) => {
     res.render("policy")
 })
 
+app.get("/refund-policy", (req, res) => {
+    res.render("refund")
+})
+
 app.get("/live-class/:VIDEO_CHANNEL", setCache, (req,res) => {
     if(req.session.HH_user)
     {
